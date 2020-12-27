@@ -1,0 +1,1779 @@
+.class public final Ljp2;
+.super Lcom/jio/myjio/MyJioFragment;
+.source "LocateUsStoreListFragment.kt"
+
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Ljp2$a;
+    }
+.end annotation
+
+.annotation runtime Lkotlin/Metadata;
+    bv = {
+        0x1,
+        0x0,
+        0x3
+    }
+    d1 = {
+        "\u0000\u00ba\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\u0008\u0006\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\u0008\u0005\n\u0002\u0018\u0002\n\u0002\u0008\u0005\n\u0002\u0018\u0002\n\u0002\u0008\u0004\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0010\u0006\n\u0002\u0008\u0005\n\u0002\u0010 \n\u0002\u0008\u0002\n\u0002\u0010\u0002\n\u0002\u0008\u0006\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0008\u000e\u0018\u0000 b2\u00020\u0001:\u0001bB\u0005\u00a2\u0006\u0002\u0010\u0002J&\u0010;\u001a\u00020<2\u0006\u0010=\u001a\u00020<2\u0006\u0010>\u001a\u00020<2\u0006\u0010?\u001a\u00020<2\u0006\u0010@\u001a\u00020<J \u0010A\u001a\n\u0012\u0004\u0012\u00020\u0016\u0018\u00010B2\u000e\u0010C\u001a\n\u0012\u0004\u0012\u00020\u0016\u0018\u00010BH\u0002J\u0008\u0010D\u001a\u00020EH\u0016J\u0008\u0010F\u001a\u00020EH\u0016J\u0008\u0010G\u001a\u00020EH\u0002J\u0008\u0010H\u001a\u00020EH\u0016J \u0010I\u001a\u00020E2\u000e\u0010J\u001a\n\u0012\u0004\u0012\u00020\u0016\u0018\u00010B2\u0008\u0010K\u001a\u0004\u0018\u00010LJ\u0012\u0010M\u001a\u00020E2\u0008\u0010N\u001a\u0004\u0018\u00010OH\u0016J&\u0010P\u001a\u0004\u0018\u00010Q2\u0006\u0010R\u001a\u00020S2\u0008\u0010T\u001a\u0004\u0018\u00010U2\u0008\u0010N\u001a\u0004\u0018\u00010OH\u0016J\u0008\u0010V\u001a\u00020EH\u0016J\u0008\u0010W\u001a\u00020EH\u0002J\u0006\u0010X\u001a\u00020EJ\u0010\u0010Y\u001a\u00020E2\u0008\u0010\u001e\u001a\u0004\u0018\u00010\u001fJ\u0008\u0010Z\u001a\u00020EH\u0002J\u0012\u0010[\u001a\u00020E2\u0008\u0010K\u001a\u0004\u0018\u00010LH\u0002J\u0016\u0010\\\u001a\u00020E2\u000e\u0010]\u001a\n\u0012\u0004\u0012\u00020#\u0018\u000109J\u000e\u0010^\u001a\u00020E2\u0006\u0010_\u001a\u00020\u000eJ\u0012\u0010`\u001a\u0004\u0018\u00010#2\u0008\u0010a\u001a\u0004\u0018\u00010#R\u001a\u0010\u0003\u001a\u00020\u0004X\u0080.\u00a2\u0006\u000e\n\u0000\u001a\u0004\u0008\u0005\u0010\u0006\"\u0004\u0008\u0007\u0010\u0008R\u0010\u0010\t\u001a\u0004\u0018\u00010\nX\u0082\u000e\u00a2\u0006\u0002\n\u0000R\u0010\u0010\u000b\u001a\u0004\u0018\u00010\u000cX\u0082\u000e\u00a2\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u000e\u00a2\u0006\u0002\n\u0000R\u001a\u0010\u000f\u001a\u00020\u000eX\u0086\u000e\u00a2\u0006\u000e\n\u0000\u001a\u0004\u0008\u0010\u0010\u0011\"\u0004\u0008\u0012\u0010\u0013R\u0016\u0010\u0014\u001a\n\u0012\u0004\u0012\u00020\u0016\u0018\u00010\u0015X\u0082\u000e\u00a2\u0006\u0002\n\u0000R\u0010\u0010\u0017\u001a\u0004\u0018\u00010\u0018X\u0082\u000e\u00a2\u0006\u0002\n\u0000R\u0010\u0010\u0019\u001a\u0004\u0018\u00010\u001aX\u0082\u000e\u00a2\u0006\u0002\n\u0000R\u0010\u0010\u001b\u001a\u0004\u0018\u00010\u001cX\u0082\u000e\u00a2\u0006\u0002\n\u0000R\u0010\u0010\u001d\u001a\u0004\u0018\u00010\u0018X\u0082\u000e\u00a2\u0006\u0002\n\u0000R\u0010\u0010\u001e\u001a\u0004\u0018\u00010\u001fX\u0082\u000e\u00a2\u0006\u0002\n\u0000R\u0010\u0010 \u001a\u0004\u0018\u00010!X\u0082\u000e\u00a2\u0006\u0002\n\u0000R\u001c\u0010\"\u001a\u0004\u0018\u00010#X\u0080\u000e\u00a2\u0006\u000e\n\u0000\u001a\u0004\u0008$\u0010%\"\u0004\u0008&\u0010\'R\u001c\u0010(\u001a\u0004\u0018\u00010)X\u0086\u000e\u00a2\u0006\u000e\n\u0000\u001a\u0004\u0008*\u0010+\"\u0004\u0008,\u0010-R\u0019\u0010.\u001a\n 0*\u0004\u0018\u00010/0/\u00a2\u0006\u0008\n\u0000\u001a\u0004\u00081\u00102R\u0010\u00103\u001a\u0004\u0018\u000104X\u0082\u000e\u00a2\u0006\u0002\n\u0000R\u0016\u00105\u001a\n\u0012\u0004\u0012\u00020\u0016\u0018\u00010\u0015X\u0082\u000e\u00a2\u0006\u0002\n\u0000R\u0010\u00106\u001a\u0004\u0018\u000107X\u0082\u000e\u00a2\u0006\u0002\n\u0000R\u0014\u00108\u001a\u0008\u0012\u0004\u0012\u00020#09X\u0082\u0004\u00a2\u0006\u0002\n\u0000R\u0010\u0010:\u001a\u0004\u0018\u00010\u000cX\u0082\u000e\u00a2\u0006\u0002\n\u0000\u00a8\u0006c"
+    }
+    d2 = {
+        "Lcom/jio/myjio/locateus/fragments/LocateUsStoreListFragment;",
+        "Lcom/jio/myjio/MyJioFragment;",
+        "()V",
+        "df",
+        "Ljava/text/DecimalFormat;",
+        "getDf$app_prodRelease",
+        "()Ljava/text/DecimalFormat;",
+        "setDf$app_prodRelease",
+        "(Ljava/text/DecimalFormat;)V",
+        "gson",
+        "Lcom/google/gson/Gson;",
+        "latLng",
+        "Lcom/google/android/gms/maps/model/LatLng;",
+        "lbIsLocationSearched",
+        "",
+        "lbValuegotFromServer",
+        "getLbValuegotFromServer",
+        "()Z",
+        "setLbValuegotFromServer",
+        "(Z)V",
+        "list_temp",
+        "",
+        "Lcom/jio/myjio/locateus/beans/LocateUsNearByStore;",
+        "llShimmerEffect",
+        "Landroid/widget/LinearLayout;",
+        "loadingAnimationView",
+        "Lcom/airbnb/lottie/LottieAnimationView;",
+        "locateUsListAdapter",
+        "Lcom/jio/myjio/locateus/adapters/LocateUsListAdapter;",
+        "locateusShimmerEffect",
+        "location",
+        "Landroid/location/Location;",
+        "locationBaseService",
+        "Lcom/jiolib/libclasses/business/LocationBaseService;",
+        "lsDistance",
+        "",
+        "getLsDistance$app_prodRelease",
+        "()Ljava/lang/String;",
+        "setLsDistance$app_prodRelease",
+        "(Ljava/lang/String;)V",
+        "mHandlerMsg",
+        "Landroid/os/Handler;",
+        "getMHandlerMsg",
+        "()Landroid/os/Handler;",
+        "setMHandlerMsg",
+        "(Landroid/os/Handler;)V",
+        "msgException",
+        "Landroid/os/Message;",
+        "kotlin.jvm.PlatformType",
+        "getMsgException",
+        "()Landroid/os/Message;",
+        "myLocationsListRecyclerView",
+        "Landroidx/recyclerview/widget/RecyclerView;",
+        "nearbyStoresList",
+        "noDataFoundText",
+        "Lcom/jio/myjio/custom/TextViewMedium;",
+        "searchedData",
+        "Ljava/util/ArrayList;",
+        "searchedLatlon",
+        "calculationByDistance",
+        "",
+        "initialLat",
+        "initialLong",
+        "finalLat",
+        "finalLong",
+        "getUniqueItems1",
+        "",
+        "passedResults",
+        "init",
+        "",
+        "initListeners",
+        "initMember",
+        "initViews",
+        "notifyAdapter",
+        "nearbyStores",
+        "coroutineResponse",
+        "Lcom/jio/myjio/bean/CoroutinesResponse;",
+        "onActivityCreated",
+        "savedInstanceState",
+        "Landroid/os/Bundle;",
+        "onCreateView",
+        "Landroid/view/View;",
+        "inflater",
+        "Landroid/view/LayoutInflater;",
+        "container",
+        "Landroid/view/ViewGroup;",
+        "onResume",
+        "releaseLock",
+        "searchedLatLonCalled",
+        "setData",
+        "setNearByStoresListData",
+        "setNoDataFound",
+        "setSearchedPlacesList",
+        "resultList",
+        "showLoadingAnimation",
+        "isLoadingAnimation",
+        "validateForPincodeSearch",
+        "search",
+        "Companion",
+        "app_prodRelease"
+    }
+    k = 0x1
+    mv = {
+        0x1,
+        0x1,
+        0xf
+    }
+.end annotation
+
+
+# static fields
+.field public static final B:Ljp2$a;
+
+
+# instance fields
+.field public A:Ljava/util/HashMap;
+
+.field public s:Landroid/os/Handler;
+
+.field public t:Ljava/text/DecimalFormat;
+
+.field public u:Landroidx/recyclerview/widget/RecyclerView;
+
+.field public v:Lbp2;
+
+.field public w:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List<",
+            "Lcom/jio/myjio/locateus/beans/LocateUsNearByStore;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public x:Lcom/jio/myjio/custom/TextViewMedium;
+
+.field public y:Lcom/airbnb/lottie/LottieAnimationView;
+
+.field public z:Landroid/widget/LinearLayout;
+
+
+# direct methods
+.method public static constructor <clinit>()V
+    .locals 2
+
+    new-instance v0, Ljp2$a;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Ljp2$a;-><init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+
+    sput-object v0, Ljp2;->B:Ljp2$a;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .locals 2
+
+    .line 1
+    invoke-direct {p0}, Lcom/jio/myjio/MyJioFragment;-><init>()V
+
+    .line 2
+    new-instance v0, Landroid/os/Handler;
+
+    invoke-direct {v0}, Landroid/os/Handler;-><init>()V
+
+    iput-object v0, p0, Ljp2;->s:Landroid/os/Handler;
+
+    .line 3
+    iget-object v0, p0, Ljp2;->s:Landroid/os/Handler;
+
+    if-eqz v0, :cond_0
+
+    const/16 v1, 0x4e21
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
+
+    .line 4
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    return-void
+
+    .line 5
+    :cond_0
+    invoke-static {}, Lwr3;->b()V
+
+    const/4 v0, 0x0
+
+    throw v0
+.end method
+
+
+# virtual methods
+.method public final X()V
+    .locals 3
+
+    .line 1
+    :try_start_0
+    sget-object v0, Lj33;->d:Lj33$a;
+
+    const-string v1, "LocateUsStoreListFrg"
+
+    const-string v2, "----- inside initMember()-------"
+
+    invoke-virtual {v0, v1, v2}, Lj33$a;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 2
+    new-instance v0, Lcom/google/gson/Gson;
+
+    invoke-direct {v0}, Lcom/google/gson/Gson;-><init>()V
+
+    .line 3
+    new-instance v0, Le33;
+
+    invoke-direct {v0}, Le33;-><init>()V
+
+    .line 4
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    .line 5
+    new-instance v0, Ljava/text/DecimalFormat;
+
+    invoke-direct {v0}, Ljava/text/DecimalFormat;-><init>()V
+
+    iput-object v0, p0, Ljp2;->t:Ljava/text/DecimalFormat;
+
+    .line 6
+    iget-object v0, p0, Ljp2;->t:Ljava/text/DecimalFormat;
+
+    if-eqz v0, :cond_0
+
+    const/4 v1, 0x2
+
+    invoke-virtual {v0, v1}, Ljava/text/DecimalFormat;->setMaximumFractionDigits(I)V
+
+    goto :goto_0
+
+    :cond_0
+    const-string v0, "df"
+
+    invoke-static {v0}, Lwr3;->d(Ljava/lang/String;)V
+    :try_end_0
+    .catch Landroid/content/res/Resources$NotFoundException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    const/4 v0, 0x0
+
+    throw v0
+
+    :catch_0
+    move-exception v0
+
+    .line 7
+    invoke-static {v0}, Li03;->a(Ljava/lang/Exception;)V
+
+    goto :goto_0
+
+    :catch_1
+    move-exception v0
+
+    .line 8
+    invoke-static {v0}, Li03;->a(Ljava/lang/Exception;)V
+
+    :goto_0
+    return-void
+.end method
+
+.method public final Y()V
+    .locals 2
+
+    .line 1
+    :try_start_0
+    invoke-virtual {p0}, Lcom/jio/myjio/MyJioFragment;->getMActivity()Lcom/jio/myjio/MyJioActivity;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/app/Activity;->isFinishing()Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    .line 2
+    invoke-virtual {p0}, Lcom/jio/myjio/MyJioFragment;->getMActivity()Lcom/jio/myjio/MyJioActivity;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    check-cast v0, Lcom/jio/myjio/dashboard/activities/DashboardActivity;
+
+    invoke-virtual {v0}, Lcom/jio/myjio/dashboard/activities/DashboardActivity;->K1()V
+
+    goto :goto_0
+
+    :cond_0
+    new-instance v0, Lkotlin/TypeCastException;
+
+    const-string v1, "null cannot be cast to non-null type com.jio.myjio.dashboard.activities.DashboardActivity"
+
+    invoke-direct {v0, v1}, Lkotlin/TypeCastException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    :catch_0
+    move-exception v0
+
+    .line 3
+    invoke-static {v0}, Li03;->a(Ljava/lang/Exception;)V
+
+    :cond_1
+    :goto_0
+    return-void
+.end method
+
+.method public final Z()V
+    .locals 3
+
+    .line 1
+    iget-object v0, p0, Ljp2;->x:Lcom/jio/myjio/custom/TextViewMedium;
+
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_1
+
+    const/16 v2, 0x8
+
+    invoke-virtual {v0, v2}, Landroid/widget/TextView;->setVisibility(I)V
+
+    const/4 v0, 0x0
+
+    .line 2
+    invoke-virtual {p0, v0}, Ljp2;->i(Z)V
+
+    .line 3
+    iget-object v2, p0, Ljp2;->u:Landroidx/recyclerview/widget/RecyclerView;
+
+    if-eqz v2, :cond_0
+
+    invoke-virtual {v2, v0}, Landroid/view/ViewGroup;->setVisibility(I)V
+
+    .line 4
+    invoke-virtual {p0}, Ljp2;->Y()V
+
+    return-void
+
+    .line 5
+    :cond_0
+    invoke-static {}, Lwr3;->b()V
+
+    throw v1
+
+    .line 6
+    :cond_1
+    invoke-static {}, Lwr3;->b()V
+
+    throw v1
+.end method
+
+.method public _$_clearFindViewByIdCache()V
+    .locals 1
+
+    iget-object v0, p0, Ljp2;->A:Ljava/util/HashMap;
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0}, Ljava/util/HashMap;->clear()V
+
+    :cond_0
+    return-void
+.end method
+
+.method public _$_findCachedViewById(I)Landroid/view/View;
+    .locals 2
+
+    iget-object v0, p0, Ljp2;->A:Ljava/util/HashMap;
+
+    if-nez v0, :cond_0
+
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+
+    iput-object v0, p0, Ljp2;->A:Ljava/util/HashMap;
+
+    :cond_0
+    iget-object v0, p0, Ljp2;->A:Ljava/util/HashMap;
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/view/View;
+
+    if-nez v0, :cond_2
+
+    invoke-virtual {p0}, Landroidx/fragment/app/Fragment;->getView()Landroid/view/View;
+
+    move-result-object v0
+
+    if-nez v0, :cond_1
+
+    const/4 p1, 0x0
+
+    return-object p1
+
+    :cond_1
+    invoke-virtual {v0, p1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    iget-object v1, p0, Ljp2;->A:Ljava/util/HashMap;
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    invoke-virtual {v1, p1, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    :cond_2
+    return-object v0
+.end method
+
+.method public final a(Lcom/jio/myjio/bean/CoroutinesResponse;)V
+    .locals 6
+
+    const-string v0, "message"
+
+    const v1, 0x7f130fb8
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x0
+
+    .line 35
+    :try_start_0
+    invoke-virtual {p0, v2}, Ljp2;->i(Z)V
+
+    .line 36
+    iget-object v4, p0, Ljp2;->u:Landroidx/recyclerview/widget/RecyclerView;
+
+    if-eqz v4, :cond_6
+
+    const/16 v5, 0x8
+
+    invoke-virtual {v4, v5}, Landroid/view/ViewGroup;->setVisibility(I)V
+
+    .line 37
+    iget-object v4, p0, Ljp2;->x:Lcom/jio/myjio/custom/TextViewMedium;
+
+    if-eqz v4, :cond_5
+
+    invoke-virtual {v4, v2}, Landroid/widget/TextView;->setVisibility(I)V
+
+    if-eqz p1, :cond_0
+
+    .line 38
+    invoke-virtual {p1}, Lcom/jio/myjio/bean/CoroutinesResponse;->getResponseEntity()Ljava/util/Map;
+
+    move-result-object p1
+
+    goto :goto_0
+
+    :cond_0
+    move-object p1, v3
+
+    :goto_0
+    if-eqz p1, :cond_4
+
+    if-eqz p1, :cond_2
+
+    .line 39
+    invoke-interface {p1, v0}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    .line 40
+    iget-object v2, p0, Ljp2;->x:Lcom/jio/myjio/custom/TextViewMedium;
+
+    if-eqz v2, :cond_1
+
+    invoke-interface {p1, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {v2, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    goto :goto_1
+
+    :cond_1
+    invoke-static {}, Lwr3;->b()V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    throw v3
+
+    .line 41
+    :cond_2
+    :try_start_1
+    iget-object p1, p0, Ljp2;->x:Lcom/jio/myjio/custom/TextViewMedium;
+
+    if-eqz p1, :cond_3
+
+    invoke-virtual {p0}, Lcom/jio/myjio/MyJioFragment;->getMActivity()Lcom/jio/myjio/MyJioActivity;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroidx/appcompat/app/AppCompatActivity;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 42
+    :goto_1
+    invoke-virtual {p0}, Ljp2;->Y()V
+
+    goto :goto_2
+
+    .line 43
+    :cond_3
+    invoke-static {}, Lwr3;->b()V
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
+
+    throw v3
+
+    .line 44
+    :cond_4
+    :try_start_2
+    new-instance p1, Lkotlin/TypeCastException;
+
+    const-string v0, "null cannot be cast to non-null type kotlin.collections.Map<kotlin.String, kotlin.Any>"
+
+    invoke-direct {p1, v0}, Lkotlin/TypeCastException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    .line 45
+    :cond_5
+    invoke-static {}, Lwr3;->b()V
+    :try_end_2
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
+
+    throw v3
+
+    .line 46
+    :cond_6
+    :try_start_3
+    invoke-static {}, Lwr3;->b()V
+    :try_end_3
+    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_0
+
+    throw v3
+
+    :catch_0
+    nop
+
+    .line 47
+    iget-object p1, p0, Ljp2;->x:Lcom/jio/myjio/custom/TextViewMedium;
+
+    if-eqz p1, :cond_7
+
+    invoke-virtual {p0}, Lcom/jio/myjio/MyJioFragment;->getMActivity()Lcom/jio/myjio/MyJioActivity;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroidx/appcompat/app/AppCompatActivity;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    :goto_2
+    return-void
+
+    :cond_7
+    invoke-static {}, Lwr3;->b()V
+
+    throw v3
+.end method
+
+.method public final a(Ljava/util/List;Lcom/jio/myjio/bean/CoroutinesResponse;)V
+    .locals 5
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List<",
+            "+",
+            "Lcom/jio/myjio/locateus/beans/LocateUsNearByStore;",
+            ">;",
+            "Lcom/jio/myjio/bean/CoroutinesResponse;",
+            ")V"
+        }
+    .end annotation
+
+    .line 1
+    sget-object v0, Lj33;->d:Lj33$a;
+
+    const-string v1, "LocateUsStoreListFrag"
+
+    const-string v2, "--- Inside notifyAdapter()---"
+
+    invoke-virtual {v0, v1, v2}, Lj33$a;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    if-eqz p1, :cond_8
+
+    .line 2
+    :try_start_0
+    invoke-interface {p1}, Ljava/util/Collection;->isEmpty()Z
+
+    move-result v0
+
+    xor-int/lit8 v0, v0, 0x1
+
+    if-eqz v0, :cond_8
+
+    .line 3
+    invoke-virtual {p0, p1}, Ljp2;->d(Ljava/util/List;)Ljava/util/List;
+
+    move-result-object p1
+
+    .line 4
+    invoke-static {p1}, Lcs3;->b(Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object p1
+
+    iput-object p1, p0, Ljp2;->w:Ljava/util/List;
+
+    .line 5
+    sget-object p1, Lj33;->d:Lj33$a;
+
+    const-string v0, "--- Inside notifyAdapter() after setting nearbyStoresList---"
+
+    invoke-virtual {p1, v1, v0}, Lj33$a;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 6
+    iget-object p1, p0, Ljp2;->w:Ljava/util/List;
+
+    if-eqz p1, :cond_7
+
+    iget-object p1, p0, Ljp2;->w:Ljava/util/List;
+
+    const/4 v0, 0x0
+
+    if-eqz p1, :cond_6
+
+    invoke-interface {p1}, Ljava/util/List;->size()I
+
+    move-result p1
+
+    if-lez p1, :cond_7
+
+    .line 7
+    invoke-virtual {p0}, Ljp2;->Z()V
+
+    .line 8
+    sget-object p1, Lj33;->d:Lj33$a;
+
+    const-string v2, "--- Inside notifyAdapter() is nearbyStoreList size > 0---"
+
+    invoke-virtual {p1, v1, v2}, Lj33$a;->a(Ljava/lang/String;Ljava/lang/String;)V
+    :try_end_0
+    .catch Landroid/content/res/Resources$NotFoundException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
+
+    .line 9
+    :try_start_1
+    sget-object p1, Lcom/jio/myjio/locateus/fragments/LocateUsStoreMapListTabFragment;->K:Lcom/jio/myjio/locateus/fragments/LocateUsStoreMapListTabFragment$b;
+
+    iget-object v2, p0, Ljp2;->w:Ljava/util/List;
+
+    invoke-virtual {p1, v2}, Lcom/jio/myjio/locateus/fragments/LocateUsStoreMapListTabFragment$b;->a(Ljava/util/List;)V
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception p1
+
+    .line 10
+    :try_start_2
+    invoke-static {p1}, Li03;->a(Ljava/lang/Exception;)V
+
+    .line 11
+    :goto_0
+    sget-object p1, Lj33;->d:Lj33$a;
+
+    const-string v2, "--- Inside notifyAdapter() checking myLocationsListRecyclerView == null ---"
+
+    invoke-virtual {p1, v1, v2}, Lj33$a;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 12
+    iget-object p1, p0, Ljp2;->u:Landroidx/recyclerview/widget/RecyclerView;
+
+    const/4 v2, 0x0
+
+    if-nez p1, :cond_1
+
+    .line 13
+    invoke-virtual {p0}, Lcom/jio/myjio/MyJioFragment;->getBaseView()Landroid/view/View;
+
+    move-result-object p1
+
+    const v3, 0x7f0b137e
+
+    invoke-virtual {p1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object p1
+
+    check-cast p1, Landroidx/recyclerview/widget/RecyclerView;
+
+    iput-object p1, p0, Ljp2;->u:Landroidx/recyclerview/widget/RecyclerView;
+
+    .line 14
+    iget-object p1, p0, Ljp2;->u:Landroidx/recyclerview/widget/RecyclerView;
+
+    if-eqz p1, :cond_0
+
+    invoke-virtual {p1, v2}, Landroid/view/ViewGroup;->setVisibility(I)V
+
+    goto :goto_1
+
+    :cond_0
+    invoke-static {}, Lwr3;->b()V
+    :try_end_2
+    .catch Landroid/content/res/Resources$NotFoundException; {:try_start_2 .. :try_end_2} :catch_2
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
+
+    throw v0
+
+    .line 15
+    :cond_1
+    :goto_1
+    :try_start_3
+    sget-object p1, Lj33;->d:Lj33$a;
+
+    const-string v3, "--- Inside notifyAdapter() before setting notifyDataSetChanged()---"
+
+    invoke-virtual {p1, v1, v3}, Lj33$a;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 16
+    invoke-virtual {p0, v2}, Ljp2;->i(Z)V
+
+    .line 17
+    iget-object p1, p0, Ljp2;->v:Lbp2;
+
+    if-eqz p1, :cond_5
+
+    .line 18
+    iget-object v3, p0, Ljp2;->w:Ljava/util/List;
+
+    if-eqz v3, :cond_4
+
+    .line 19
+    sget-object v4, Lcom/jio/myjio/locateus/fragments/LocateUsStoreMapListTabFragment;->K:Lcom/jio/myjio/locateus/fragments/LocateUsStoreMapListTabFragment$b;
+
+    invoke-virtual {v4}, Lcom/jio/myjio/locateus/fragments/LocateUsStoreMapListTabFragment$b;->a()Ljava/lang/String;
+
+    move-result-object v4
+
+    .line 20
+    invoke-virtual {p1, v3, v4}, Lbp2;->a(Ljava/util/List;Ljava/lang/String;)V
+
+    .line 21
+    iget-object p1, p0, Ljp2;->u:Landroidx/recyclerview/widget/RecyclerView;
+
+    if-eqz p1, :cond_3
+
+    iget-object v3, p0, Ljp2;->v:Lbp2;
+
+    invoke-virtual {p1, v3}, Landroidx/recyclerview/widget/RecyclerView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$g;)V
+
+    .line 22
+    iget-object p1, p0, Ljp2;->u:Landroidx/recyclerview/widget/RecyclerView;
+
+    if-eqz p1, :cond_2
+
+    invoke-virtual {p1, v2}, Landroidx/recyclerview/widget/RecyclerView;->scrollToPosition(I)V
+
+    .line 23
+    sget-object p1, Lj33;->d:Lj33$a;
+
+    const-string v0, "--- Inside notifyAdapter() after setting notifyDataSetChanged()---"
+
+    invoke-virtual {p1, v1, v0}, Lj33$a;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    goto :goto_2
+
+    .line 24
+    :cond_2
+    invoke-static {}, Lwr3;->b()V
+    :try_end_3
+    .catch Landroid/content/res/Resources$NotFoundException; {:try_start_3 .. :try_end_3} :catch_2
+    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_1
+
+    throw v0
+
+    .line 25
+    :cond_3
+    :try_start_4
+    invoke-static {}, Lwr3;->b()V
+    :try_end_4
+    .catch Landroid/content/res/Resources$NotFoundException; {:try_start_4 .. :try_end_4} :catch_2
+    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_1
+
+    throw v0
+
+    .line 26
+    :cond_4
+    :try_start_5
+    invoke-static {}, Lwr3;->b()V
+    :try_end_5
+    .catch Landroid/content/res/Resources$NotFoundException; {:try_start_5 .. :try_end_5} :catch_2
+    .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_1
+
+    throw v0
+
+    .line 27
+    :cond_5
+    :try_start_6
+    invoke-static {}, Lwr3;->b()V
+    :try_end_6
+    .catch Landroid/content/res/Resources$NotFoundException; {:try_start_6 .. :try_end_6} :catch_2
+    .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_6} :catch_1
+
+    throw v0
+
+    .line 28
+    :cond_6
+    :try_start_7
+    invoke-static {}, Lwr3;->b()V
+    :try_end_7
+    .catch Landroid/content/res/Resources$NotFoundException; {:try_start_7 .. :try_end_7} :catch_2
+    .catch Ljava/lang/Exception; {:try_start_7 .. :try_end_7} :catch_1
+
+    throw v0
+
+    .line 29
+    :cond_7
+    :try_start_8
+    invoke-virtual {p0, p2}, Ljp2;->a(Lcom/jio/myjio/bean/CoroutinesResponse;)V
+
+    goto :goto_2
+
+    .line 30
+    :cond_8
+    invoke-virtual {p0, p2}, Ljp2;->a(Lcom/jio/myjio/bean/CoroutinesResponse;)V
+    :try_end_8
+    .catch Landroid/content/res/Resources$NotFoundException; {:try_start_8 .. :try_end_8} :catch_2
+    .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_8} :catch_1
+
+    goto :goto_2
+
+    :catch_1
+    move-exception p1
+
+    .line 31
+    invoke-virtual {p0, p2}, Ljp2;->a(Lcom/jio/myjio/bean/CoroutinesResponse;)V
+
+    .line 32
+    invoke-static {p1}, Li03;->a(Ljava/lang/Exception;)V
+
+    goto :goto_2
+
+    :catch_2
+    move-exception p1
+
+    .line 33
+    invoke-virtual {p0, p2}, Ljp2;->a(Lcom/jio/myjio/bean/CoroutinesResponse;)V
+
+    .line 34
+    invoke-static {p1}, Li03;->a(Ljava/lang/Exception;)V
+
+    :goto_2
+    return-void
+.end method
+
+.method public final d(Ljava/util/List;)Ljava/util/List;
+    .locals 12
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List<",
+            "+",
+            "Lcom/jio/myjio/locateus/beans/LocateUsNearByStore;",
+            ">;)",
+            "Ljava/util/List<",
+            "Lcom/jio/myjio/locateus/beans/LocateUsNearByStore;",
+            ">;"
+        }
+    .end annotation
+
+    const-string v0, "java.lang.String.format(format, *args)"
+
+    const-string v1, "%.4f"
+
+    const/4 v2, 0x0
+
+    .line 1
+    :try_start_0
+    new-instance v3, Ljava/util/ArrayList;
+
+    invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
+
+    .line 2
+    new-instance v3, Ljava/util/HashMap;
+
+    invoke-direct {v3}, Ljava/util/HashMap;-><init>()V
+
+    .line 3
+    new-instance v4, Lcom/fasterxml/jackson/databind/ObjectMapper;
+
+    invoke-direct {v4}, Lcom/fasterxml/jackson/databind/ObjectMapper;-><init>()V
+
+    .line 4
+    new-instance v5, Ljp2$b;
+
+    invoke-direct {v5}, Ljp2$b;-><init>()V
+
+    .line 5
+    invoke-virtual {v4, p1, v5}, Lcom/fasterxml/jackson/databind/ObjectMapper;->convertValue(Ljava/lang/Object;Lcom/fasterxml/jackson/core/type/TypeReference;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Ljava/util/List;
+
+    if-eqz p1, :cond_2
+
+    .line 6
+    new-instance v4, Ljava/util/ArrayList;
+
+    invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
+    :try_end_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_3
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_2
+
+    .line 7
+    :try_start_1
+    invoke-interface {p1}, Ljava/util/Collection;->size()I
+
+    move-result v2
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    :goto_0
+    if-ge v6, v2, :cond_1
+
+    .line 8
+    new-instance v7, Ljava/lang/StringBuilder;
+
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+
+    sget-object v8, Lbs3;->a:Lbs3;
+
+    const/4 v8, 0x1
+
+    new-array v9, v8, [Ljava/lang/Object;
+
+    .line 9
+    invoke-interface {p1, v6}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v10
+
+    check-cast v10, Lcom/jio/myjio/locateus/beans/LocateUsNearByStore;
+
+    invoke-virtual {v10}, Lcom/jio/myjio/locateus/beans/LocateUsNearByStore;->getLatitude()D
+
+    move-result-wide v10
+
+    invoke-static {v10, v11}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    move-result-object v10
+
+    aput-object v10, v9, v5
+
+    .line 10
+    array-length v10, v9
+
+    invoke-static {v9, v10}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
+
+    move-result-object v9
+
+    invoke-static {v1, v9}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-static {v9, v0}, Lwr3;->a(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 11
+    sget-object v9, Lbs3;->a:Lbs3;
+
+    new-array v9, v8, [Ljava/lang/Object;
+
+    invoke-interface {p1, v6}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v10
+
+    check-cast v10, Lcom/jio/myjio/locateus/beans/LocateUsNearByStore;
+
+    invoke-virtual {v10}, Lcom/jio/myjio/locateus/beans/LocateUsNearByStore;->getLongitude()D
+
+    move-result-wide v10
+
+    invoke-static {v10, v11}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    move-result-object v10
+
+    aput-object v10, v9, v5
+
+    array-length v10, v9
+
+    invoke-static {v9, v10}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
+
+    move-result-object v9
+
+    invoke-static {v1, v9}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-static {v9, v0}, Lwr3;->a(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v7
+
+    .line 12
+    invoke-virtual {v3, v7}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v7
+
+    if-nez v7, :cond_0
+
+    .line 13
+    new-instance v7, Ljava/lang/StringBuilder;
+
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+
+    sget-object v9, Lbs3;->a:Lbs3;
+
+    new-array v9, v8, [Ljava/lang/Object;
+
+    .line 14
+    invoke-interface {p1, v6}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v10
+
+    check-cast v10, Lcom/jio/myjio/locateus/beans/LocateUsNearByStore;
+
+    invoke-virtual {v10}, Lcom/jio/myjio/locateus/beans/LocateUsNearByStore;->getLatitude()D
+
+    move-result-wide v10
+
+    invoke-static {v10, v11}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    move-result-object v10
+
+    aput-object v10, v9, v5
+
+    .line 15
+    array-length v10, v9
+
+    invoke-static {v9, v10}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
+
+    move-result-object v9
+
+    invoke-static {v1, v9}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-static {v9, v0}, Lwr3;->a(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 16
+    sget-object v9, Lbs3;->a:Lbs3;
+
+    new-array v8, v8, [Ljava/lang/Object;
+
+    invoke-interface {p1, v6}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v9
+
+    check-cast v9, Lcom/jio/myjio/locateus/beans/LocateUsNearByStore;
+
+    invoke-virtual {v9}, Lcom/jio/myjio/locateus/beans/LocateUsNearByStore;->getLongitude()D
+
+    move-result-wide v9
+
+    invoke-static {v9, v10}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    move-result-object v9
+
+    aput-object v9, v8, v5
+
+    array-length v9, v8
+
+    invoke-static {v8, v9}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
+
+    move-result-object v8
+
+    invoke-static {v1, v8}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-static {v8, v0}, Lwr3;->a(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-interface {p1, v6}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v8
+
+    .line 17
+    invoke-interface {v3, v7, v8}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 18
+    invoke-interface {p1, v6}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v7
+
+    invoke-interface {v4, v7}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    :try_end_1
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_1 .. :try_end_1} :catch_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
+
+    :cond_0
+    add-int/lit8 v6, v6, 0x1
+
+    goto/16 :goto_0
+
+    :cond_1
+    move-object v2, v4
+
+    goto :goto_3
+
+    :catch_0
+    move-exception p1
+
+    move-object v2, v4
+
+    goto :goto_1
+
+    :catch_1
+    move-exception p1
+
+    move-object v2, v4
+
+    goto :goto_2
+
+    :catch_2
+    move-exception p1
+
+    .line 19
+    :goto_1
+    invoke-static {p1}, Li03;->a(Ljava/lang/Exception;)V
+
+    goto :goto_3
+
+    :catch_3
+    move-exception p1
+
+    .line 20
+    :goto_2
+    invoke-static {p1}, Li03;->a(Ljava/lang/Exception;)V
+
+    :cond_2
+    :goto_3
+    return-object v2
+.end method
+
+.method public final i(Z)V
+    .locals 4
+
+    .line 1
+    :try_start_0
+    iget-object v0, p0, Ljp2;->x:Lcom/jio/myjio/custom/TextViewMedium;
+
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_9
+
+    const/16 v2, 0x8
+
+    invoke-virtual {v0, v2}, Landroid/widget/TextView;->setVisibility(I)V
+
+    const/4 v0, 0x0
+
+    if-eqz p1, :cond_5
+
+    .line 2
+    iget-object p1, p0, Ljp2;->z:Landroid/widget/LinearLayout;
+
+    if-eqz p1, :cond_4
+
+    invoke-virtual {p1, v0}, Landroid/widget/LinearLayout;->setVisibility(I)V
+
+    .line 3
+    invoke-virtual {p0}, Lcom/jio/myjio/MyJioFragment;->getBaseView()Landroid/view/View;
+
+    move-result-object p1
+
+    const v3, 0x7f0b0cb1
+
+    invoke-virtual {p1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object p1
+
+    check-cast p1, Lcom/airbnb/lottie/LottieAnimationView;
+
+    iput-object p1, p0, Ljp2;->y:Lcom/airbnb/lottie/LottieAnimationView;
+
+    .line 4
+    iget-object p1, p0, Ljp2;->y:Lcom/airbnb/lottie/LottieAnimationView;
+
+    if-eqz p1, :cond_3
+
+    invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setVisibility(I)V
+
+    .line 5
+    iget-object p1, p0, Ljp2;->y:Lcom/airbnb/lottie/LottieAnimationView;
+
+    if-eqz p1, :cond_2
+
+    const-string v0, "fetching_location.json"
+
+    invoke-virtual {p1, v0}, Lcom/airbnb/lottie/LottieAnimationView;->setAnimation(Ljava/lang/String;)V
+
+    .line 6
+    iget-object p1, p0, Ljp2;->y:Lcom/airbnb/lottie/LottieAnimationView;
+
+    if-eqz p1, :cond_1
+
+    invoke-virtual {p1}, Lcom/airbnb/lottie/LottieAnimationView;->h()V
+
+    .line 7
+    iget-object p1, p0, Ljp2;->u:Landroidx/recyclerview/widget/RecyclerView;
+
+    if-eqz p1, :cond_0
+
+    invoke-virtual {p1, v2}, Landroid/view/ViewGroup;->setVisibility(I)V
+
+    goto :goto_0
+
+    :cond_0
+    invoke-static {}, Lwr3;->b()V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    throw v1
+
+    .line 8
+    :cond_1
+    :try_start_1
+    invoke-static {}, Lwr3;->b()V
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
+
+    throw v1
+
+    .line 9
+    :cond_2
+    :try_start_2
+    invoke-static {}, Lwr3;->b()V
+    :try_end_2
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
+
+    throw v1
+
+    .line 10
+    :cond_3
+    :try_start_3
+    invoke-static {}, Lwr3;->b()V
+    :try_end_3
+    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_0
+
+    throw v1
+
+    .line 11
+    :cond_4
+    :try_start_4
+    invoke-static {}, Lwr3;->b()V
+    :try_end_4
+    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_0
+
+    throw v1
+
+    .line 12
+    :cond_5
+    :try_start_5
+    iget-object p1, p0, Ljp2;->z:Landroid/widget/LinearLayout;
+
+    if-eqz p1, :cond_8
+
+    invoke-virtual {p1, v2}, Landroid/widget/LinearLayout;->setVisibility(I)V
+
+    .line 13
+    iget-object p1, p0, Ljp2;->y:Lcom/airbnb/lottie/LottieAnimationView;
+
+    if-eqz p1, :cond_7
+
+    invoke-virtual {p1, v2}, Landroid/widget/ImageView;->setVisibility(I)V
+
+    .line 14
+    iget-object p1, p0, Ljp2;->u:Landroidx/recyclerview/widget/RecyclerView;
+
+    if-eqz p1, :cond_6
+
+    invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->setVisibility(I)V
+
+    goto :goto_0
+
+    :cond_6
+    invoke-static {}, Lwr3;->b()V
+    :try_end_5
+    .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_0
+
+    throw v1
+
+    .line 15
+    :cond_7
+    :try_start_6
+    invoke-static {}, Lwr3;->b()V
+    :try_end_6
+    .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_6} :catch_0
+
+    throw v1
+
+    .line 16
+    :cond_8
+    :try_start_7
+    invoke-static {}, Lwr3;->b()V
+    :try_end_7
+    .catch Ljava/lang/Exception; {:try_start_7 .. :try_end_7} :catch_0
+
+    throw v1
+
+    .line 17
+    :cond_9
+    :try_start_8
+    invoke-static {}, Lwr3;->b()V
+    :try_end_8
+    .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_8} :catch_0
+
+    throw v1
+
+    :catch_0
+    move-exception p1
+
+    .line 18
+    invoke-static {p1}, Li03;->a(Ljava/lang/Exception;)V
+
+    .line 19
+    invoke-virtual {p0}, Lcom/jio/myjio/MyJioFragment;->getMActivity()Lcom/jio/myjio/MyJioActivity;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_a
+
+    check-cast p1, Lcom/jio/myjio/dashboard/activities/DashboardActivity;
+
+    invoke-virtual {p1}, Lcom/jio/myjio/dashboard/activities/DashboardActivity;->K1()V
+
+    :goto_0
+    return-void
+
+    :cond_a
+    new-instance p1, Lkotlin/TypeCastException;
+
+    const-string v0, "null cannot be cast to non-null type com.jio.myjio.dashboard.activities.DashboardActivity"
+
+    invoke-direct {p1, v0}, Lkotlin/TypeCastException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+.end method
+
+.method public init()V
+    .locals 3
+
+    .line 1
+    sget-object v0, Lj33;->d:Lj33$a;
+
+    const-string v1, "LocateUsStoreListFrg"
+
+    const-string v2, "----- inside init()-------"
+
+    invoke-virtual {v0, v1, v2}, Lj33$a;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 2
+    invoke-virtual {p0}, Ljp2;->initViews()V
+
+    .line 3
+    invoke-virtual {p0}, Ljp2;->X()V
+
+    .line 4
+    invoke-virtual {p0}, Ljp2;->initListeners()V
+
+    return-void
+.end method
+
+.method public initListeners()V
+    .locals 3
+
+    .line 1
+    sget-object v0, Lj33;->d:Lj33$a;
+
+    const-string v1, "LocateUsStoreListFrg"
+
+    const-string v2, "----- inside initListeners()-------"
+
+    invoke-virtual {v0, v1, v2}, Lj33$a;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public initViews()V
+    .locals 5
+
+    .line 1
+    sget-object v0, Lj33;->d:Lj33$a;
+
+    const-string v1, "LocateUsStoreListFrg"
+
+    const-string v2, "----- inside initViews()-------"
+
+    invoke-virtual {v0, v1, v2}, Lj33$a;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 2
+    invoke-virtual {p0}, Lcom/jio/myjio/MyJioFragment;->getBaseView()Landroid/view/View;
+
+    move-result-object v0
+
+    const v1, 0x7f0b137e
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroidx/recyclerview/widget/RecyclerView;
+
+    iput-object v0, p0, Ljp2;->u:Landroidx/recyclerview/widget/RecyclerView;
+
+    .line 3
+    invoke-virtual {p0}, Lcom/jio/myjio/MyJioFragment;->getBaseView()Landroid/view/View;
+
+    move-result-object v0
+
+    const v1, 0x7f0b0ecb
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/jio/myjio/custom/TextViewMedium;
+
+    iput-object v0, p0, Ljp2;->x:Lcom/jio/myjio/custom/TextViewMedium;
+
+    .line 4
+    iget-object v0, p0, Ljp2;->x:Lcom/jio/myjio/custom/TextViewMedium;
+
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_6
+
+    invoke-virtual {p0}, Lcom/jio/myjio/MyJioFragment;->getMActivity()Lcom/jio/myjio/MyJioActivity;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Landroidx/appcompat/app/AppCompatActivity;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v2
+
+    const v3, 0x7f130fb8
+
+    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 5
+    invoke-virtual {p0}, Lcom/jio/myjio/MyJioFragment;->getBaseView()Landroid/view/View;
+
+    move-result-object v0
+
+    const v2, 0x7f0b0cb5
+
+    invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/LinearLayout;
+
+    .line 6
+    iget-object v0, p0, Ljp2;->u:Landroidx/recyclerview/widget/RecyclerView;
+
+    if-eqz v0, :cond_5
+
+    new-instance v3, Landroidx/recyclerview/widget/LinearLayoutManager;
+
+    invoke-virtual {p0}, Lcom/jio/myjio/MyJioFragment;->getMActivity()Lcom/jio/myjio/MyJioActivity;
+
+    move-result-object v4
+
+    invoke-direct {v3, v4}, Landroidx/recyclerview/widget/LinearLayoutManager;-><init>(Landroid/content/Context;)V
+
+    invoke-virtual {v0, v3}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$o;)V
+
+    .line 7
+    iget-object v0, p0, Ljp2;->u:Landroidx/recyclerview/widget/RecyclerView;
+
+    if-eqz v0, :cond_4
+
+    invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView;->requestLayout()V
+
+    .line 8
+    iget-object v0, p0, Ljp2;->u:Landroidx/recyclerview/widget/RecyclerView;
+
+    if-eqz v0, :cond_3
+
+    const/4 v3, 0x1
+
+    invoke-virtual {v0, v3}, Landroidx/recyclerview/widget/RecyclerView;->setHasFixedSize(Z)V
+
+    .line 9
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Ljp2;->w:Ljava/util/List;
+
+    .line 10
+    new-instance v0, Lbp2;
+
+    iget-object v4, p0, Ljp2;->w:Ljava/util/List;
+
+    if-eqz v4, :cond_2
+
+    invoke-direct {v0, p0, v4}, Lbp2;-><init>(Lcom/jio/myjio/MyJioFragment;Ljava/util/List;)V
+
+    iput-object v0, p0, Ljp2;->v:Lbp2;
+
+    .line 11
+    iget-object v0, p0, Ljp2;->u:Landroidx/recyclerview/widget/RecyclerView;
+
+    if-eqz v0, :cond_0
+
+    iget-object v4, p0, Ljp2;->v:Lbp2;
+
+    invoke-virtual {v0, v4}, Landroidx/recyclerview/widget/RecyclerView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$g;)V
+
+    .line 12
+    :cond_0
+    invoke-virtual {p0}, Lcom/jio/myjio/MyJioFragment;->getBaseView()Landroid/view/View;
+
+    move-result-object v0
+
+    const v4, 0x7f0b0cb1
+
+    invoke-virtual {v0, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/airbnb/lottie/LottieAnimationView;
+
+    iput-object v0, p0, Ljp2;->y:Lcom/airbnb/lottie/LottieAnimationView;
+
+    .line 13
+    invoke-virtual {p0}, Lcom/jio/myjio/MyJioFragment;->getBaseView()Landroid/view/View;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/LinearLayout;
+
+    iput-object v0, p0, Ljp2;->z:Landroid/widget/LinearLayout;
+
+    .line 14
+    invoke-virtual {p0, v3}, Ljp2;->i(Z)V
+
+    .line 15
+    iget-object v0, p0, Ljp2;->u:Landroidx/recyclerview/widget/RecyclerView;
+
+    if-eqz v0, :cond_1
+
+    const/16 v1, 0x8
+
+    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setVisibility(I)V
+
+    return-void
+
+    :cond_1
+    invoke-static {}, Lwr3;->b()V
+
+    throw v1
+
+    .line 16
+    :cond_2
+    invoke-static {}, Lwr3;->b()V
+
+    throw v1
+
+    .line 17
+    :cond_3
+    invoke-static {}, Lwr3;->b()V
+
+    throw v1
+
+    .line 18
+    :cond_4
+    invoke-static {}, Lwr3;->b()V
+
+    throw v1
+
+    .line 19
+    :cond_5
+    invoke-static {}, Lwr3;->b()V
+
+    throw v1
+
+    .line 20
+    :cond_6
+    invoke-static {}, Lwr3;->b()V
+
+    throw v1
+.end method
+
+.method public onActivityCreated(Landroid/os/Bundle;)V
+    .locals 1
+
+    .line 1
+    invoke-super {p0, p1}, Landroidx/fragment/app/Fragment;->onActivityCreated(Landroid/os/Bundle;)V
+
+    .line 2
+    invoke-virtual {p0}, Lcom/jio/myjio/MyJioFragment;->getMActivity()Lcom/jio/myjio/MyJioActivity;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
+
+    move-result-object p1
+
+    const/16 v0, 0x20
+
+    invoke-virtual {p1, v0}, Landroid/view/Window;->setSoftInputMode(I)V
+
+    .line 3
+    invoke-virtual {p0}, Ljp2;->init()V
+
+    return-void
+.end method
+
+.method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
+    .locals 2
+
+    const-string v0, "inflater"
+
+    invoke-static {p1, v0}, Lwr3;->b(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const v0, 0x7f0e0444
+
+    const/4 v1, 0x0
+
+    .line 1
+    invoke-virtual {p1, v0, p2, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
+
+    move-result-object v0
+
+    const-string v1, "inflater.inflate(R.layou\u2026agment, container, false)"
+
+    invoke-static {v0, v1}, Lwr3;->a(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {p0, v0}, Lcom/jio/myjio/MyJioFragment;->setBaseView(Landroid/view/View;)V
+
+    .line 2
+    invoke-super {p0, p1, p2, p3}, Lcom/jio/myjio/MyJioFragment;->onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
+
+    .line 3
+    invoke-virtual {p0}, Lcom/jio/myjio/MyJioFragment;->getBaseView()Landroid/view/View;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public synthetic onDestroyView()V
+    .locals 0
+
+    invoke-super {p0}, Lcom/jio/myjio/MyJioFragment;->onDestroyView()V
+
+    invoke-virtual {p0}, Ljp2;->_$_clearFindViewByIdCache()V
+
+    return-void
+.end method
+
+.method public onResume()V
+    .locals 2
+
+    .line 1
+    invoke-super {p0}, Lcom/jio/myjio/MyJioFragment;->onResume()V
+
+    .line 2
+    invoke-virtual {p0}, Lcom/jio/myjio/MyJioFragment;->getMActivity()Lcom/jio/myjio/MyJioActivity;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
+
+    move-result-object v0
+
+    const/16 v1, 0x30
+
+    .line 3
+    invoke-virtual {v0, v1}, Landroid/view/Window;->setSoftInputMode(I)V
+
+    return-void
+.end method

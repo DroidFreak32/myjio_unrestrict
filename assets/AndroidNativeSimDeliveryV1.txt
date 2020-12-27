@@ -1,0 +1,1427 @@
+{
+  "simDeliveryIntroductionContent": {
+    "title": "Say Hello to Jio PostPaid Plus!",
+    "titleID": "",
+    "shortDescription": "India's premium postpaid experience",
+    "shortDescriptionID": "",
+    "subTitle": "Get started",
+    "subTitleID": "",
+    "iconTextColor": "",
+    "appVersion": 6012,
+    "versionType": 2,
+    "visibility": 1,
+    "headerVisibility": 3,
+    "iconURL": "/upload/drawable/ic_digital_life_sd.xml",
+    "bGColor": "/upload/drawable/sd_full_banner_bg.xml",
+    "iconColor": "#4939FF",
+    "accessibilityContent": "Say Hello to Jio PostPaid Plus!",
+    "actionTag": "T022",
+    "callActionLink": "native_sim_delivery_main_screen",
+    "commonActionURL": "native_sim_delivery_main_screen",
+    "id": 3021
+  },
+  "simDeliveryBlinkStatusText": {
+    "statusVerifyNumber": "Verify number",
+    "statusVerifyNumberID": "",
+    "statusSelectSim": "Select SIM",
+    "statusSelectSimID": "",
+    "statusShareAddress": "Share address",
+    "statusShareAddressID": "",
+    "iconTextColor": ""
+  },
+  "simDeliveryStagesScreenViewContent": [
+    {
+      "viewType": "Verify Mobile Number",
+      "viewTypeIdentifier": "0",
+      "headerText": {
+        "title": "Verify mobile number",
+        "titleID": "",
+        "subTitle": "We will use these details to send you information about your order",
+        "subTitleID": ""
+      },
+      "buttonText": {
+        "title": "Generate OTP",
+        "titleID": "",
+        "bGColor": "",
+        "iconColor": "",
+        "appVersion": 6012,
+        "versionType": 2,
+        "visibility": 1,
+        "accessibilityContent": "Generate OTP",
+        "actionTag": "T022",
+        "callActionLink": "",
+        "commonActionURL": ""
+      },
+      "items": [
+        {
+          "orderNo": 0,
+          "title": "Full name",
+          "titleID": "",
+          "subTitle": "",
+          "subTitleID": "",
+          "appVersion": 6012,
+          "versionType": 2,
+          "visibility": 1,
+          "headerVisibility": 3,
+          "iconURL": "/upload/drawable/ic_port.xml",
+          "accessibilityContent": "Home delivery"
+        },
+        {
+          "orderNo": 1,
+          "title": "Mobile number",
+          "titleID": "",
+          "subTitle": "",
+          "subTitleID": "",
+          "appVersion": 6012,
+          "versionType": 2,
+          "visibility": 1,
+          "headerVisibility": 3
+        }
+      ]
+    },
+    {
+      "viewType": "Verify OTP",
+      "viewTypeIdentifier": "1",
+      "headerText": {
+        "title": "Verify OTP",
+        "titleID": "",
+        "subTitle": "We will use these details to send you information about your order",
+        "subTitleID": ""
+      },
+      "verifyOtpButtonText": {
+        "title": "Verify OTP",
+        "titleID": "",
+        "bGColor": "",
+        "iconColor": "",
+        "iconTextColor": "",
+        "appVersion": 6012,
+        "versionType": 2,
+        "visibility": 1,
+        "accessibilityContent": "Verify OTP",
+        "actionTag": "T022",
+        "callActionLink": "",
+        "commonActionURL": ""
+      },
+      "resendOtpButtonText": {
+        "title": "Resend OTP",
+        "titleID": "",
+        "bGColor": "",
+        "iconColor": "",
+        "iconTextColor": "",
+        "appVersion": 6012,
+        "versionType": 2,
+        "visibility": 1,
+        "accessibilityContent": "Resend OTP",
+        "actionTag": "T022",
+        "callActionLink": "",
+        "commonActionURL": ""
+      }
+    },
+    {
+      "viewType": "Select SIM",
+      "viewTypeIdentifier": "2",
+      "headerText": {
+        "title": "Hello",
+        "titleID": "",
+        "subTitle": "Tell us what you are looking for",
+        "subTitleID": ""
+      },
+      "items": [
+        {
+          "title": "New number",
+          "titleID": "",
+          "bGColor": "",
+          "iconColor": "",
+          "appVersion": 6012,
+          "versionType": 2,
+          "visibility": 1,
+          "accessibilityContent": "New number",
+          "actionTag": "T022",
+          "callActionLink": "",
+          "commonActionURL": ""
+        },
+        {
+          "title": "Port in to Jio",
+          "titleID": "",
+          "bGColor": "",
+          "iconColor": "",
+          "appVersion": 6012,
+          "versionType": 2,
+          "visibility": 1,
+          "accessibilityContent": "Port into Jio",
+          "actionTag": "T022",
+          "callActionLink": "",
+          "commonActionURL": ""
+        },
+        {
+          "title": "Know more",
+          "titleID": "",
+          "subTitle": "about port in to Jio",
+          "subTitleID": "",
+          "bGColor": "",
+          "iconColor": "",
+          "iconTextColor": "#214796",
+          "appVersion": 6012,
+          "versionType": 2,
+          "visibility": 1,
+          "accessibilityContent": "Know more about port in to Jio",
+          "actionTag": "T001",
+          "callActionLink": "",
+          "commonActionURL": ""
+        },
+        {
+          "title": "Get Jio SIM",
+          "titleID": "",
+          "subTitle": "Want to place a corporate order?",
+          "subTitleID": "",
+          "iconURL": "/upload/drawable/ic_corporate_order.xml",
+          "bGColor": "",
+          "iconColor": "",
+          "appVersion": 6012,
+          "versionType": 2,
+          "visibility": 1,
+          "accessibilityContent": "Want to place a corporate order?",
+          "actionTag": "T003",
+          "callActionLink": "https://www.jio.com/ent-lead-form",
+          "commonActionURL": "https://www.jio.com/ent-lead-form"
+        }
+      ]
+    },
+    {
+      "viewType": "PreAndPost paid selection",
+      "viewTypeIdentifier": "3",
+      "headerText": {
+        "title": "Hello",
+        "titleID": "",
+        "subTitle": "What type of connection would you like",
+        "subTitleID": ""
+      },
+      "items": [
+        {
+          "title": "Prepaid SIM",
+          "titleID": "",
+          "bGColor": "",
+          "iconColor": "",
+          "appVersion": 6012,
+          "versionType": 2,
+          "visibility": 1,
+          "accessibilityContent": "Prepaid SIM",
+          "actionTag": "T022",
+          "callActionLink": "",
+          "commonActionURL": ""
+        },
+        {
+          "title": "Postpaid SIM",
+          "titleID": "",
+          "bGColor": "",
+          "iconColor": "",
+          "appVersion": 6012,
+          "versionType": 2,
+          "visibility": 1,
+          "accessibilityContent": "Postpaid SIM",
+          "actionTag": "T022",
+          "callActionLink": "",
+          "commonActionURL": ""
+        }
+      ]
+    },
+    {
+      "viewType": "Share address",
+      "viewTypeIdentifier": "4",
+      "headerText": {
+        "title": "Address",
+        "titleID": "",
+        "subTitle": "Please fill all fields in correct format",
+        "subTitleID": ""
+      },
+      "buttonText": {
+        "title": "Proceed",
+        "titleID": "",
+        "bGColor": "",
+        "iconColor": "",
+        "appVersion": 6012,
+        "versionType": 2,
+        "visibility": 1,
+        "accessibilityContent": "Proceed",
+        "actionTag": "T022",
+        "callActionLink": "",
+        "commonActionURL": ""
+      },
+      "items": [
+        {
+          "orderNo": 0,
+          "title": "Pin code",
+          "titleID": "",
+          "subTitle": "",
+          "subTitleID": "",
+          "appVersion": 6012,
+          "versionType": 2,
+          "visibility": 1,
+          "headerVisibility": 3,
+          "iconURL": "",
+          "accessibilityContent": "Home delivery"
+        },
+        {
+          "orderNo": 1,
+          "title": "State",
+          "titleID": "",
+          "subTitle": "",
+          "subTitleID": "",
+          "appVersion": 6012,
+          "versionType": 2,
+          "visibility": 1,
+          "headerVisibility": 3,
+          "iconURL": "",
+          "accessibilityContent": "State"
+        },
+        {
+          "orderNo": 2,
+          "title": "City",
+          "titleID": "",
+          "subTitle": "",
+          "subTitleID": "",
+          "appVersion": 6012,
+          "versionType": 2,
+          "visibility": 1,
+          "headerVisibility": 3,
+          "iconURL": "",
+          "accessibilityContent": "City"
+        },
+        {
+          "orderNo": 3,
+          "title": "House / Building",
+          "titleID": "",
+          "subTitle": "",
+          "subTitleID": "",
+          "appVersion": 6012,
+          "versionType": 2,
+          "visibility": 1,
+          "headerVisibility": 3,
+          "iconURL": "",
+          "accessibilityContent": "House / Building"
+        },
+        {
+          "orderNo": 4,
+          "title": "Street / Village",
+          "titleID": "",
+          "subTitle": "",
+          "subTitleID": "",
+          "appVersion": 6012,
+          "versionType": 2,
+          "visibility": 1,
+          "headerVisibility": 3,
+          "iconURL": "",
+          "accessibilityContent": "Street / Village"
+        },
+        {
+          "orderNo": 5,
+          "title": "Landmark (optional)",
+          "titleID": "",
+          "subTitle": "",
+          "subTitleID": "",
+          "appVersion": 6012,
+          "versionType": 2,
+          "visibility": 1,
+          "headerVisibility": 3,
+          "iconURL": "",
+          "accessibilityContent": "Landmark (optional)"
+        }
+      ]
+    },
+    {
+      "viewType": "Delivery Slot Screen",
+      "viewTypeIdentifier": "5",
+      "headerText": {
+        "title": "Book appointment date for delivery and document verification",
+        "titleID": "",
+        "subTitle": "You can reschedule the appointment only once after placing order.",
+        "subTitleID": ""
+      },
+      "buttonText": {
+        "title": "Proceed",
+        "titleID": "",
+        "bGColor": "",
+        "iconColor": "",
+        "iconTextColor": "",
+        "appVersion": 6012,
+        "versionType": 2,
+        "visibility": 1,
+        "accessibilityContent": "Proceed",
+        "actionTag": "T022",
+        "callActionLink": "",
+        "commonActionURL": ""
+      },
+      "items": [
+        {
+          "title": "Select date",
+          "titleID": "",
+          "bGColor": "",
+          "iconTextColor": "#000000",
+          "appVersion": 6012,
+          "versionType": 2,
+          "visibility": 1,
+          "accessibilityContent": "Select date",
+          "actionTag": "T001",
+          "callActionLink": "",
+          "commonActionURL": ""
+        },
+        {
+          "title": "Select time slot",
+          "titleID": "",
+          "bGColor": "",
+          "iconTextColor": "#000000",
+          "appVersion": 6012,
+          "versionType": 2,
+          "visibility": 1,
+          "accessibilityContent": "Select time slot",
+          "actionTag": "T001",
+          "callActionLink": "",
+          "commonActionURL": ""
+        },
+        {
+          "title": "Next",
+          "titleID": "",
+          "bGColor": "",
+          "iconTextColor": "#214796",
+          "appVersion": 6012,
+          "versionType": 2,
+          "visibility": 1,
+          "accessibilityContent": "Next",
+          "actionTag": "T001",
+          "callActionLink": "",
+          "commonActionURL": ""
+        },
+        {
+          "title": "Previous",
+          "titleID": "",
+          "bGColor": "",
+          "iconTextColor": "#214796",
+          "appVersion": 6012,
+          "versionType": 2,
+          "visibility": 1,
+          "accessibilityContent": "Previous",
+          "actionTag": "T001",
+          "callActionLink": "",
+          "commonActionURL": ""
+        }
+      ]
+    }
+  ],
+  "knowMoreDialogScreenText": {
+    "title": "Ok",
+    "titleID": "",
+    "iconTextColor": "",
+    "appVersion": 6012,
+    "versionType": 2,
+    "visibility": 1,
+    "headerVisibility": 3,
+    "iconURL": "https://jep-asset.akamaized.net/MyJio_Client/Common/get_jio_sim_pop_up_banner.png",
+    "bGColor": "",
+    "accessibilityContent": "Ok",
+    "actionTag": "T001",
+    "callActionLink": "native_sim_delivery_main_screen",
+    "commonActionURL": "native_sim_delivery_main_screen"
+  },
+  "noSlotsAvailableDialogScreenText": {
+    "title": "No Slots Available",
+    "titleID": "",
+    "subTitle": "Sorry! We do not have any delivery slots available for your location in the next week. Proceed to confirm your order and collect it from your nearest JIO store.",
+    "subTitleID": "",
+    "iconTextColor": "",
+    "appVersion": 6012,
+    "versionType": 2,
+    "visibility": 1,
+    "headerVisibility": 3,
+    "iconURL": "",
+    "bGColor": "",
+    "accessibilityContent": "No Slots Available",
+    "actionTag": "T001",
+    "callActionLink": "",
+    "commonActionURL": "",
+    "buttonText": {
+      "title": "Proceed",
+      "titleID": "",
+      "bGColor": "",
+      "iconColor": "",
+      "appVersion": 6012,
+      "versionType": 2,
+      "visibility": 1,
+      "accessibilityContent": "Proceed",
+      "actionTag": "T001",
+      "callActionLink": "",
+      "commonActionURL": ""
+    }
+  },
+  "simDeliverySummaryScreenText": [
+    {
+      "viewType": "Delivery details",
+      "viewTypeIdentifier": "0",
+      "headerText": {
+        "title": "Delivery details",
+        "titleID": ""
+      },
+      "items": [
+        {
+          "title": "Name",
+          "titleID": "",
+          "subTitle": "",
+          "subTitleID": "",
+          "appVersion": 6012,
+          "versionType": 2,
+          "visibility": 1,
+          "iconURL": "",
+          "accessibilityContent": "Name"
+        },
+        {
+          "title": "Contact number",
+          "titleID": "",
+          "subTitle": "",
+          "subTitleID": "",
+          "appVersion": 6012,
+          "versionType": 2,
+          "visibility": 1,
+          "iconURL": "",
+          "accessibilityContent": "Contact number"
+        },
+        {
+          "title": "Address",
+          "titleID": "",
+          "subTitle": "",
+          "subTitleID": "",
+          "appVersion": 6012,
+          "versionType": 2,
+          "visibility": 1,
+          "iconURL": "",
+          "accessibilityContent": "Address"
+        },
+        {
+          "title": "Landmark",
+          "titleID": "",
+          "subTitle": "",
+          "subTitleID": "",
+          "appVersion": 6012,
+          "versionType": 2,
+          "visibility": 1,
+          "iconURL": "",
+          "accessibilityContent": "Landmark"
+        }
+      ]
+    },
+    {
+      "viewType": "Delivery schedule",
+      "viewTypeIdentifier": "1",
+      "headerText": {
+        "title": "Delivery schedule",
+        "titleID": ""
+      },
+      "items": [
+        {
+          "title": "Delivery date",
+          "titleID": "",
+          "subTitle": "",
+          "subTitleID": "",
+          "appVersion": 6012,
+          "versionType": 2,
+          "visibility": 1,
+          "iconURL": "",
+          "accessibilityContent": "Delivery date"
+        },
+        {
+          "title": "Delivery time",
+          "titleID": "",
+          "subTitle": "",
+          "subTitleID": "",
+          "appVersion": 6012,
+          "versionType": 2,
+          "visibility": 1,
+          "iconURL": "",
+          "accessibilityContent": "Delivery time"
+        }
+      ]
+    },
+    {
+      "viewType": "Order details",
+      "viewTypeIdentifier": "2",
+      "headerText": {
+        "title": "Order details",
+        "titleID": ""
+      },
+      "items": [
+        {
+          "title": "Product",
+          "titleID": "",
+          "subTitle": "",
+          "subTitleID": "",
+          "appVersion": 6012,
+          "versionType": 2,
+          "visibility": 1,
+          "iconURL": "",
+          "accessibilityContent": "Product"
+        },
+        {
+          "title": "SIM type",
+          "titleID": "",
+          "subTitle": "",
+          "subTitleID": "",
+          "appVersion": 6012,
+          "versionType": 2,
+          "visibility": 1,
+          "iconURL": "",
+          "accessibilityContent": "SIM type"
+        },
+        {
+          "title": "Home delivery charges",
+          "titleID": "",
+          "subTitle": "99",
+          "subTitleID": "",
+          "appVersion": 6012,
+          "versionType": 2,
+          "visibility": 1,
+          "iconURL": "",
+          "accessibilityContent": "Home delivery charges"
+        },
+        {
+          "title": "Order Total",
+          "titleID": "",
+          "subTitle": "99",
+          "subTitleID": "",
+          "appVersion": 6012,
+          "versionType": 2,
+          "visibility": 1,
+          "iconURL": "",
+          "accessibilityContent": "Order Total"
+        },
+        {
+          "title": "Note: SIM is free but to activate SIM your need to recharge your SIM with Jio plans. Please check plan on Jio.com or on MyJio application and be ready with document and selected plan amount",
+          "titleID": "",
+          "subTitle": "",
+          "subTitleID": "",
+          "appVersion": 6012,
+          "versionType": 2,
+          "visibility": 1,
+          "iconURL": "",
+          "accessibilityContent": "Note"
+        }
+      ],
+      "buttonText": {
+        "title": "Place order",
+        "titleID": "",
+        "bGColor": "",
+        "iconColor": "",
+        "appVersion": 6012,
+        "versionType": 2,
+        "visibility": 1,
+        "accessibilityContent": "Place order",
+        "actionTag": "T022",
+        "callActionLink": "",
+        "commonActionURL": ""
+      }
+    }
+  ],
+  "orderConfirmationScreenText": [
+    {
+      "viewType": "Order placed successfully",
+      "viewTypeIdentifier": "0",
+      "bGColor": "/upload/drawable/sd_full_banner_bg.xml",
+      "headerText": {
+        "title": "Order placed successfully",
+        "titleID": "",
+        "subTitle": "Congratulations! You've taken your first step towards joining the world's largest digital data network - MyJio",
+        "subTitleID": ""
+      },
+      "items": [
+        {
+          "title": "View more",
+          "titleID": "",
+          "subTitle": "",
+          "subTitleID": "",
+          "appVersion": 6012,
+          "versionType": 2,
+          "visibility": 1,
+          "iconTextColor": "",
+          "iconURL": "/upload/drawable/ic_nsd_delivery_agent.xml",
+          "accessibilityContent": "View more"
+        },
+        {
+          "title": "Product",
+          "titleID": "",
+          "subTitle": "",
+          "subTitleID": "",
+          "appVersion": 6012,
+          "versionType": 2,
+          "visibility": 1,
+          "iconTextColor": "",
+          "iconURL": "/upload/drawable/ic_nsd_delivery_store.xml",
+          "accessibilityContent": ""
+        },
+        {
+          "title": "SIM type",
+          "titleID": "",
+          "subTitle": "",
+          "subTitleID": "",
+          "appVersion": 6012,
+          "versionType": 2,
+          "visibility": 1,
+          "iconTextColor": "",
+          "iconURL": "/upload/drawable/ic_nsd_aadhaar.xml",
+          "accessibilityContent": "Please keep any Government Identity & Address document ready for verification"
+        }
+      ]
+    },
+    {
+      "viewType": "Next steps",
+      "viewTypeIdentifier": "1",
+      "bGColor": "/upload/drawable/sd_full_banner_bg.xml",
+      "headerText": {
+        "title": "Next steps",
+        "titleID": ""
+      },
+      "items": [
+        {
+          "title": "Our delivery agent will bring home your SIM on",
+          "titleID": "",
+          "subTitle": "",
+          "subTitleID": "",
+          "appVersion": 6012,
+          "versionType": 2,
+          "visibility": 1,
+          "iconTextColor": "",
+          "iconURL": "/upload/drawable/ic_nsd_delivery_agent.xml",
+          "accessibilityContent": "Our delivery agent will bring home your SIM on"
+        },
+        {
+          "title": "Collect SIM from your nearest Jio store as per your convenience.",
+          "titleID": "",
+          "subTitle": "Locate store",
+          "subTitleID": "",
+          "appVersion": 6012,
+          "versionType": 2,
+          "visibility": 1,
+          "iconTextColor": "",
+          "shortDescription": "Locate us",
+          "shortDescriptionID": "",
+          "iconURL": "/upload/drawable/ic_nsd_delivery_store.xml",
+          "accessibilityContent": "",
+          "actionTag": "T001",
+          "callActionLink": "store_hotspot_locator",
+          "commonActionURL": "store_hotspot_locator"
+        },
+        {
+          "title": "Please keep any Government Identity & Address document ready for verification.",
+          "titleID": "",
+          "subTitle": "",
+          "subTitleID": "",
+          "appVersion": 6012,
+          "versionType": 2,
+          "visibility": 1,
+          "iconTextColor": "",
+          "iconURL": "/upload/drawable/ic_nsd_aadhaar.xml",
+          "accessibilityContent": "Please keep any Government Identity & Address document ready for verification."
+        },
+        {
+          "title": "To switch from your current service provider to JIO, send an SMS to 1900 in the following format to receive a Unique Porting Code (UPC).",
+          "titleID": "",
+          "subTitle": "99",
+          "subTitleID": "",
+          "appVersion": 6012,
+          "versionType": 2,
+          "visibility": 1,
+          "iconTextColor": "",
+          "iconURL": "/upload/drawable/ic_sim_port.xml",
+          "accessibilityContent": "To switch from your current service provider to JIO, send an SMS to 1900 in the following format to receive a Unique Porting Code (UPC)."
+        },
+        {
+          "title": "PORT <10 digit mobile number> Eg: PORT 98******34",
+          "titleID": "",
+          "subTitle": "",
+          "subTitleID": "",
+          "appVersion": 6012,
+          "versionType": 2,
+          "visibility": 1,
+          "iconTextColor": "",
+          "iconURL": "",
+          "accessibilityContent": "PORT <10 digit mobile number> Eg: PORT 98******34"
+        }
+      ],
+      "buttonText": {
+        "title": "Done",
+        "titleID": "",
+        "bGColor": "",
+        "iconColor": "",
+        "appVersion": 6012,
+        "versionType": 2,
+        "visibility": 1,
+        "accessibilityContent": "Done",
+        "actionTag": "T022",
+        "callActionLink": "",
+        "commonActionURL": ""
+      }
+    }
+  ],
+  "orderPlacedSuccessfullyScreenText": [
+    {
+      "viewType": "Non Serviceable Area",
+      "viewTypeIdentifier": "0",
+      "title": "Order placed successfully",
+      "titleID": "",
+      "bGColor": "/upload/drawable/sd_full_banner_bg.xml",
+      "headerText": {
+        "title": "Thank You for you interest in Jio.",
+        "titleID": "",
+        "subTitle": "We are currently not servicing home delivery in your area due to the prevailing restrictions. We will contact you soon through our executive",
+        "subTitleID": ""
+      },
+      "buttonText": {
+        "title": "Done",
+        "titleID": "",
+        "bGColor": "",
+        "iconColor": "",
+        "appVersion": 6012,
+        "versionType": 2,
+        "visibility": 1,
+        "accessibilityContent": "Done",
+        "actionTag": "T022",
+        "callActionLink": "",
+        "commonActionURL": ""
+      },
+      "nextStepsText": {
+        "title": "Next steps",
+        "titleID": ""
+      },
+      "items": [
+        {
+          "title": "View more",
+          "titleID": "",
+          "subTitle": "",
+          "subTitleID": "",
+          "appVersion": 6012,
+          "versionType": 2,
+          "visibility": 0,
+          "iconTextColor": "",
+          "iconURL": "/upload/drawable/ic_nsd_delivery_agent.xml",
+          "accessibilityContent": "View more"
+        },
+        {
+          "title": "Product",
+          "titleID": "",
+          "subTitle": "",
+          "subTitleID": "",
+          "appVersion": 6012,
+          "versionType": 2,
+          "visibility": 0,
+          "iconTextColor": "",
+          "iconURL": "/upload/drawable/ic_nsd_delivery_store.xml",
+          "accessibilityContent": ""
+        },
+        {
+          "title": "SIM type",
+          "titleID": "",
+          "subTitle": "",
+          "subTitleID": "",
+          "appVersion": 6012,
+          "versionType": 2,
+          "visibility": 0,
+          "iconTextColor": "",
+          "iconURL": "/upload/drawable/ic_nsd_aadhaar.xml",
+          "accessibilityContent": "SIM type"
+        },
+        {
+          "title": "Collect SIM from your nearest Jio store as per your convenience.",
+          "titleID": "",
+          "subTitle": "Locate store",
+          "subTitleID": "",
+          "appVersion": 6012,
+          "versionType": 2,
+          "visibility": 1,
+          "iconTextColor": "",
+          "shortDescription": "Locate us",
+          "shortDescriptionID": "",
+          "iconURL": "/upload/drawable/ic_nsd_delivery_store.xml",
+          "accessibilityContent": "",
+          "actionTag": "T001",
+          "callActionLink": "store_hotspot_locator",
+          "commonActionURL": "store_hotspot_locator"
+        },
+        {
+          "title": "Please keep any Government Identity & Address document ready for verification.",
+          "titleID": "",
+          "subTitle": "",
+          "subTitleID": "",
+          "appVersion": 6012,
+          "versionType": 2,
+          "visibility": 1,
+          "iconTextColor": "",
+          "iconURL": "/upload/drawable/ic_nsd_aadhaar.xml",
+          "accessibilityContent": "Please keep any Government Identity & Address document ready for verification."
+        },
+        {
+          "title": "To switch from your current service provider to JIO, send an SMS to 1900 in the following format to receive a Unique Porting Code (UPC).",
+          "titleID": "",
+          "subTitle": "99",
+          "subTitleID": "",
+          "appVersion": 6012,
+          "versionType": 2,
+          "visibility": 1,
+          "iconTextColor": "",
+          "iconURL": "/upload/drawable/ic_sim_port.xml",
+          "accessibilityContent": "To switch from your current service provider to JIO, send an SMS to 1900 in the following format to receive a Unique Porting Code (UPC)."
+        },
+        {
+          "title": "PORT <10 digit mobile number> Eg: PORT 98******34",
+          "titleID": "",
+          "subTitle": "",
+          "subTitleID": "",
+          "appVersion": 6012,
+          "versionType": 2,
+          "visibility": 1,
+          "iconTextColor": "",
+          "iconURL": "",
+          "accessibilityContent": "PORT <10 digit mobile number> Eg: PORT 98******34"
+        }
+      ]
+    },
+    {
+      "viewType": "Serviceable With Slot - Home Delivery",
+      "viewTypeIdentifier": "1",
+      "title": "Order placed successfully",
+      "titleID": "",
+      "bGColor": "/upload/drawable/sd_full_banner_bg.xml",
+      "headerText": {
+        "title": "",
+        "titleID": "",
+        "subTitle": "Congratulations! You?ve taken your first step towards joining the world?s largest digital data network - MyJio",
+        "subTitleID": ""
+      },
+      "buttonText": {
+        "title": "Done",
+        "titleID": "",
+        "bGColor": "",
+        "iconColor": "",
+        "appVersion": 6012,
+        "versionType": 2,
+        "visibility": 1,
+        "accessibilityContent": "Done",
+        "actionTag": "T022",
+        "callActionLink": "",
+        "commonActionURL": ""
+      },
+      "nextStepsText": {
+        "title": "Next steps",
+        "titleID": ""
+      },
+      "items": [
+        {
+          "title": "View more",
+          "titleID": "",
+          "subTitle": "",
+          "subTitleID": "",
+          "appVersion": 6012,
+          "versionType": 2,
+          "visibility": 1,
+          "iconTextColor": "",
+          "iconURL": "/upload/drawable/ic_nsd_delivery_agent.xml",
+          "accessibilityContent": "View more"
+        },
+        {
+          "title": "Product",
+          "titleID": "",
+          "subTitle": "",
+          "subTitleID": "",
+          "appVersion": 6012,
+          "versionType": 2,
+          "visibility": 1,
+          "iconTextColor": "",
+          "iconURL": "/upload/drawable/ic_nsd_delivery_store.xml",
+          "accessibilityContent": "Product"
+        },
+        {
+          "title": "SIM type",
+          "titleID": "",
+          "subTitle": "",
+          "subTitleID": "",
+          "appVersion": 6012,
+          "versionType": 2,
+          "visibility": 1,
+          "iconTextColor": "",
+          "iconURL": "/upload/drawable/ic_nsd_aadhaar.xml",
+          "accessibilityContent": "SIM type"
+        },
+        {
+          "title": "Our delivery agent will bring home your SIM on",
+          "titleID": "",
+          "appVersion": 6012,
+          "versionType": 2,
+          "visibility": 1,
+          "iconTextColor": "",
+          "shortDescription": "Locate us",
+          "shortDescriptionID": "",
+          "iconURL": "/upload/drawable/ic_nsd_delivery_agent.xml",
+          "accessibilityContent": "",
+          "actionTag": "T001",
+          "callActionLink": "",
+          "commonActionURL": ""
+        },
+        {
+          "title": "Please keep your Aadhaar Card ready for address & identity verification.",
+          "titleID": "",
+          "subTitle": "",
+          "subTitleID": "",
+          "appVersion": 6012,
+          "versionType": 2,
+          "visibility": 1,
+          "iconTextColor": "",
+          "iconURL": "/upload/drawable/ic_nsd_aadhaar.xml",
+          "accessibilityContent": "Please keep your Aadhaar Card ready for address & identity verification."
+        },
+        {
+          "title": "To switch from your current service provider to JIO, send an SMS to 1900 in the following format to receive a Unique Porting Code (UPC).",
+          "titleID": "",
+          "subTitle": "99",
+          "subTitleID": "",
+          "appVersion": 6012,
+          "versionType": 2,
+          "visibility": 1,
+          "iconTextColor": "",
+          "iconURL": "/upload/drawable/ic_sim_port.xml",
+          "accessibilityContent": "To switch from your current service provider to JIO, send an SMS to 1900 in the following format to receive a Unique Porting Code (UPC)."
+        },
+        {
+          "title": "PORT <10 digit mobile number> Eg: PORT 98******34",
+          "titleID": "",
+          "subTitle": "99",
+          "subTitleID": "",
+          "appVersion": 6012,
+          "versionType": 2,
+          "visibility": 1,
+          "iconTextColor": "",
+          "iconURL": "/upload/drawable/ic_sim_port.xml",
+          "accessibilityContent": "PORT <10 digit mobile number> Eg: PORT 98******34"
+        }
+      ]
+    },
+    {
+      "viewType": "Serviceable With Slot - Store Pickup",
+      "viewTypeIdentifier": "2",
+      "title": "Order placed successfully",
+      "titleID": "",
+      "bGColor": "/upload/drawable/sd_full_banner_bg.xml",
+      "headerText": {
+        "title": "",
+        "titleID": "",
+        "subTitle": "Congratulations! You've taken your first step towards joining the world?s largest digital data network - MyJio",
+        "subTitleID": ""
+      },
+      "buttonText": {
+        "title": "Done",
+        "titleID": "",
+        "bGColor": "",
+        "iconColor": "",
+        "appVersion": 6012,
+        "versionType": 2,
+        "visibility": 1,
+        "accessibilityContent": "Done",
+        "actionTag": "T022",
+        "callActionLink": "",
+        "commonActionURL": ""
+      },
+      "nextStepsText": {
+        "title": "Next steps",
+        "titleID": ""
+      },
+      "items": [
+        {
+          "title": "View more",
+          "titleID": "",
+          "subTitle": "",
+          "subTitleID": "",
+          "appVersion": 6012,
+          "versionType": 2,
+          "visibility": 1,
+          "iconTextColor": "",
+          "iconURL": "/upload/drawable/ic_nsd_delivery_agent.xml",
+          "accessibilityContent": "View more"
+        },
+        {
+          "title": "Product",
+          "titleID": "",
+          "subTitle": "",
+          "subTitleID": "",
+          "appVersion": 6012,
+          "versionType": 2,
+          "visibility": 1,
+          "iconTextColor": "",
+          "iconURL": "/upload/drawable/ic_nsd_delivery_store.xml",
+          "accessibilityContent": "Product"
+        },
+        {
+          "title": "SIM type",
+          "titleID": "",
+          "subTitle": "",
+          "subTitleID": "",
+          "appVersion": 6012,
+          "versionType": 2,
+          "visibility": 0,
+          "iconTextColor": "",
+          "iconURL": "/upload/drawable/ic_nsd_aadhaar.xml",
+          "accessibilityContent": "SIM type"
+        },
+        {
+          "title": "Collect SIM from your nearest Jio store as per your convenience.",
+          "titleID": "",
+          "subTitle": "Locate store",
+          "subTitleID": "",
+          "appVersion": 6012,
+          "versionType": 2,
+          "visibility": 1,
+          "iconTextColor": "",
+          "shortDescription": "Locate us",
+          "shortDescriptionID": "",
+          "iconURL": "/upload/drawable/ic_nsd_delivery_store.xml",
+          "accessibilityContent": "",
+          "actionTag": "T001",
+          "callActionLink": "",
+          "commonActionURL": ""
+        },
+        {
+          "title": "Please keep your Aadhaar Card ready for address & identity verification.",
+          "titleID": "",
+          "subTitle": "",
+          "subTitleID": "",
+          "appVersion": 6012,
+          "versionType": 2,
+          "visibility": 1,
+          "iconTextColor": "",
+          "iconURL": "/upload/drawable/ic_nsd_aadhaar.xml",
+          "accessibilityContent": "Please keep your Aadhaar Card ready for address & identity verification."
+        },
+        {
+          "title": "To switch from your current service provider to JIO, send an SMS to 1900 in the following format to receive a Unique Porting Code (UPC).",
+          "titleID": "",
+          "subTitle": "99",
+          "subTitleID": "",
+          "appVersion": 6012,
+          "versionType": 2,
+          "visibility": 1,
+          "iconTextColor": "",
+          "iconURL": "/upload/drawable/ic_sim_port.xml",
+          "accessibilityContent": "To switch from your current service provider to JIO, send an SMS to 1900 in the following format to receive a Unique Porting Code (UPC)."
+        },
+        {
+          "title": "PORT <10 digit mobile number> Eg: PORT 98******34",
+          "titleID": "",
+          "subTitle": "",
+          "subTitleID": "",
+          "appVersion": 6012,
+          "versionType": 2,
+          "visibility": 1,
+          "iconTextColor": "",
+          "iconURL": "",
+          "accessibilityContent": "PORT <10 digit mobile number> Eg: PORT 98******34"
+        }
+      ]
+    },
+    {
+      "viewType": "Serviceable Without Slot",
+      "viewTypeIdentifier": "3",
+      "title": "Order placed successfully",
+      "titleID": "",
+      "bGColor": "/upload/drawable/sd_full_banner_bg.xml",
+      "headerText": {
+        "title": "",
+        "titleID": "",
+        "subTitle": "Congratulations! You've taken your first step towards joining the world's largest digital data network - MyJio",
+        "subTitleID": ""
+      },
+      "buttonText": {
+        "title": "Done",
+        "titleID": "",
+        "bGColor": "",
+        "iconColor": "",
+        "appVersion": 6012,
+        "versionType": 2,
+        "visibility": 1,
+        "accessibilityContent": "Done",
+        "actionTag": "T022",
+        "callActionLink": "",
+        "commonActionURL": ""
+      },
+      "nextStepsText": {
+        "title": "Next steps",
+        "titleID": ""
+      },
+      "items": [
+        {
+          "title": "View more",
+          "titleID": "",
+          "subTitle": "",
+          "subTitleID": "",
+          "appVersion": 6012,
+          "versionType": 2,
+          "visibility": 1,
+          "iconTextColor": "",
+          "iconURL": "/upload/drawable/ic_nsd_delivery_agent.xml",
+          "accessibilityContent": "View more"
+        },
+        {
+          "title": "Product",
+          "titleID": "",
+          "subTitle": "",
+          "subTitleID": "",
+          "appVersion": 6012,
+          "versionType": 2,
+          "visibility": 1,
+          "iconTextColor": "",
+          "iconURL": "/upload/drawable/ic_nsd_delivery_store.xml",
+          "accessibilityContent": ""
+        },
+        {
+          "title": "SIM type",
+          "titleID": "",
+          "subTitle": "",
+          "subTitleID": "",
+          "appVersion": 6012,
+          "versionType": 2,
+          "visibility": 1,
+          "iconTextColor": "",
+          "iconURL": "/upload/drawable/ic_nsd_aadhaar.xml",
+          "accessibilityContent": "Please keep any Government Identity & Address document ready for verification"
+        },
+        {
+          "title": "Our Jio representative will connect with you within 2 to 3 days. You will have to be present at the address for the SIM activation process.",
+          "titleID": "",
+          "appVersion": 6012,
+          "versionType": 2,
+          "visibility": 1,
+          "iconTextColor": "",
+          "shortDescription": "Locate us",
+          "shortDescriptionID": "",
+          "iconURL": "/upload/drawable/ic_nsd_delivery_agent.xml",
+          "accessibilityContent": "Our Jio representative will connect with you within 2 to 3 days. You will have to be present at the address for the SIM activation process.",
+          "actionTag": "T001",
+          "callActionLink": "store_hotspot_locator",
+          "commonActionURL": "store_hotspot_locator"
+        },
+        {
+          "title": "The executive will verify your identity along with the address proof to complete the one-time KYC.",
+          "titleID": "",
+          "subTitle": "View all accepted documents",
+          "subTitleID": "",
+          "appVersion": 6012,
+          "versionType": 2,
+          "visibility": 1,
+          "iconTextColor": "",
+          "iconURL": "/upload/drawable/ic_nsd_aadhaar.xml",
+          "accessibilityContent": "The executive will verify your identity along with the address proof to complete the one-time KYC."
+        },
+        {
+          "title": "You will receive an OTP via SMS on your mobile number. Please share this OTP with the executive for completing the order.",
+          "titleID": "",
+          "subTitle": "99",
+          "subTitleID": "",
+          "appVersion": 6012,
+          "versionType": 2,
+          "visibility": 1,
+          "iconTextColor": "",
+          "iconURL": "/upload/drawable/ic_nsd_otp.xml",
+          "accessibilityContent": "You will receive an OTP via SMS on your mobile number. Please share this OTP with the executive for completing the order."
+        },
+        {
+          "title": "PORT <10 digit mobile number> Eg: PORT 98******34",
+          "titleID": "",
+          "subTitle": "",
+          "subTitleID": "",
+          "appVersion": 6012,
+          "versionType": 2,
+          "visibility": 0,
+          "iconTextColor": "",
+          "iconURL": "",
+          "accessibilityContent": "PORT <10 digit mobile number> Eg: PORT 98******34"
+        }
+      ]
+    }
+  ],
+  "simDeliveryOptionContent": {
+    "title": "How would you like to receive your SIM?",
+    "titleID": "",
+    "subTitle": "",
+    "subTitleID": "",
+    "appVersion": 6012,
+    "versionType": 0,
+    "visibility": 1,
+    "headerTypes": "D000",
+    "viewType": 5036,
+    "subViewType": 503607,
+    "bGColor": "#FFFFFF",
+    "accessibilityContent": "How would you like to receive your SIM?",
+    "id": 3016,
+    "items": [
+      {
+        "title": "Home delivery",
+        "titleID": "",
+        "subTitle": "",
+        "subTitleID": "",
+        "appVersion": 6012,
+        "versionType": 2,
+        "visibility": 1,
+        "headerVisibility": 3,
+        "iconURL": "/upload/drawable/ic_home_delivery.xml",
+        "accessibilityContent": "Home delivery",
+        "actionTag": "T003",
+        "callActionLink": "",
+        "commonActionURL": ""
+      },
+      {
+        "title": "Store pick up",
+        "titleID": "",
+        "subTitle": "",
+        "subTitleID": "",
+        "appVersion": "6012",
+        "versionType": 2,
+        "visibility": 1,
+        "headerVisibility": 3,
+        "iconURL": "/upload/drawable/ic_store_pickup.xml",
+        "accessibilityContent": "Store pick up",
+        "actionTag": "T003",
+        "callActionLink": "",
+        "commonActionURL": ""
+      }
+    ]
+  },
+  "serviceAbilityAlertDialogContent": {
+    "title": "Serviceability Alert",
+    "titleID": "",
+    "subTitle": "We provide home delivery of SIM only at selected pin-codes. Changing address may lead to the new address being unserviceable. Store pickup will be provided as an alternative.",
+    "subTitleID": "",
+    "appVersion": 6012,
+    "versionType": 0,
+    "visibility": 1,
+    "headerTypes": "D000",
+    "viewType": 5036,
+    "subViewType": 503607,
+    "bGColor": "#FFFFFF",
+    "accessibilityContent": "Serviceability Alert",
+    "id": 3016,
+    "items": [
+      {
+        "title": "Cancel",
+        "titleID": "",
+        "subTitle": "",
+        "subTitleID": "",
+        "appVersion": 6012,
+        "versionType": 2,
+        "visibility": 1,
+        "headerVisibility": 3,
+        "iconURL": "",
+        "accessibilityContent": "Cancel",
+        "actionTag": "T003",
+        "callActionLink": "",
+        "commonActionURL": ""
+      },
+      {
+        "title": "Proceed",
+        "titleID": "",
+        "subTitle": "",
+        "subTitleID": "",
+        "appVersion": "6012",
+        "versionType": 2,
+        "visibility": 1,
+        "headerVisibility": 3,
+        "iconURL": "",
+        "accessibilityContent": "Proceed",
+        "actionTag": "T003",
+        "callActionLink": "",
+        "commonActionURL": ""
+      }
+    ]
+  },
+  "acceptedDocumentsDialogContent": {
+    "title": "Accepted documents",
+    "titleID": "",
+    "subTitle": "Following original documents can be shown as Proof of Identity (POI) and Proof of Address (POA):",
+    "subTitleID": "",
+    "appVersion": 6012,
+    "versionType": 0,
+    "visibility": 1,
+    "headerTypes": "D000",
+    "viewType": 5036,
+    "subViewType": 503607,
+    "bGColor": "#FFFFFF",
+    "accessibilityContent": "Accepted documents",
+    "id": 3016,
+    "buttonText": {
+      "title": "OK",
+      "titleID": "",
+      "bGColor": "",
+      "iconColor": "",
+      "appVersion": 6012,
+      "versionType": 2,
+      "visibility": 1,
+      "accessibilityContent": "OK",
+      "actionTag": "T022",
+      "callActionLink": "",
+      "commonActionURL": ""
+    },
+    "items": [
+      {
+        "title": "Aadhaar card",
+        "titleID": "",
+        "subTitle": "",
+        "subTitleID": "",
+        "appVersion": 6012,
+        "versionType": 2,
+        "visibility": 1,
+        "headerVisibility": 3,
+        "iconURL": "",
+        "accessibilityContent": "Aadhaar card",
+        "actionTag": "T003",
+        "callActionLink": "",
+        "commonActionURL": ""
+      },
+      {
+        "title": "Voter ID",
+        "titleID": "",
+        "subTitle": "",
+        "subTitleID": "",
+        "appVersion": "6012",
+        "versionType": 2,
+        "visibility": 1,
+        "headerVisibility": 3,
+        "iconURL": "",
+        "accessibilityContent": "Voter ID",
+        "actionTag": "T003",
+        "callActionLink": "",
+        "commonActionURL": ""
+      },
+      {
+        "title": "Passport",
+        "titleID": "",
+        "subTitle": "",
+        "subTitleID": "",
+        "appVersion": 6012,
+        "versionType": 2,
+        "visibility": 1,
+        "headerVisibility": 3,
+        "iconURL": "",
+        "accessibilityContent": "Passport",
+        "actionTag": "T003",
+        "callActionLink": "",
+        "commonActionURL": ""
+      },
+      {
+        "title": "Driving licence",
+        "titleID": "",
+        "subTitle": "",
+        "subTitleID": "",
+        "appVersion": "6012",
+        "versionType": 2,
+        "visibility": 1,
+        "headerVisibility": 3,
+        "iconURL": "",
+        "accessibilityContent": "Driving licence",
+        "actionTag": "T003",
+        "callActionLink": "",
+        "commonActionURL": ""
+      }
+    ]
+  }
+}

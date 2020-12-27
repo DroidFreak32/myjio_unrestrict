@@ -1,0 +1,105 @@
+{
+  "applist": {
+    "tcm:19-17198-1024": {
+      "description": "Manage your Jio account.",
+      "title": "MyJio",
+      "res": "R.drawable.ic_myjio",
+      "icon": "ic_myjio.xml"
+    },
+    "tcm:19-3090-1024": {
+      "description": "Daily dose of entertainment.",
+      "title": "JioTV",
+      "res": "R.drawable.ic_jiotv",
+      "icon": "ic_jiotv.xml"
+    },
+    "tcm:19-3097-1024": {
+      "description": "All your music. Anytime. Anywhere.",
+      "title": "JioSaavn",
+      "res": "R.drawable.ic_jiosaavn",
+      "icon": "ic_jiosaavn.xml"
+    },
+    "tcm:19-3085-1024": {
+      "description": "Movies, TV shows, Music & more.",
+      "title": "JioCinema",
+      "res": "R.drawable.ic_jiocinema",
+      "icon": "ic_jiocinema.xml"
+    },
+    "tcm:19-3083-1024": {
+      "description": "Backup your files and contacts.",
+      "title": "JioCloud",
+      "res": "R.drawable.ic_jiocloud",
+      "icon": "ic_jiocloud.xml"
+    },
+    "1461083097499": {
+      "description": "Your News. Your Language.",
+      "title": "JioNews",
+      "res": "",
+      "icon": "ic_jionews.xml"
+    },
+    "tcm:19-11661-1024": {
+      "description": "Get VoLTE & RCS on any phone.",
+      "title": "Jio4GVoice",
+      "res": "R.drawable.ic_jio4gvoice",
+      "icon": "ic_jio4gvoice.xml"
+    },
+    "tcm:19-16939-1024": {
+      "description": "Protect phone, secure data.",
+      "title": "JioSecurity",
+      "res": "R.drawable.ic_jiosecurity",
+      "icon": "ic_jiosecurity.xml"
+    },
+    "tcm:19-6364-1024": {
+      "description": "Understand how to use Jio's Wi-Fi services.",
+      "title": "JioNet",
+      "res": "R.drawable.ic_jionet",
+      "icon": "https://rtss-prod.jioconnect.com/upload/AndroidV5/drawable/drawable-xxhdpi/ic_jionett.png"
+    },
+    "tcm:19-3099-1024": {
+      "description": "Experience cashfree living.",
+      "title": "JioMoney.",
+      "res": "R.drawable.ic_jiomoney",
+      "icon": "ic_jiomoney.xml"
+    },
+    "tcm:19-6274-1024": {
+      "description": "An efficient way to stay connected",
+      "title": "JioChat",
+      "res": "R.drawable.ic_jiochat",
+      "icon": "ic_jiochat.xml"
+    },
+    "1461063940933": {
+      "description": "Access tests, doctors & reports.",
+      "title": "JioHealthHub",
+      "res": "R.drawable.ic_jiohealthhub",
+      "icon": "ic_jiohealthhub.xml"
+    },
+    "1461082683516": {
+      "description": "Enjoy the match by creating your own team.",
+      "title": "Jio Cricket Play Along",
+      "res": "",
+      "icon": "https://jep-asset.akamaized.net/MyJio_Client/Common/ic_playalong_and.png"
+    },
+    "1461083389933": {
+      "description": "Fast, Safe & Light weight browser.",
+      "title": "JioBrowser",
+      "res": "R.drawable.jio_browser",
+      "icon": "jio_browser.xml"
+    }
+  },
+  "faqCategory": {
+    "1461076744335": "https://jep-asset.akamaized.net/MyJio_Client/Common/FAQs/ic_offer.png",
+    "1461059662348": "https://jep-asset.akamaized.net/MyJio_Client/Common/FAQs/ic_offer.png",
+    "1461084588108": "https://jep-asset.akamaized.net/MyJio_Client/Common/FAQs/ic_faq_jiofiber.png",
+    "tcm:19-3073-1024": "https://jep-asset.akamaized.net/MyJio_Client/Common/FAQs/faq_apps.png",
+    "tcm:19-7316-1024": "https://jep-asset.akamaized.net/MyJio_Client/Common/FAQs/faq_services_devices.png",
+    "tcm:19-23854-1024": "https://jep-asset.akamaized.net/MyJio_Client/Common/FAQs/ic_online_shopping.png",
+    "tcm:19-54464-1024": "/upload/FAQV5/drawable/jio_dhanandhan.png",
+    "1461094281514": "/upload/FAQV5/drawable/ic_faq_tv_error.png",
+    "1461094281712": "/upload/FAQV5/drawable/ic_faq__relocation.png",
+    "1461094281929": "/upload/FAQV5/drawable/ic_faq_stb.png",
+    "1461094282032": "/upload/FAQV5/drawable/ic_faq_others.png",
+    "app_tcm_id": "tcm:19-3073-1024",
+    "self_help_tcm_id": "tcm:19-23806-1024",
+    "parentLink": "FAQ/",
+    "HATHWAY001_7": "JioHathwayFAQ/"
+  }
+}

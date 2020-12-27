@@ -1,0 +1,78 @@
+{
+"WalletId": {
+		"1000531": "",
+        			"1000243": "",
+        			"1000533": "",
+        			"1000540": "",
+        			"1000541": "",
+        			"1000545": "",
+        			"1000547": "",
+        			"1000548": "",
+        			"1000549": "",
+        			"1000550": "",
+        			"1000551": "",
+        			"1000552": "",
+        			"1000553": "",
+        			"1000554": "",
+        			"1000555": "",
+        			"1000556": "",
+        			"1000557": "",
+        			"1000558": "",
+        			"1000559": "",
+        			"1000560": "",
+        			"1000572": "",
+        			"1000573": "",
+        			"1002907": "",
+        			"1002874": "",
+        			"1001600": "",
+        			"1000303":""
+        		},
+"jio_point_wallet_configurables":{
+      "create_wallet_account_points":"4200",
+      "plan_expirity_days":"2",
+      "wallet_plan_expiry_date":"20170331000000"
+},
+   "jio_point_wallet_banners":{
+      "create_jio_wallet_account":"/upload/jiopoints/jio_point_create_wallet_banner.png",
+      "download_jio_money":"/upload/jiopoints/install_jiomoney.png",
+      "start_recharge_popup":"/upload/jiopoints/jio_point_recharge_banner.png",
+      "start_paybill_popup":"/upload/jiopoints/jio_point_recharge_banner.png"
+   },
+"jio_point_wallet_texts":{
+         "create_jio_point_wallet_title":"JioMoney Wallet",
+         "create_jio_point_wallet_heading":"Welcome to your new digital wallet.",
+         "create_jio_point_wallet_sub_heading":"Create your wallet and get Jio Points to extend \n your Jio Happy New Year Offer!",
+         "create_jio_point_wallet_in_2_steps":"Create JioMoney wallet in two easy steps",
+         "create_jio_point_wallet_in_1_steps":"Create JioMoney wallet in one easy step",
+         "create_jio_point_wallet_verify_details":"Verify your \n details",
+         "create_jio_point_wallet_download_jioMoney":"Download \n JioMoney",
+         "create_jio_point_wallet_step_1_title":"Create Wallet",
+         "create_jio_point_wallet_get_point":"Create your JioMoney wallet and get",
+         "create_jio_point_wallet_use_jio_point":"Use your Jio Points to recharge your \n Jio Happy New Year Offer",
+         "create_jio_point_wallet_button_text":"Create Wallet",
+         "create_jio_point_wallet_install_jio_money_title":"Install JioMoney",
+         "create_jio_point_wallet_install_jio_money_heading":"JioPoints have been added to your wallet",
+         "create_jio_point_wallet_install_jio_money_sub_heading":"Tap on INSTALL to complete your wallet",
+         "jio_point_wallet_recharge_plan_title":"Jio Happy New Year Offer",
+         "jio_point_wallet_recharge_plan_heading":"Use your FREE Jio Wallet points to renew your subscription",
+         "fup_zero_balance_text":"You have exhausted your high speed quota for today,You are now on unlimited free data @12kbps",
+         "create_jio_point_wallet_enter_mobile_no":"Enter mobile number on which \n wallet will be created.",
+         "create_jio_point_wallet_otp_sent_to":"An OTP will be sent to this number for \n verification",
+         "prepaid_account_texts":{
+              "recharge_jio_point_wallet_prepaid_title":"Recharge",
+              "recharge_jio_point_wallet_prepaid_heading":"Your Jio Happy New Year is about to expire",
+              "recharge_jio_point_wallet_prepaid_recharge_to_continue":"Recharge to continue enjoying \n the Jio digital experience",
+              "recharge_jio_point_wallet_prepaid_button_text":"Recharge",
+              "recharge_jio_point_wallet_prepaid_recharge_using":"Recharge using JioWallet points",
+              "recharge_jio_point_wallet_prepaid_payment_successs":"Recharge Successful"
+         },
+         "postpaid_account_texts":{
+              "recharge_jio_point_wallet_postpaid_title":"Pay Bill",
+              "recharge_jio_point_wallet_postpaid_heading":"Your due date is approaching!",
+              "recharge_jio_point_wallet_postpaid_recharge_to_continue":"Pay your bill to continue enjoying \n the Jio digital experience",
+              "recharge_jio_point_wallet_postpaid_button_text":"Pay Bill",
+              "recharge_jio_point_wallet_postpaid_recharge_using":"Pay bill using Jio points",
+              "recharge_jio_point_wallet_postpaid_payment_successs":"Payment successful"
+         }
+      }
+}

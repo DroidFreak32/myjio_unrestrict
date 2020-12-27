@@ -1,0 +1,88 @@
+{
+  "troubleshootItems": [
+    {
+      "appVersion": 6011,
+      "versionType": 0,
+      "visibility": 1,
+      "commonActionURL": "jio://com.jio.myjio/ask_jio?l=en&q=",
+      "tcmId": "tcm:19-23771-1024-16",
+      "title": "I am not able to connect to internet on mobile. What do I do?",
+      "titleID": "",
+      "serviceTypes": "Z0003_1,Z0003_2,CP_Z0003_1,CP_Z0003_2,Z0002_1,Z0002_2,Z0005_1,Z0005_2,CP_Z0005_2,CP_Z0005_1,Z0004_1,Z0004_2,Z0006_1,Z0006_2,Z0029_1,Z0029_2,NonJio_5",
+      "url": "/cs/Satellite?c=RIL_FAQ_C&cid=1400180394805&d=Touch&pagename=JIO%2FRIL_FAQ_C%2FFAQ-Detail",
+      "faqRank": "1"
+    },
+    {
+      "appVersion": 6011,
+      "versionType": 0,
+      "visibility": 1,
+      "commonActionURL": "jio://com.jio.myjio/ask_jio?l=en&q=",
+      "tcmId": "tcm:19-23771-1024-16",
+      "title": "The internet speed on mobile is slow. What do I do?",
+      "titleID": "",
+      "serviceTypes": "Z0003_1,Z0003_2,CP_Z0003_1,CP_Z0003_2,Z0002_1,Z0002_2,Z0005_1,Z0005_2,CP_Z0005_2,CP_Z0005_1,Z0004_1,Z0004_2,Z0006_1,Z0006_2,Z0029_1,Z0029_2,NonJio_5",
+      "url": "/cs/Satellite?c=RIL_FAQ_C&cid=1400180446250&d=Touch&pagename=JIO%2FRIL_FAQ_C%2FFAQ-Detail",
+      "faqRank": "2"
+    },
+    {
+      "appVersion": 6011,
+      "versionType": 0,
+      "visibility": 1,
+      "commonActionURL": "jio://com.jio.myjio/ask_jio?l=en&q=",
+      "tcmId": "tcm:19-23771-1024-16",
+      "title": "I have done recharge, I am unable to find it. What do I do?",
+      "titleID": "",
+      "serviceTypes": "Z0002_1,Z0002_2,Z0004_1,Z0004_2,Z0006_1,Z0006_2,Z0029_1,Z0029_2,NonJio_5",
+      "url": "/cs/Satellite?c=RIL_FAQ_C&cid=1400180446224&d=Touch&pagename=JIO%2FRIL_FAQ_C%2FFAQ-Detail",
+      "faqRank": "3"
+    },
+    {
+      "appVersion": 6011,
+      "versionType": 0,
+      "visibility": 1,
+      "commonActionURL": "jio://com.jio.myjio/ask_jio?l=en&q=",
+      "tcmId": "tcm:19-23771-1024-16",
+      "title": "I am not able to receive calls. What do I do?",
+      "titleID": "",
+      "serviceTypes": "Z0003_1,Z0003_2,CP_Z0003_1,CP_Z0003_2,Z0002_1,Z0002_2,Z0005_1,Z0005_2,CP_Z0005_2,CP_Z0005_1,Z0004_1,Z0004_2,Z0006_1,Z0006_2,Z0029_1,Z0029_2,NonJio_5",
+      "url": "/cs/Satellite?c=RIL_FAQ_C&cid=1461083123468&d=Touch&pagename=JIO%2FRIL_FAQ_C%2FFAQ-Detail",
+      "faqRank": "4"
+    },
+    {
+      "appVersion": 6011,
+      "versionType": 0,
+      "visibility": 1,
+      "commonActionURL": "jio://com.jio.myjio/ask_jio?l=en&q=",
+      "tcmId": "tcm:19-23771-1024-16",
+      "title": "The internet speed on JioFi is slow. What do I do?",
+      "titleID": "",
+      "serviceTypes": "Z0003_1,Z0003_2,CP_Z0003_1,CP_Z0003_2,Z0002_1,Z0002_2,Z0004_1,Z0004_2,Z0006_1,Z0006_2,Z0029_1,Z0029_2,NonJio_5",
+      "url": "/cs/Satellite?c=RIL_FAQ_C&cid=1400180837883&d=Touch&pagename=JIO%2FRIL_FAQ_C%2FFAQ-Detail",
+      "faqRank": "4"
+    },
+    {
+      "appVersion": 6011,
+      "versionType": 0,
+      "visibility": 1,
+      "commonActionURL": "jio://com.jio.myjio/ask_jio?l=en&q=",
+      "tcmId": "tcm:19-23771-1024-16",
+      "title": "I am not able to make calls. What do I do?",
+      "titleID": "",
+      "serviceTypes": "Z0003_1,Z0003_2,CP_Z0003_1,CP_Z0003_2,Z0002_1,Z0002_2,Z0005_1,Z0005_2,CP_Z0005_2,CP_Z0005_1,Z0004_1,Z0004_2,Z0006_1,Z0006_2,Z0029_1,Z0029_2,NonJio_5",
+      "url": "/cs/Satellite?c=RIL_FAQ_C&cid=1400180446196&d=Touch&pagename=JIO%2FRIL_FAQ_C%2FFAQ-Detail",
+      "faqRank": "5"
+    },
+    {
+      "appVersion": 6011,
+      "versionType": 0,
+      "visibility": 1,
+      "commonActionURL": "jio://com.jio.myjio/ask_jio?l=en&q=",
+      "tcmId": "1461082217178-16",
+      "title": "How to know where I have used my Data?",
+      "titleID": "",
+      "serviceTypes": "Z0003_1,Z0003_2,CP_Z0003_1,CP_Z0003_2,Z0002_1,Z0002_2,Z0004_1,Z0004_2,Z0006_1,Z0006_2,Z0029_1,Z0029_2,NonJio_5",
+      "url": "/en-in/faq/self-help/my-jio-connection/how-to-know-where-i-have-used-my-data.html",
+      "faqRank": "6"
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+assets_storage_path=/carrierConfig/embms;internal_storage_path=/embms/qcom; /embms/oem; /embms/qti;absolute_storage_path= /vendor/app/embms/oem;external_storage_path=/embms/qcom;log_location_external=/embms/qti/debug;log_location_absolute=/data/embms/qcom/debug;

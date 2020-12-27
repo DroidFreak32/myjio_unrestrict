@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?><!--suppress ALL, XmlPathReference, XmlPathReference -->
+<MSDCConfigParams xmlns:r21="urn:qualcomm:MSDC:ConfigFile:ConfigSchemaExtn:r21"
+  xmlns:r24="urn:qualcomm:MSDC:ConfigFile:ConfigSchemaExtn:r24"
+  xmlns:sv="urn:3gpp:metadata:2009:MBMS:schemaVersion"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="0"
+  xmlns="urn:3gpp:qualcomm:MSDC:ConfigFile"
+  xsi:schemaLocation="urn:3gpp:qualcomm:MSDC:ConfigFile MSP_ConfigParams.xsd">
+
+  <Unicast>
+    <HTTPRetryAttempts>1</HTTPRetryAttempts>
+    <HTTPRetryPeriod>PT1M</HTTPRetryPeriod>
+    <HTTPClientTimeout>PT30S</HTTPClientTimeout>
+  </Unicast>
+
+  <BearerControl>
+    <FileDeliveryTMGIActivationRetryTimeOut>PT1S</FileDeliveryTMGIActivationRetryTimeOut>
+    <FileDeliveryOutOfServiceTMGIActivationRetryTimeOut>PT5S
+    </FileDeliveryOutOfServiceTMGIActivationRetryTimeOut>
+  </BearerControl>
+
+  <Streaming>
+    <SegmentProcDelayedBase>PT0S</SegmentProcDelayedBase>
+    <SegmentProcDelayedFactor>1</SegmentProcDelayedFactor>
+    <TimeShiftedBufferDepth>PT5M</TimeShiftedBufferDepth>
+    <ReceptionGap>1</ReceptionGap>
+    <DelayJitter>PT2.5S</DelayJitter>
+    <r24:StreamingExtension>
+      <SegmentPeriodicityForDriftMonitoring xmlns="">1</SegmentPeriodicityForDriftMonitoring>
+      <DelayFactorForDriftMonitoring xmlns="">0.5</DelayFactorForDriftMonitoring>
+      <StreamingExtension1 xmlns="">
+        <EnableDASHUTCTiming>true</EnableDASHUTCTiming>
+      </StreamingExtension1>
+    </r24:StreamingExtension>
+  </Streaming>
+
+  <ServiceAnnouncement>
+    <ServiceDiscoveryWakeupDuration>PT15M</ServiceDiscoveryWakeupDuration>
+    <USDFileSizeQuota>35840</USDFileSizeQuota>
+    <ConfigurationFileSizeQuota>8192</ConfigurationFileSizeQuota>
+    <RegistrationValidity>PT168H</RegistrationValidity>
+    <ServiceDiscoveryFileReceiveWaitTime>PT1M</ServiceDiscoveryFileReceiveWaitTime>
+    <r21:ServiceDiscoveryPerDevice DeviceClassID="SmartPhone"
+      WakeupDuration="PT15M"></r21:ServiceDiscoveryPerDevice>
+    <sv:delimiter>0</sv:delimiter>
+    <r24:MSDCUpgradeCheckInterval>PT0S</r24:MSDCUpgradeCheckInterval>
+    <r24:ServiceAnnouncementExtension>
+      <regionChangeServiceDiscoveryInterval xmlns="">PT1M</regionChangeServiceDiscoveryInterval>
+      <ServiceAnnouncementExtension1 xmlns="">
+        <UnicastServiceDiscoveryWakeupDuration>PT0M</UnicastServiceDiscoveryWakeupDuration>
+        <!-- <ServiceAnnouncementExtension2> -->
+        <!-- <unicastSD_URI>some_uri</unicastSD_URI> -->
+        <!-- <ServiceAnnouncementExtension3/> -->
+        <!-- </ServiceAnnouncementExtension2> -->
+      </ServiceAnnouncementExtension1>
+    </r24:ServiceAnnouncementExtension>
+  </ServiceAnnouncement>
+
+  <FileDownload>
+    <FileRepairThreshold>0.90</FileRepairThreshold>
+    <FullFileRepairEnable>true</FullFileRepairEnable>
+    <UnfinishedFileDownloadQuota>102400</UnfinishedFileDownloadQuota>
+    <AdvanceWakeupForFiles>PT2S</AdvanceWakeupForFiles>
+    <MultibandAdvanceWakeupForFiles>PT1S</MultibandAdvanceWakeupForFiles>
+    <MultibandRandomPeriod>10</MultibandRandomPeriod>
+    <FileRepairUriMaxLength>8190</FileRepairUriMaxLength>
+  </FileDownload>
+
+  <FLUTESession>
+    <BytesUntilFileDeliveryTableAvailable>128</BytesUntilFileDeliveryTableAvailable>
+    <NumberOfFileDeliveryTablesSaved>3</NumberOfFileDeliveryTablesSaved>
+  </FLUTESession>
+
+  <ReceptionReporting>
+    <ReceptionReportingQuota>102400</ReceptionReportingQuota>
+  </ReceptionReporting>
+
+  <SignalToNoiseRatioMapping Level0="0" Level1="1" Level2="2" Level3="3" Level4="4" />
+
+  <r24:MSDCConfigParamsExtension>
+    <CarrierNetworkParams xmlns="">
+      <ServiceDiscoveryNumberOfRetries>16</ServiceDiscoveryNumberOfRetries>
+      <AccessPointNameMapping>
+        <AccessPointName>default</AccessPointName>
+        <AccessPointFeature>enableHIPRI</AccessPointFeature>
+        <AccessPointNameMappingExtension />
+      </AccessPointNameMapping>
+      <NetworkConstraintForADP>LTE</NetworkConstraintForADP>
+      <RSSIPollingInterval>PT2.56S</RSSIPollingInterval>
+      <UnicastFetchForDASH>0</UnicastFetchForDASH>
+
+      <PLMN>
+        <MCC>405</MCC>
+        <MNC>840</MNC>
+      </PLMN>
+      <PLMN>
+        <MCC>405</MCC>
+        <MNC>854</MNC>
+      </PLMN>
+      <PLMN>
+        <MCC>405</MCC>
+        <MNC>855</MNC>
+      </PLMN>
+      <PLMN>
+        <MCC>405</MCC>
+        <MNC>856</MNC>
+      </PLMN>
+      <PLMN>
+        <MCC>405</MCC>
+        <MNC>857</MNC>
+      </PLMN>
+      <PLMN>
+        <MCC>405</MCC>
+        <MNC>858</MNC>
+      </PLMN>
+      <PLMN>
+        <MCC>405</MCC>
+        <MNC>859</MNC>
+      </PLMN>
+      <PLMN>
+        <MCC>405</MCC>
+        <MNC>860</MNC>
+      </PLMN>
+      <PLMN>
+        <MCC>405</MCC>
+        <MNC>861</MNC>
+      </PLMN>
+      <PLMN>
+        <MCC>405</MCC>
+        <MNC>862</MNC>
+      </PLMN>
+      <PLMN>
+        <MCC>405</MCC>
+        <MNC>863</MNC>
+      </PLMN>
+      <PLMN>
+        <MCC>405</MCC>
+        <MNC>864</MNC>
+      </PLMN>
+      <PLMN>
+        <MCC>405</MCC>
+        <MNC>865</MNC>
+      </PLMN>
+      <PLMN>
+        <MCC>405</MCC>
+        <MNC>866</MNC>
+      </PLMN>
+      <PLMN>
+        <MCC>405</MCC>
+        <MNC>867</MNC>
+      </PLMN>
+      <PLMN>
+        <MCC>405</MCC>
+        <MNC>868</MNC>
+      </PLMN>
+      <PLMN>
+        <MCC>405</MCC>
+        <MNC>869</MNC>
+      </PLMN>
+      <PLMN>
+        <MCC>405</MCC>
+        <MNC>870</MNC>
+      </PLMN>
+      <PLMN>
+        <MCC>405</MCC>
+        <MNC>871</MNC>
+      </PLMN>
+      <PLMN>
+        <MCC>405</MCC>
+        <MNC>872</MNC>
+      </PLMN>
+      <PLMN>
+        <MCC>405</MCC>
+        <MNC>873</MNC>
+      </PLMN>
+      <PLMN>
+        <MCC>405</MCC>
+        <MNC>874</MNC>
+      </PLMN>
+      <StorageFileDelivery>
+        <MaxFileDeliveryTTL>PT2H</MaxFileDeliveryTTL>
+        <StorageFileDeliveryExtension />
+      </StorageFileDelivery>
+      <CarrierNetworkParamsExtension>
+        <APNCapability>
+          <AccessPointName>default</AccessPointName>
+          <NetworkCapability>12</NetworkCapability>
+          <APNCapabilityExtension>
+            <ProfileIndex>1</ProfileIndex>
+          </APNCapabilityExtension>
+        </APNCapability>
+      </CarrierNetworkParamsExtension>
+
+
+    </CarrierNetworkParams>
+
+
+  </r24:MSDCConfigParamsExtension>
+
+</MSDCConfigParams>

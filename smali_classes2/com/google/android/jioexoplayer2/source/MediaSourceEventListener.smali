@@ -1,0 +1,42 @@
+.class public interface abstract Lcom/google/android/jioexoplayer2/source/MediaSourceEventListener;
+.super Ljava/lang/Object;
+.source "MediaSourceEventListener.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lcom/google/android/jioexoplayer2/source/MediaSourceEventListener$EventDispatcher;,
+        Lcom/google/android/jioexoplayer2/source/MediaSourceEventListener$MediaLoadData;,
+        Lcom/google/android/jioexoplayer2/source/MediaSourceEventListener$LoadEventInfo;
+    }
+.end annotation
+
+
+# virtual methods
+.method public abstract onDownstreamFormatChanged(ILcom/google/android/jioexoplayer2/source/MediaSource$MediaPeriodId;Lcom/google/android/jioexoplayer2/source/MediaSourceEventListener$MediaLoadData;)V
+.end method
+
+.method public abstract onLoadCanceled(ILcom/google/android/jioexoplayer2/source/MediaSource$MediaPeriodId;Lcom/google/android/jioexoplayer2/source/MediaSourceEventListener$LoadEventInfo;Lcom/google/android/jioexoplayer2/source/MediaSourceEventListener$MediaLoadData;)V
+.end method
+
+.method public abstract onLoadCompleted(ILcom/google/android/jioexoplayer2/source/MediaSource$MediaPeriodId;Lcom/google/android/jioexoplayer2/source/MediaSourceEventListener$LoadEventInfo;Lcom/google/android/jioexoplayer2/source/MediaSourceEventListener$MediaLoadData;)V
+.end method
+
+.method public abstract onLoadError(ILcom/google/android/jioexoplayer2/source/MediaSource$MediaPeriodId;Lcom/google/android/jioexoplayer2/source/MediaSourceEventListener$LoadEventInfo;Lcom/google/android/jioexoplayer2/source/MediaSourceEventListener$MediaLoadData;Ljava/io/IOException;Z)V
+.end method
+
+.method public abstract onLoadStarted(ILcom/google/android/jioexoplayer2/source/MediaSource$MediaPeriodId;Lcom/google/android/jioexoplayer2/source/MediaSourceEventListener$LoadEventInfo;Lcom/google/android/jioexoplayer2/source/MediaSourceEventListener$MediaLoadData;)V
+.end method
+
+.method public abstract onMediaPeriodCreated(ILcom/google/android/jioexoplayer2/source/MediaSource$MediaPeriodId;)V
+.end method
+
+.method public abstract onMediaPeriodReleased(ILcom/google/android/jioexoplayer2/source/MediaSource$MediaPeriodId;)V
+.end method
+
+.method public abstract onReadingStarted(ILcom/google/android/jioexoplayer2/source/MediaSource$MediaPeriodId;)V
+.end method
+
+.method public abstract onUpstreamDiscarded(ILcom/google/android/jioexoplayer2/source/MediaSource$MediaPeriodId;Lcom/google/android/jioexoplayer2/source/MediaSourceEventListener$MediaLoadData;)V
+.end method

@@ -1,0 +1,1259 @@
+{
+   "accountsDelinkText":{
+      "buttonText":"Your account is linked with",
+      "buttonTextID":"",
+      "pageHeaderText":"Below numbers have your Jio number linked to their account and can manage it",
+      "pageHeaderTextID":"",
+      "confirmationMsg":"Are you sure want to delink your account from this number? They will no longer be able to manage your account.",
+      "confirmationMsgID":"",
+      "noDelinkAccountFound":"Your Jio number is not linked to any account.",
+      "noDelinkAccountFoundID":""
+   },
+   "signUpText":{
+      "emailIDText":"Email entered here becomes your registered email ID. You can use the same ID &amp; password to login to your Jio account."
+   },
+   "rechargePaymentTexts":{
+      "recharge_from_account_balance_text":"Using your account balance will deduct recharge amount net of taxes from your account balance",
+      "recharge_from_account_balance_payment_mode":"Own Balance"
+   },
+   "sessionErrorMessage":{
+      "sessionErrorMsg":"We are unable to process your request at this moment, Please try again later",
+      "sessionErrorMsgID":""
+   },
+   "androidManageDevice":{
+      "mifi":{
+         "iconUrl":"/upload/managedevice_jiofi.png",
+         "res":"managedevice_jiofi",
+         "maxAssociatedDevices":"10",
+         "personalSsidIndex":{
+            "1":"2.4 GHz",
+            "4":"5 GHz"
+         },
+         "guestSsidIndex":{
+            "2":"2.4 GHz",
+            "5":"5 GHz"
+         }
+      },
+      "jioFiber":{
+         "iconUrl":"/upload/managedevice_fttx.png",
+         "res":"managedevice_fttx",
+         "maxAssociatedDevices":"24",
+         "personalSsidIndex":{
+            "1":"2.4 GHz",
+            "4":"5 GHz"
+         },
+         "guestSsidIndex":{
+            "2":"2.4 GHz",
+            "5":"5 GHz"
+         }
+      },
+      "plc":{
+         "iconUrl":"/upload/plc.png",
+         "res":"ic_plc",
+         "maxAssociatedDevices":"6",
+         "personalSsidIndex":{
+            "1":"2.4 GHz"
+         },
+         "guestSsidIndex":{
+            "2":"2.4 GHz"
+         }
+      },
+      "deviceTypes":{
+         "ont":"JioFiber Home Gateway",
+         "plc":"JioFiber Extender",
+         "stb":"stb",
+         "others":"others"
+      },
+      "manageDeviceScreenTexts":{
+         "updationErrorMessage":"Oops! Something went wrong. Please try again later",
+         "retryServiceOrderError":"Umm.. Looks like there isn't any device registered with your Jio number",
+         "retryServiceOrderErrorId":"",
+         "retryResourceOrderError":"Please try again later.",
+         "retryResourceOrderErrorId":"80002",
+         "blockDeviceConfirmationMessage":"Please ensure the device is not an active device in use. Blocking the device will restrict it from connecting to your JioFiber.",
+         "blockDeviceConfirmationMessageId":"80003",
+         "blockDeviceOkLevel":"Block",
+         "blockDeviceOkLevelId":"80011",
+         "blockDeviceCancelLevel":"Cancel",
+         "blockDeviceCancelLevelId":"",
+         "changeSSIDNameRules":"-Special characters allowed are ~ @ $ - _ # space\n-Character length : 8 - 32",
+         "changeSSIDNameRulesId":"80004",
+         "changePasswordRules":"-SSID password should not contain ; ' |\n-Character length : 8 - 32",
+         "changePasswordRulesId":"80005",
+         "wpsEnableConfirmationMessage":"Enabling WPS on this SSID will disable WPS for all other SSIDs. Are you sure you want to enable this WPS.",
+         "wpsEnableConfirmationMessageId":"80006",
+         "deviceSettingsChangeConfirmationMessage":"Your request has been submitted successfully. Changes will take sometime to reflect.",
+         "deviceSettingsChangeConfirmationMessageId":"80007",
+         "yourDeviceIsNotRegisteredInOurSystem":"Umm.. Looks like there isn?t any device registered with your Jio number",
+         "yourDeviceIsNotRegisteredInOurSystemId":"80008",
+         "resourceOrderNullResponseError":"No devices connected to your system",
+         "resourceOrderNullResponseErrorId":"80009",
+         "ssidNotFound":"SSID not found",
+         "ssidNotFoundId":"80010",
+         "errorViewRetryButtonTxt":"Retry",
+         "errorViewRetryButtonTxtId":"80011",
+         "connectionErrorImageURLiOS":"/upload/iOS/errorWire.png",
+         "connectionErrorImageURLAndroid":"/upload/errorWire.png",
+         "connectionErrorResAndroid":"dissconnect_retry",
+         "devicesString":"Devices",
+         "devicesStringId":"80012",
+         "blockedDevicesString":"Blocked devices",
+         "blockedDevicesStringId":"80013",
+         "changePasswordTitle":"Password should",
+         "changePasswordTitleId":"",
+         "changePasswordFirstRules":"- Not contain ; ' |",
+         "changePasswordFirstRulesId":"",
+         "changePasswordSecondRules":"- Have between 8 and 32 characters",
+         "changePasswordSecondRulesId":"",
+         "cpNotMatchCriteria":"Password does not match the criteria",
+         "cpNotMatchCriteriaId":"",
+         "cpEnterNewPassword":"Please enter a new password",
+         "cpEnterNewPasswordId":"",
+         "cpEnterPasswordConfirmation":"Please enter password for confirmation",
+         "cpEnterPasswordConfirmationId":"",
+         "cpPasswordDoNotMatch":"Password does not match",
+         "cpPasswordDoNotMatchId":"",
+         "cpPasswordRules":"Password length must be between 8 ? 32 characters",
+         "cpPasswordRulesId":"",
+         "ssidConstrainsTitle":"Name can",
+         "ssidConstrainsTitleId":"",
+         "ssidConstrains1":"- Contain special characters such as ~ @ $ - _ # and space",
+         "ssidConstrains1Id":"",
+         "ssidConstrains2":"- Have upto 32 characters",
+         "ssidConstrains2Id":"",
+         "aliasConstrainsTitle":"Name can",
+         "aliasConstrainsTitleId":"",
+         "editAliasConstrains1":"- Contain special characters such as ~ @ $ - _ # and space",
+         "editAliasConstrains1Id":"",
+         "editAliasConstrains2":"- Have upto 32 characters",
+         "editAliasConstrains2Id":""
+      }
+   },
+   "favouritePlans":{
+      "getFavouritePlanBannerURL":"/upload/JioPrime/getfavouritePlanBanner.png"
+   },
+   "jioUpiIntroScreenImages":{
+      "upi_intro_image":"https://jep-asset.akamaized.net/MyJio_Client/Common/upi_intro_upi.png",
+      "bank_intro_image":"https://jep-asset.akamaized.net/MyJio_Client/Common/upi_intro_jpb.png"
+   },
+   "mnpTextDetails":{
+
+   },
+   "changeBillModeEmailDetail":{
+      "preferredBillModeEmail":{
+         "txt_details_info":"To get Jio Prime MemberShip, you\n must opt for ebill as your preferred bill\n mode and configure auto-pay.",
+         "txt_details_infoID":"80014",
+         "textView2":"I agree to receive the bills on the below \n email address & opt out of paper bill",
+         "textView2ID":"80015",
+         "btn_proceed":"Proceed",
+         "btn_proceedID":"80016",
+         "email_title":"Email",
+         "email_titleID":"80017",
+         "edtTxt_your_email_id":"Your email ID has been\nsuccessfully set for ebill.Please\n proceed to get Jio\nPrime Membership",
+         "edtTxt_your_email_idID":"80018",
+         "email_saved":"Email Saved!",
+         "email_savedID":"80019",
+         "email_saved_dialog_btn_ok":"OK",
+         "email_saved_dialog_btn_okID":"80020"
+      },
+      "changeEmailNewFragment":{
+         "change_details_popup":"You can receive your e-bill after you have verified \n your email ID provided. Please register for e-bill \n to get bills your bills in your inbox. ",
+         "tv_email_title11":"email",
+         "suggestion_otp":"We have sent OTP to your email ID",
+         "tv_otp_title":"OTP",
+         "tv_otp_resend":"Re-send OTP",
+         "editTextOtpValue":"recommended",
+         "txt_message":"Your email has been successfully updated.Do you wish to opt for ebill\n also?",
+         "bill_pref_txt_title":"Bill Preferences",
+         "bill_pref_no":"No",
+         "bill_pref_yes":"Yes",
+         "tv_title":"Confirmation",
+         "btn_done":"Done",
+         "screen_btn_submit":"Submit",
+         "btn_verify_otp":"Submit",
+         "resend_otp":"Re-send OTP"
+      },
+      "eBIllAddressFragment":{
+         "txt_monthly_bill":"Your monthly bill will be sent to the \n email ID provided below.",
+         "txt_monthly_billID":"80021",
+         "preferred_bill_mode_msg":"Enter email ID on which you wish to \n receive the ebill.",
+         "preferred_bill_mode_msgID":"80022",
+         "your_email_updated":"Your email ID have been successfully updated with a reference ID",
+         "your_email_updatedID":"80023",
+         "reference_id":"You will receive the bill in the Email ID provided",
+         "reference_idID":"80024",
+         "btn_submit":"Submit",
+         "btn_submitID":"80025",
+         "tv_title":"Confirmation",
+         "tv_titleID":"80026",
+         "btn_done":"Done",
+         "btn_doneID":"80027"
+      },
+      "browsePlansExpandableListFragment":{
+         "tv_verify_msg":"Security deposit",
+         "tv_activation_date":"Rates will be applicable from 1st April 2017",
+         "btn_OK":"Confirm",
+         "post_paid_plans_tab_header":"Postpaid Plans",
+         "plan_name_with_plan_price":"To move to the PLAN NAME plan you will need to pay deposit of",
+         "post_paid_already_security_deposited":"You are already on a commercial plan which will be applicable from 1st April 2017",
+         "cocp_changeplan_restriction_msg":"Dear user, you are a corporate customer and therefore cannot change your plan. Please contact your company administrator to do so."
+      }
+   },
+   "getJioPrime":{
+      "titleImageUrl":"/upload/JioPrime/jio_prime_page_icon.png",
+      "title":"Unlimited maza \n continue hoynga!!",
+      "heading":"With Jio Prime Membership get \n additional benefits.",
+      "validTill":"Subscription open till 31 March 2017 only!",
+      "getJioPrimeImageUrl":"/upload/JioPrime/jio_prime_card.png",
+      "tryJioPrimeTo":"Try Jio Prime to",
+      "giftJioPrimeMembershipTitle":"Gift Jio Prime Membership",
+      "giftJioPrimeMembershipHeading":"Surprise your friends with Jio Prime \n Membership! Gift them additional benefits \n till 31st March 2018",
+      "giftJioPrimeMembershipImageUrl":"/upload/JioPrime/gift_jio_prime.png",
+      "subHeading":[
+         "Continue your Jio unlimited plan",
+         "Get free content worth Rs. 10,000",
+         "Get attractive deals and offers"
+      ],
+      "getJioPrime_btn_text":"Buy Prime",
+      "giftJioPrime_btn_text":"Gift Prime"
+   },
+   "giftMembershipPlans":{
+      "jioPrimeMembershipPlan":"Jio Summer Surprise",
+      "enjoyTheBenefitstext":"Special offer for Jio Prime Members\n\nGift your friends 3 months of complimentary services along with first recharge of Rs. 303 or higher",
+      "enteryourfriendsmobilenumber":"Enter your friend?s Jio number to gift Jio Summer Surprise",
+      "confirmationPopUpText":"You have transferred your Jio Prime Membership Plan successfully",
+      "mobileNoText":"Jio no. ",
+      "couponCode":"Coupon Code : ",
+      "transfer":"Gift"
+   },
+   "trackOrderStatus":{
+      "orderStatus":[
+         {
+            "mainTitle":"Kindly enter your Jio Number / Order Reference Number to know your current order status.",
+            "mainTitleID":"80028",
+            "iconURL":"/upload/trackOrderAndroid/track_order.jpg"
+         },
+         {
+            "status":"Z01",
+            "value":{
+               "title":"Activation of your number is in progress. Kindly wait for SMS notification on your registered mobile number to proceed with next steps.",
+               "titleID":"80029",
+               "soTitle":"Your reverification request for Jio Number %@ is in progress. You will receive an SMS for confirmation shortly",
+               "soTitleID":"80030",
+               "noTitle":"Activation of your number is in progress. Kindly wait for SMS notification on your registered mobile number to proceed with next steps.",
+               "noTitleID":"80029",
+               "iconURL":"/upload/trackOrderAndroid/placed.jpg"
+            }
+         },
+         {
+            "status":"Z02",
+            "value":{
+               "title":"Your number is ready for tele-verification. To activate your services, dial 1977 from your Jio SIM and enter the Tele-verification PIN sent to you by SMS on your alternate number. To activate only data services, call 18008901977",
+               "soTitle":"Your number is ready for tele-verification. To activate your services, dial 1977 from your Jio SIM and enter the Tele-verification PIN sent to you by SMS on your alternate number. To activate only data services, call 18008901977",
+               "noTitle":"Your number is ready for tele-verification. To activate your services, dial 1977 from your Jio SIM and enter the Tele-verification PIN sent to you by SMS on your alternate number. To activate only data services, call 18008901977",
+               "iconURL":"/upload/trackOrderAndroid/tele_veri.jpg"
+            }
+         },
+         {
+            "status":"Z03",
+            "value":{
+               "title":"Your order is cancelled due to incomplete details provided during Televerification. Request you to place a new order.",
+               "titleID":"80032",
+               "soTitle":"Your order is cancelled due to incomplete details provided during Televerification. Request you to place a new order.",
+               "soTitleID":"80032",
+               "noTitle":"Your order is cancelled due to incomplete details provided during Televerification. Request you to place a new order.",
+               "noTitleID":"80032",
+               "iconURL":"/upload/trackOrderAndroid/store.jpg"
+            }
+         },
+         {
+            "status":"Z04",
+            "value":{
+               "title":"Your application form for Jio number could not be processed. To activate your connection, please re-visit the same Jio Store/retailer where you had submitted your application form along with POA/POI documents",
+               "soTitle":"Your application form for Jio number could not be processed. To activate your connection, please re-visit the same Jio Store/retailer where you had submitted your application form along with POA/POI documents",
+               "noTitle":"Your application form for Jio number could not be processed. To activate your connection, please re-visit the same Jio Store/retailer where you had submitted your application form along with POA/POI documents",
+               "iconURL":"/upload/trackOrderAndroid/reject.jpg"
+            }
+         },
+         {
+            "status":"Z05",
+            "value":{
+               "title":"Your Jio number is now active. Please insert the SIM in SIM slot 1 of your handset and start using Jio services.",
+               "titleID":"80034",
+               "soTitle":"Your reverification request for Jio Number %@ has been successfully completed",
+               "noTitle":"Your Jio number is now active. Please insert the SIM in SIM slot 1 of your handset and start using Jio services.",
+               "iconURL":"/upload/trackOrderAndroid/active.jpg"
+            }
+         },
+         {
+            "status":"Z06",
+            "value":{
+               "title":"Your application form for Jio number could not be processed. To activate your connection, please re-visit the same Jio Store/retailer where you had submitted your application form along with POA/POI documents",
+               "soTitle":"Your application form for Jio number could not be processed. To activate your connection, please re-visit the same Jio Store/retailer where you had submitted your application form along with POA/POI documents",
+               "noTitle":"Your application form for Jio number could not be processed. To activate your connection, please re-visit the same Jio Store/retailer where you had submitted your application form along with POA/POI documents",
+               "iconURL":"/upload/trackOrderAndroid/store.jpg"
+            }
+         },
+         {
+            "status":"Z07",
+            "value":{
+               "title":"Your order is cancelled. Please re-visit the same Jio Store/retailer to place a new order",
+               "soTitle":"Your eKYC reverification for mobile number %@ is cancelled, please contact Jio customer care for further information.",
+               "soTitleID":"80036",
+               "noTitle":"Your order is cancelled. Please re-visit the same Jio Store/retailer to place a new order",
+               "iconURL":"/upload/trackOrderAndroid/store.jpg"
+            }
+         },
+         {
+            "status":"Z11",
+            "value":{
+               "title":"Your application form for Jio number could not be processed. To activate your connection, please re-visit the same Jio Store/retailer where you had submitted your application form along with POA/POI documents",
+               "soTitle":"Your application form for Jio number could not be processed. To activate your connection, please re-visit the same Jio Store/retailer where you had submitted your application form along with POA/POI documents",
+               "noTitle":"Your application form for Jio number could not be processed. To activate your connection, please re-visit the same Jio Store/retailer where you had submitted your application form along with POA/POI documents",
+               "iconURL":"/upload/trackOrderAndroid/store.jpg"
+            }
+         },
+         {
+            "status":"Z12",
+            "value":{
+               "title":"Your order is cancelled. Please re-visit the same Jio Store/retailer to place a new order",
+               "soTitle":"Your order is cancelled. Please re-visit the same Jio Store/retailer to place a new order",
+               "noTitle":"Your order is cancelled. Please re-visit the same Jio Store/retailer to place a new order",
+               "iconURL":"/upload/trackOrderAndroid/store.jpg"
+            }
+         },
+         {
+            "status":"Z14",
+            "value":{
+               "title":"Your order is cancelled. Request you to place a new order",
+               "titleID":"80035",
+               "soTitle":"Not applicable for this order type",
+               "soTitleID":"80037",
+               "noTitle":"Your order is cancelled. Request you to place a new order",
+               "noTitleID":"80035",
+               "iconURL":"/upload/trackOrderAndroid/store.jpg"
+            }
+         },
+         {
+            "status":"Z19",
+            "value":{
+               "title":"Activation of your number is in progress. Kindly wait for SMS notification on your registered mobile number to proceed with next steps.",
+               "titleID":"80029",
+               "soTitle":"Activation of your number is in progress. Kindly wait for SMS notification on your registered mobile number to proceed with next steps",
+               "soTitleID":"80029",
+               "noTitle":"Activation of your number is in progress. Kindly wait for SMS notification on your registered mobile number to proceed with next steps",
+               "noTitleID":"80029",
+               "iconURL":"/upload/trackOrderAndroid/placed.jpg"
+            }
+         }
+      ]
+   },
+   "locateMyPhoneAndroid":{
+      "noDeviceFoundTitle":"You have no devices logged in with JioSecurity!",
+      "noDeviceTitleID":"80038",
+      "noDeviceFoundDescription":"You can track the last ten detected locations of all your devices logged into JioSecurity.\n \n Get JioSecurity and never lose your phone!",
+      "deviceFoundTitle":"Keep a track on your devices.",
+      "deviceFoundDescription":"You can track the last ten locations of your devices logged into JioSecurity. Sync up your devices with JioSecurity never lose your phone!",
+      "locate_banner":{
+         "title":"Locate Banner",
+         "imageUrl":"/upload/JPOBannerAndroid/international_roaming_banner.png",
+         "appVersion":"4104",
+         "visibility":"1",
+         "actionTag":"T004",
+         "callActionLink":"F039",
+         "deeplinkIdentifier":"",
+         "commonActionURL":""
+      }
+   },
+   "jioCallerBannerAndroid":{
+      "jio_caller_banner_jionet":"https://rtss-prod.jioconnect.com/upload/JioCaller/banner_jionet.png",
+      "jio_caller_banner_giftsim":"https://rtss-prod.jioconnect.com/upload/JioCaller/banner_giftsim.png",
+      "jio_caller_banner_refer_friend":"https://rtss-prod.jioconnect.com/upload/JioCaller/banner_referfriend.png"
+   },
+   "notificationText":{
+      "noNotificationTitle":"No new notifications!",
+      "noNotificationTitleID":"80042",
+      "noNotificationDescription":"You will be notified with alerts and latest offers over here",
+      "noNotificationDescriptionID":"80043"
+   },
+   "jioSocialCallingBannerAndroid":{
+      "jio_social_calling_intro_banner":"https://jep-asset.akamaized.net/MyJio_Client/Common/social_call_intro.png",
+      "jio_social_calling_guide_line_banner":"https://jep-asset.akamaized.net/MyJio_Client/Common/social_call_guide_line.png",
+      "jio_social_calling_block_time_in_sec":"30"
+   },
+   "jioTCAndPrivatePolicy":{
+      "jioTcUrl":"https://www.jio.com/en-in/myjioapp-terms&header=no",
+      "jioPrivatePolicyUrl":"https://www.jio.com/en-in/myjio-privacy-policy&header=no",
+      "publishedByText":"Published by Reliance Corporate IT Park Ltd.",
+      "publishedByTextID":"95049",
+      "serviceProvidedByText":"Service provided by Reliance Jio Infocomm Ltd.",
+      "serviceProvidedByTextID":"95050",
+      "copyRightText":"Reliance Jio Infocomm Ltd.",
+      "copyRightTextID":"95051",
+      "privacyPolicy":"Privacy policy",
+      "privacyPolicyID":"",
+      "termsConditions":"Terms & Conditions",
+      "termsConditionsID":""
+   },
+   "jioFiberQRscanText":{
+      "scanLogin":"Scan QR code to login",
+      "scanLoginID":"95052",
+      "scanLink":"Scan QR code to link",
+      "scanLinkID":"95053",
+      "scanDetailText":"Scan the QR code available in \"Login to app\" \n section in your Set Top Box MyJio app",
+      "scanDetailID":"95046",
+      "cameraDeniedText":"Camera access denied",
+      "cameraDeniedTextID":"95054",
+      "cameraDeniedDetailText":"Enable camera permission from device settings to login",
+      "cameraDeniedDetailTextID":"95045",
+      "goToSettingsButton":"Go to settings",
+      "goToSettingsButtonID":"95044",
+      "scanErrorAlertText":"Incorrect QR code! Please try again",
+      "scanErrorAlertTextID":"95041",
+      "scanWindowText":"Make sure your QR fits inside the scan section",
+      "scanWindowTextID":"95042"
+   },
+   "alertTextDeviceSupport":{
+      "kitkatNotification":"A software update is required to use this feature, please update and try again.",
+      "qnotification":"Currently not supporting in Android 10"
+   },
+   "rootedDeviceDetected":{
+      "rootedDeviceMessage":"Google is unable to verify that your device or the software running on it is android compatible."
+   },
+   "androidPermissionData":{
+      "permWelcomeTitle":"Welcome to MyJio",
+      "accessibilityContent":"Welcome to MyJio",
+      "permWelcomeDescription":"We will need a few permissions to provide you a personalised experience",
+      "permButtonText":"Proceed",
+      "userPermissionsItemsListArray":[
+         {
+            "title":"Allow calls",
+            "description":"Reach out to JioCare executives with single click.",
+            "permissionTag":"P004",
+            "versionType":"0",
+            "visibility":"1",
+            "mandatory":"1",
+            "iconURL":"/upload/drawable/ic_perm_call.xml"
+         },
+         {
+            "title":"Allow SMS",
+            "description":"Simplify your login process with OTP auto-consumption.",
+            "permissionTag":"P001",
+            "versionType":"0",
+            "visibility":"1",
+            "mandatory":"1",
+            "iconURL":"/upload/drawable/ic_perm_sms.xml"
+         },
+         {
+            "title":"Allow location",
+            "description":"Find the nearest Jio stores and JioNet hotspots. Your location will not be tracked.",
+            "permissionTag":"P003",
+            "versionType":"0",
+            "visibility":"1",
+            "mandatory":"1",
+            "iconURL":"/upload/drawable/ic_perm_location.xml"
+         },
+         {
+            "title":"Allow media",
+            "description":"Download and store your bills, statements and invoices.",
+            "permissionTag":"P005",
+            "versionType":"0",
+            "visibility":"1",
+            "mandatory":"1",
+            "iconURL":"/upload/drawable/ic_perm_media.xml"
+         },
+         {
+            "title":"Allow contacts",
+            "description":"We sync your contacts to help you connect with your friends using HelloJio.",
+            "permissionTag":"P002",
+            "versionType":"0",
+            "visibility":"1",
+            "mandatory":"1",
+            "iconURL":"/upload/drawable/ic_perm_contacts.xml"
+         }
+      ]
+   },
+   "WebViewLoopingUrlContains":[
+      "pp2pay",
+      "JioMoney"
+   ],
+   "profileColors":[
+      {
+         "circleColor":"#ff8D8D",
+         "textColor":"#ffffff"
+      },
+      {
+         "circleColor":"#3E88FF",
+         "textColor":"#ffffff"
+      },
+      {
+         "circleColor":"#FFC107",
+         "textColor":"#ffffff"
+      },
+      {
+         "circleColor":"#FF6FE3",
+         "textColor":"#ffffff"
+      },
+      {
+         "circleColor":"#7E57C2",
+         "textColor":"#ffffff"
+      },
+      {
+         "circleColor":"#CDDC39",
+         "textColor":"#ffffff"
+      },
+      {
+         "circleColor":"#67D0FF",
+         "textColor":"#ffffff"
+      },
+      {
+         "circleColor":"#4CAF50",
+         "textColor":"#ffffff"
+      },
+      {
+         "circleColor":"#E91E63",
+         "textColor":"#ffffff"
+      },
+      {
+         "circleColor":"#AB47BC",
+         "textColor":"#ffffff"
+      }
+   ],
+   "payBillText":{
+      "billPaymentScreenMessage":"Please note this payment will be credited in your postpaid account and cannot be used for recharge / Security deposit",
+      "billPaymentScreenMessageID":"20260",
+      "maxPaymentLimitAmount":"10000",
+      "maxPaymentLimitMessage":"Please enter an amount between Rs.1 and Rs.10,000 and try again.",
+      "maxPaymentLimitMessageID":"20261",
+      "cocpPayBillMessage":"You are subscribed to a corporate plan. Payments are not allowed for this plan",
+      "cocpPayBillMessageID":"20262"
+   },
+   "locateUsAdBanner":{
+      "items":[
+         {
+            "orderNo":0,
+            "title":"Get Jio SIM",
+            "titleID":"",
+            "subTitle":"",
+            "subTitleID":"",
+            "appVersion":6004,
+            "versionType":0,
+            "visibility":1,
+            "iconURL":"https://jep-asset.akamaized.net/MyJio_Client/Common/banner_locateus_android.jpg",
+            "accessibilityContent":"Get Jio SIM",
+            "actionTag":"T010",
+            "callActionLink":"",
+            "commonActionURL":"googlechrome://navigate?url=https://www.jio.com/en-in/jio-home-delivery-book-appointment.html?utm_source=myjio&utm_medium=myjio&utm_campaign=GSULLD&header=no&source=myjio",
+            "serviceTypes":"Z0003_1,Z0003_2,CP_Z0003_1,CP_Z0003_2,Z0002_1,CP_Z0002_1,Z0002_2,CP_Z0002_2,Z0001_1,CP_Z0001_1,Z0001_2,CP_Z0001_2,Z0006_1,Z0006_2,Z0029_1,Z0029_2,NonJio_5",
+            "itemId":2011
+         }
+      ]
+   },
+   "jioChatStoriesMessages":{
+      "items":[
+         {
+            "orderNo":0,
+            "title":"Error",
+            "titleID":"",
+            "subTitle":"",
+            "subTitleID":"",
+            "appVersion":6006,
+            "versionType":2,
+            "visibility":1,
+            "iconURL":"https://jep-asset.akamaized.net/MyJio_Client/Common/banner_locateus_android.jpg",
+            "accessibilityContent":"Error",
+            "actionTag":"T010",
+            "callActionLink":"Oops! Something went wrong. Please try again later",
+            "commonActionURL":"No stories!",
+            "serviceTypes":"Z0003_1,Z0003_2,CP_Z0003_1,CP_Z0003_2,Z0002_1,CP_Z0002_1,Z0002_2,CP_Z0002_2,Z0001_1,CP_Z0001_1,Z0001_2,CP_Z0001_2,Z0006_1,Z0006_2,Z0029_1,Z0029_2,NonJio_5",
+            "itemId":2011
+         }
+      ]
+   },
+   "CCI_ERROR":{
+      "error_msg":"Sorry we are unable to fetch your details..."
+   },
+   "JioMartSearch":{
+      "title":"JIOMART",
+      "titleID":"95159",
+      "subTitle":"JIOMART",
+      "subTitleID":"95159",
+      "userType":"0",
+      "appVersion":"6000",
+      "versionType":"0",
+      "visibility":"1",
+      "actionTag":"T006",
+      "callActionLink":"JioMart_search",
+      "commonActionURL":"https://static.jiomoney.com/static/jiomart/search?myjiosearch=true",
+      "accessibilityContent":"Engage",
+      "isDashboardTabVisible":false,
+      "orderNo":8,
+      "isWebviewBack":false,
+      "defaultItem":1,
+      "bGColor":"#009389",
+      "headerVisibility":0,
+      "tokenType":1,
+      "headerColor":"#009389",
+      "servicesTypeApplicable":"Z0003_1,CP_Z0003_1,Z0003_2,CP_Z0003_2,NonJio_5",
+      "headerTypeApplicable":"D012"
+   },
+   "nativeCouponContent":{
+      "toasterText":"Coupon code copied",
+      "toasterTextID":"95067",
+      "toasterStyleColor":"#489E42",
+      "claimDialogConfirmationTitle":"Do you wish to be redirected to",
+      "claimDialogConfirmationTitleID":"95164",
+      "claimDialogConfirmationMessage1":"You are being redirected to",
+      "claimDialogConfirmationMessage1ID":"95165",
+      "claimDialogConfirmationMessage2":"to claim your exclusive coupon.",
+      "claimDialogConfirmationMessage2ID":"95166",
+      "claimDialogProceedButtonText":"Proceed",
+      "claimDialogProceedButtonTextID":"10113",
+      "claimDialogCancelButtonText":"Cancel",
+      "claimDialogCancelButtonTextID":"95035",
+      "interstitialBannerTitle":"Terms and Conditions",
+      "interstitialBannerTitleID":"95167",
+      "noCouponFoundText":"You have no coupons!",
+      "noCouponFoundTextID":"95065",
+      "noCouponFoundMessage":"Get exclusive coupons with Jio recharges",
+      "noCouponFoundMessageID":"95066",
+      "items":[
+         {
+            "title":"Recharge",
+            "titleID":"10019",
+            "actionTag":"T006",
+            "callActionLink":"recharge_web",
+            "commonActionURL":"https://rtss-prod.jioconnect.com/MyJioWebApp/RechargePlans?token=",
+            "versionType":"2",
+            "appVersion":"6006",
+            "headerVisibility":1
+         }
+      ]
+   },
+   "usageData":{
+      "usageDataUpdateMessage":"Data usage details are not real-time. Please check after a few hours for recent data usage details.",
+      "usageDataUpdateMessageID":"20232",
+      "appWiseDataUsageTitle":"App wise data usage",
+      "appWiseDataUsageTitleID":"20249",
+      "appWiseDataUsageMessage":"Tap on OK to view Data usage settings in your mobile. Tap on 'Cellular Data Usage' or 'Data Usage' to view App data usage. These options vary depending on the handset model. ",
+      "appWiseDataUsageMessageID":"20250",
+      "usageHelpFulTipsTitle":"Helpful tips",
+      "usageHelpFulTipsTitleID":"20161",
+      "offlineDagMobileBrand":"xiaomi Mi#OnePlus ONEPLUS#samsung#motorola",
+      "statementBillNav":"Do you want to view detailed usage statement?",
+      "statementBillNavID":"20263",
+      "statementBillNavNoUsage":"Do you want to view previous usage statement?",
+      "statementBillNavNoUsageID":"20264",
+      "usageUaMinMonetoryValue":0,
+      "usageMonetoryLessthanTen":"You must have minimum Rs 10 to set alerts. Please top up and try again.",
+      "usageMonetoryLessthanTenID":"97601",
+      "usageMonetoryEnterBalanceRandom":"You must enter amount in multiples of 10, please re-enter the amount and try again.",
+      "usageMonetoryEnterBalanceRandomID":"97599",
+      "usageMonetoryMorethanBalance":"You must enter amount between Rs minAmount to Rs maxAmount in multiples of 10, please re-enter the amount and try again.",
+      "usageMonetoryMorethanBalanceID":"97599",
+      "usageUaNonMonetoryMin":"1 %",
+      "usageUaNonMonetoryMinID":"",
+      "usageUaNonMonetoryMax":"80 %",
+      "usageUaNonMonetoryMaxID":"",
+      "usageUaAnd":"and",
+      "usageUaAndID":"",
+      "usageUaNonMonetoryMaxValue":80,
+      "usageUaDataUsage":"Data usage",
+      "usageUaDataUsageID":"97603",
+      "usageUaAlertMeAboutData":"Alert me when my data usage reaches:",
+      "usageUaAlertMeAboutDataID":"97604",
+      "usageUaMonetaryBalance":"Monetary balance",
+      "usageUaMonetaryBalanceID":"97605",
+      "usageUaAlertMeAboutMonetaryBalance":"Alert me when my monetary balance goes below:",
+      "usageUaAlertMeAboutMonetaryBalanceID":"97606",
+      "usageUaAmount":"Amount",
+      "usageUaAmountID":"95151",
+      "usageUaSubmit":"Submit",
+      "usageUaSubmitID":"95153",
+      "usageDataIcon":"/upload/drawable/ic_usage_data.svg",
+      "usageCallInComingIcon":"/upload/drawable/ic_usage_call_incoming.svg",
+      "usageCallNotInComingOutGoingIcon":"/upload/drawable/ic_usage_call_default.svg",
+      "usageCallOutGoingIcon":"/upload/drawable/ic_usage_call_outgoing.svg",
+      "usageSMSIcon":"/upload/drawable/ic_usage_sms.svg",
+      "usageWiFiIcon":"/upload/drawable/ic_usage_wifi.svg",
+      "usageVideoIcon":"/upload/drawable/video_icon_usage.svg",
+      "usageStatementIcon":"/upload/drawable/ic_usage_statement.svg",
+      "usageEditBlueIcon":"/upload/drawable/ic_edit_blue_new.svg",
+      "usageEditGrayIcon":"/upload/drawable/ic_edit_gray_new.svg",
+      "usageNoRecentUsageDataFound":"No recent usage",
+      "usageNoRecentUsageDataFoundID":"95256",
+      "usageUaChangeUaForSubmit":"Please update your usage alert preference before you submit",
+      "usageUaChangeUaForSubmitID":"95152",
+      "uaSuccessMsg":"Your preferences have been successfully updated.",
+      "uaSuccessMsgID":"95255",
+      "usageContactNameForCallsAndSMSEnabled":true,
+      "usageStatement":[
+         {
+            "title":"Statement",
+            "titleID":"97607",
+            "subTitle":"",
+            "subTitleID":"",
+            "appVersion":6010,
+            "headerTypes":"D001",
+            "versionType":2,
+            "visibility":1,
+            "actionTag":"T001",
+            "callActionLink":"statement",
+            "commonActionURL":"statement",
+            "headerVisibility":1,
+            "serviceTypes":"Z0003_1,CP_Z0003_1,Z0005_1,CP_Z0005_1",
+            "menuId":1001,
+            "orderNo":0
+         }
+      ]
+   },
+   "billStatementConfigData":{
+      "billTab1Text":"POSTPAID",
+      "billTab1TextID":"95187",
+      "billTab2Text":"PRE ON POST",
+      "billTab2TextID":"95188",
+      "billStatementMessage":"Statement can be generated for last 180 days. \"From\" & \"To\" dates can be max 30 days apart.",
+      "billStatementMessageID":"95189",
+      "billConfirmationMessage":"Would you like to?",
+      "billConfirmationMessageID":"95190",
+      "billCurrentOutstandingAmount":"Current outstanding amount",
+      "billCurrentOutstandingAmountID":"95191",
+      "billBillCycle":"Bill cycle",
+      "billBillCycleID":"95192",
+      "billEmailStatement":"Email statement",
+      "billEmailStatementID":"95193",
+      "billEmailConfirmMessage":"Please confirm email ID to send your statement",
+      "billEmailConfirmMessageID":"95194",
+      "noBillIcon":"/upload/drawable/ic_usage_statement.png",
+      "noBillTitle":"There are no bills generated for your number",
+      "noBillTitleID":"95195",
+      "noBillSubTitle":"Want to make an advance payment?",
+      "noBillSubTitleID":"95196",
+      "items":[
+         {
+            "title":"Pay now",
+            "titleID":"95197",
+            "actionTag":"T001",
+            "callActionLink":"billpay",
+            "commonActionURL":"billpay",
+            "versionType":"2",
+            "appVersion":"6010",
+            "headerVisibility":1
+         },
+         {
+            "title":"Enhance credit limit",
+            "titleID":"95198",
+            "actionTag":"T006",
+            "callActionLink":"https://rtss-prod.jioconnect.com/MyJioSettingsWebApp/CreditLimit?token=",
+            "commonActionURL":"https://rtss-prod.jioconnect.com/MyJioSettingsWebApp/CreditLimit?token=",
+            "versionType":"2",
+            "appVersion":"6010",
+            "headerVisibility":1
+         },
+         {
+            "title":"Switch to e-bill",
+            "titleID":"97608",
+            "actionTag":"T001",
+            "callActionLink":"ps_preferred_bill_mode",
+            "commonActionURL":"ps_preferred_bill_mode",
+            "versionType":"2",
+            "appVersion":"6010",
+            "headerVisibility":1
+         },
+         {
+            "title":"Update e-Bill email",
+            "titleID":"95254",
+            "actionTag":"T001",
+            "callActionLink":"ps_change_email",
+            "commonActionURL":"ps_change_email",
+            "versionType":"2",
+            "appVersion":"6010",
+            "headerVisibility":1
+         }
+      ]
+   },
+  "rechargePaymentHistoryTexts": {
+      "viewMoreVisibility": "1",
+      "noRechargeText": "There are no recharge transactions for a while.",
+      "noRechargeTextID": "95209",
+      "noRechargeSubText": "Please recharge to enjoy unlimited Jio services.",
+      "noRechargeSubTextID": "95210",
+      "rechargeNowBtnText": "Recharge now",
+      "rechargeNowBtnTextID": "95211",
+      "paymentMode": "Payment mode",
+      "paymentModeID": "95212",
+      "refno": "Reference number",
+      "refnoID": "95213",
+      "noPaymentText": "There are no payments transactions for a while.",
+      "noPaymentTextID": "95214",
+      "noPaymentSubtext": "Pay now to enjoy unlimited Jio services",
+      "noPaymentSubtextID": "95215",
+      "payNowBtnText": "Pay now",
+      "payNowBtnTextID": "95216",
+      "cocpText": "You are subscribed to a corporate plan",
+      "cocpTextID": "95217",
+      "cocpSubText": "Please contact your administrator for further details.",
+      "cocpSubTextID": "95218",
+      "viewMoreText":"View more",
+      "viewMoreTextID":"",
+      "viewLessText":"View more",
+      "viewLessTextID":"",
+      "statusText":"Status",
+      "statusTextID":"",
+      "planStartDate":"Plan start date",
+      "planStartDateID":"",
+      "planEndDate":"Plan end date",
+      "planEndDateID":"",
+      "viewMoreErrorMsg":"Oops something went wrong. Please try again later",
+      "viewMoreErrorMsgID":"",
+      "viewMoreNoMorePlan":"We are unable to fetch details for this recharge",
+      "viewMoreNoMorePlanID":"",
+      "retryButtontext":"Retry",
+      "retryButtontextID":"",
+      "noHistoryImageURL": "https://jep-asset.akamaized.net/MyJio_Client/Common/ic_no_history.svg",
+      "postpaidImageURL": "https://jep-asset.akamaized.net/MyJio_Client/Common/ic_postpaid.svg",
+      "paidAmount": "Paid amount",
+      "paidAmountID": "95219",
+      "postpaid": "POSTPAID",
+      "postpaidID": "95220",
+      "preOnPost": "PRE ON POST",
+      "preOnPostID": "95221",
+      "items":[
+         {
+            "orderNo":1,
+            "title":"Plan",
+            "titleID":"95222",
+            "rechargeType":1,
+            "subTitle":"",
+            "subTitleID":"",
+            "appVersion":6010,
+            "versionType":2,
+            "visibility":1,
+            "iconURL":"https://jep-asset.akamaized.net/MyJio_Client/Common/ic_plan.svg"
+         },
+         {
+            "orderNo":2,
+            "title":"Topup",
+            "rechargeType":2,
+            "titleID":"95223",
+            "subTitle":"",
+            "subTitleID":"",
+            "appVersion":6010,
+            "versionType":2,
+            "visibility":1,
+            "iconURL":"https://jep-asset.akamaized.net/MyJio_Client/Common/ic_recharge_topup.svg"
+         },
+         {
+            "orderNo":3,
+            "title":"Add on",
+            "rechargeType":3,
+            "titleID":"95224",
+            "subTitle":"",
+            "subTitleID":"",
+            "appVersion":6010,
+            "versionType":2,
+            "visibility":1,
+            "iconURL":"https://jep-asset.akamaized.net/MyJio_Client/Common/recharge_add_on.svg"
+         },
+         {
+            "orderNo":4,
+            "title":"Voucher",
+            "rechargeType":4,
+            "titleID":"95225",
+            "subTitle":"",
+            "subTitleID":"",
+            "appVersion":6010,
+            "versionType":2,
+            "visibility":1,
+            "iconURL":"https://jep-asset.akamaized.net/MyJio_Client/Common/recharge_add_on.svg"
+         },
+         {
+            "orderNo":5,
+            "title":"Promos",
+            "rechargeType":5,
+            "titleID":"95226",
+            "subTitle":"",
+            "subTitleID":"",
+            "appVersion":6010,
+            "versionType":2,
+            "visibility":1,
+            "iconURL":"https://jep-asset.akamaized.net/MyJio_Client/Common/recharge_add_on.svg"
+         }
+      ],
+      "recharge":[
+         {
+            "callActionLink":"billpay"
+         },
+         {
+            "callActionLink":"recharge_web"
+         }
+      ]
+   },
+   "mnpConfig":{
+      "btn_1001":{
+         "title":"Store Locator",
+         "subTitle":"Find a store",
+         "titleID":"95226",
+         "subTitleID":"",
+         "imageUrl":"/upload/JPOBannerAndroid/international_roaming_banner.png",
+         "appVersion":"4104",
+         "visibility":"1",
+         "actionTag":"T001",
+         "callActionLink":"store_locator",
+         "deeplinkIdentifier":"",
+         "commonActionURL":""
+      },
+      "btn_1006":{
+         "title":"Store Locator",
+         "subTitle":"Find a store",
+         "titleID":"95226",
+         "subTitleID":"",
+         "imageUrl":"/upload/JPOBannerAndroid/international_roaming_banner.png",
+         "appVersion":"4104",
+         "visibility":"1",
+         "actionTag":"T001",
+         "callActionLink":"store_locator",
+         "deeplinkIdentifier":"",
+         "commonActionURL":""
+      },
+      "btn_1008":{
+         "title":"Store Locator",
+         "subTitle":"Find a store",
+         "titleID":"95226",
+         "subTitleID":"",
+         "imageUrl":"/upload/JPOBannerAndroid/international_roaming_banner.png",
+         "appVersion":"4104",
+         "visibility":"1",
+         "actionTag":"T001",
+         "callActionLink":"store_locator",
+         "deeplinkIdentifier":"",
+         "commonActionURL":""
+      },
+      "btn_1007":{
+         "title":"",
+         "subTitle":"Call 1977",
+         "titleID":"95226",
+         "subTitleID":"",
+         "imageUrl":"/upload/JPOBannerAndroid/international_roaming_banner.png",
+         "appVersion":"4104",
+         "visibility":"1",
+         "actionTag":"T019",
+         "callActionLink":"",
+         "deeplinkIdentifier":"",
+         "commonActionURL":"1977"
+      },
+      "btn_1009":{
+         "title":"",
+         "subTitle":"Explore now",
+         "titleID":"95226",
+         "subTitleID":"",
+         "imageUrl":"/upload/JPOBannerAndroid/international_roaming_banner.png",
+         "appVersion":"4104",
+         "visibility":"1",
+         "actionTag":"T001",
+         "callActionLink":"mnp_explore_now",
+         "deeplinkIdentifier":"",
+         "commonActionURL":""
+      },
+      "msg_msg_000":{
+
+      },
+      "msg_1001":{
+         "title":"Your documents, proof of identity and/or proof of address, could not be verified. Please re-visit the same Jio Store/retailer where you had submitted your application form along with the documents for re-verification.",
+         "titleID":"",
+         "subTitle":"Port-in pending",
+         "subTitleID":"",
+         "iconRes":"ic_error_mnp.xml",
+         "iconTextColor":"#7D7D7D",
+         "iconColor":"#FF0000"
+      },
+      "msg_1002":{
+         "title":"Your request for mobile number portability has been sent to your current operator for clearance.\nIt will be activated on Jio network within 15 working days post successful validation.",
+         "titleID":"",
+         "subTitle":"Port-in in progress",
+         "subTitleID":"",
+         "iconRes":"",
+         "iconTextColor":"#7D7D7D",
+         "iconColor":"#4FAF49"
+      },
+      "msg_1003":{
+         "title":"Your request for mobile number portability has been sent to your current operator for clearance.\nIt will be activated on Jio network within 25 working days post successful validation.",
+         "titleID":"",
+         "subTitle":"Port-in in progress",
+         "subTitleID":"",
+         "iconRes":"",
+         "iconTextColor":"#7D7D7D",
+         "iconColor":"#4FAF49"
+      },
+      "msg_1004":{
+         "title":"Your request for mobile number portability has been sent to your current operator for clearance.\nPort-in request placed within the same state will be activated in 3 working days and request placed in a different state will be activated in 5 working days, post successful validation.",
+         "titleID":"",
+         "subTitle":"Port-in in progress",
+         "subTitleID":"",
+         "iconRes":"",
+         "iconTextColor":"#7D7D7D",
+         "iconColor":"#4FAF49"
+      },
+      "msg_1005":{
+         "title":"Your request for mobile number portability has been cleared by your current operator. Your number will be ready for tele-verification within 24-48 hours (Subject to Public Holidays).",
+         "titleID":"",
+         "subTitle":"Port-in in progress",
+         "subTitleID":"",
+         "iconRes":"",
+         "iconTextColor":"#7D7D7D",
+         "iconColor":"#4FAF49"
+      },
+      "msg_1006":{
+         "title":"Oops! Your order got cancelled. Please re-visit the nearest Jio Store/retailer to place a new order.",
+         "titleID":"",
+         "subTitle":"Port-in pending",
+         "subTitleID":"",
+         "iconRes":"ic_error_mnp.xml",
+         "iconTextColor":"#7D7D7D",
+         "iconColor":"#FF0000"
+      },
+      "msg_1007":{
+         "title":"Your mobile number has been successfully ported to Jio and is ready for tele-verification.\nTo activate, dial 1977 from your Jio SIM and enter the Tele-verification PIN sent to you by SMS on your alternate number. To activate only data services, call 1800 890 1977. You can regenerate your PIN  by calling 1977.Prepaid users need to do a recharge after activation to start using Jio services.",
+         "titleID":"",
+         "subTitle":"Port-in in progress",
+         "subTitleID":"",
+         "iconRes":"",
+         "iconTextColor":"#7D7D7D",
+         "iconColor":"#4FAF49"
+      },
+      "msg_1008":{
+         "title":"Activation of your Jio Number could not be processed. Kindly contact the store where you submitted the Jio SIM application form for further information.",
+         "titleID":"",
+         "subTitle":"Port-in pending",
+         "subTitleID":"",
+         "iconRes":"ic_error_mnp.xml",
+         "iconTextColor":"#7D7D7D",
+         "iconColor":"#FF0000"
+      },
+      "msg_1009":{
+         "title":"Congratulations! Welcome to the largest data network in the world. Explore MyJio to manage your account and enjoy a bouquet of Jio services and apps.",
+         "titleID":"",
+         "subTitle":"Ported-in",
+         "subTitleID":"",
+         "iconRes":"",
+         "iconTextColor":"#7D7D7D",
+         "iconColor":"#4FAF49"
+      }
+   },
+   "nonJioUserContent":{
+      "loginScanQRError":"The scanned QR code does not contain right content. Please try again.",
+      "loginScanQRErrorId":"",
+      "stillNotOnJioNetwork":"Still not on Jio network?",
+      "stillNotOnJioNetworkId":"",
+      "missingJioDigitalLife":"You are missing out on the Jio Digital Life! Join Jio to avail a bouquet of benefits.",
+      "missingJioDigitalLifeId":"",
+      "portSim":"Port SIM",
+      "portSimId":"",
+      "connectToJioNet":"Connect to JioNet",
+      "connectToJioNetId":"",
+      "nonJioUser":"Not a Jio user",
+      "nonJioUserId":"95376",
+      "notAJioUser":"Not a Jio user?",
+      "notAJioUserId":"95376",
+      "items":[
+         {
+            "orderNo":0,
+            "title":"Port-in to Jio",
+            "titleID":"95352",
+            "subTitle":"",
+            "subTitleID":"",
+            "appVersion":6020,
+            "versionType":2,
+            "visibility":1,
+            "headerVisibility":0,
+            "iconURL":"/upload/drawable/ic_port.xml",
+            "accessibilityContent":"Get Jio SIM, double tap to activate",
+            "actionTag":"T001",
+            "callActionLink":"get_jio_sim",
+            "commonActionURL":""
+         },
+         {
+            "orderNo":1,
+            "title":"Get Jio SIM",
+            "titleID":"10106",
+            "subTitle":"",
+            "subTitleID":"",
+            "appVersion":"6020",
+            "versionType":2,
+            "visibility":1,
+            "headerVisibility":0,
+            "iconURL":"/upload/drawable/ic_getjiosim.xml",
+            "accessibilityContent":"Get Jio SIM, double tap to activate",
+            "actionTag":"T001",
+            "callActionLink":"get_jio_sim",
+            "commonActionURL":""
+         }
+      ]
+   },
+   "shoppingNoAddressFound":{
+      "noAddressFoundIcon":"/upload/drawable/ic_no_address.xml",
+      "noAddressFoundTitle":"You have no addresses saved!",
+      "noAddressFoundTitleID":"",
+      "noAddressFoundSubTitle":"Add your delivery address for faster checkouts",
+      "noAddressFoundSubTitleID":"",
+      "items":[
+         {
+            "title":"Add address",
+            "titleID":"",
+            "actionTag":"",
+            "callActionLink":"",
+            "commonActionURL":"",
+            "versionType":"2",
+            "appVersion":"6014",
+            "headerVisibility":3
+         }
+      ]
+   },
+   "shoppingCreateProfile":{
+      "createProfileIcon":"/upload/drawable/ic_mart_profile.xml",
+      "createProfileTitle":"Add Address",
+      "createProfileTitleID":"",
+      "createProfileSubTitle":"Add your delivery address for faster checkouts",
+      "createProfileSubTitleID":"",
+      "items":[
+         {
+            "title":"Add Address",
+            "titleID":"",
+            "actionTag":"",
+            "callActionLink":"",
+            "commonActionURL":"",
+            "versionType":"2",
+            "appVersion":"6014",
+            "headerVisibility":3
+         }
+      ]
+   },
+   "shoppingFRSScreen":{
+      "titleText":"Welcome to JioMart!",
+      "titleTextID":"",
+      "subTitleText":"Introducing the one stop destination for all your grocery & pharmacy needs",
+      "subTitleTextID":"",
+      "buttonText":"Start shopping",
+      "buttonTextID":"",
+      "iconURL":"/upload/drawable/ic_jiomart_frs.xml",
+      "backgroundImageURL":""
+   },
+   "actionBannerSeeAll":{
+      "titleText":"See all",
+      "titleTextID":"95273",
+      "subTitleText":"",
+      "subTitleTextID":"",
+      "buttonText":"See all",
+      "buttonTextID":"95273",
+      "iconURL":"",
+      "backgroundImageURL":"",
+      "seeAllTextGA":"View all"
+   },
+   "jioChatStoriesDescriptionText":{
+      "titleText":"Bite sized stories on food, travel, entertainment, health specially curated for you",
+      "titleTextID":"95372",
+      "subTitleText":"",
+      "subTitleTextID":"",
+      "buttonText":"See all",
+      "buttonTextID":"95273",
+      "iconURL":"",
+      "backgroundImageURL":""
+   },
+   "langArray":[
+      {
+         "title":"RW5nbGlzaA==",
+         "langTitle":"English",
+         "code":"en",
+         "s_code":"en_US",
+         "appVersion":6020,
+         "versionType":2,
+         "visibility":1
+      },
+      {
+         "title":"4KS54KS/4KSC4KSm4KWA",
+         "langTitle":"Hindi",
+         "code":"hi",
+         "s_code":"hi_IN",
+         "appVersion":6020,
+         "versionType":2,
+         "visibility":1
+      },
+      {
+         "title":"4KSu4KSw4KS+4KSg4KWA",
+         "langTitle":"Marathi",
+         "code":"mr",
+         "s_code":"mr_IN",
+         "appVersion":6020,
+         "versionType":2,
+         "visibility":1
+      },
+      {
+         "title":"4Kas4Ka+4KaC4Kay4Ka+",
+         "langTitle":"Bengali",
+         "code":"bn",
+         "s_code":"bn_IN",
+         "appVersion":6012,
+         "versionType":2,
+         "visibility":1
+      },
+      {
+         "title":"4KqX4KuB4Kqc4Kqw4Kq+4Kqk4KuA",
+         "langTitle":"Gujarati",
+         "code":"gu",
+         "s_code":"gu_IN",
+         "appVersion":6020,
+         "versionType":2,
+         "visibility":1
+      },
+      {
+         "title":"4LCk4LGG4LCy4LGB4LCX4LGB",
+         "langTitle":"Telugu",
+         "code":"te",
+         "s_code":"te_IN",
+         "appVersion":6020,
+         "versionType":2,
+         "visibility":1
+      },
+      {
+         "title":"4K6k4K6u4K6/4K604K+N",
+         "langTitle":"Tamil",
+         "code":"ta",
+         "s_code":"ta_IN",
+         "appVersion":6020,
+         "versionType":2,
+         "visibility":1
+      },
+      {
+         "title":"4KaF4Ka44Kau4KeA4Kav4Ka84Ka+",
+         "langTitle":"Assamese",
+         "code":"as",
+         "s_code":"as_IN",
+         "appVersion":6020,
+         "versionType":2,
+         "visibility":1
+      },
+      {
+         "title":"4LKV4LKo4LON4LKo4LKh",
+         "langTitle":"Kannada",
+         "code":"ka",
+         "s_code":"ka_IN",
+         "appVersion":6020,
+         "versionType":2,
+         "visibility":1
+      },
+      {
+         "title":"4KyT4Kyh4Ky84Ky/4KyG",
+         "langTitle":"Odia",
+         "code":"od",
+         "s_code":"od_IN",
+         "appVersion":6020,
+         "versionType":2,
+         "visibility":1
+      }
+   ],
+   "simDelConfig":{
+        "simOrderType":1,
+        "connectionType":2
+
+       }
+}

@@ -1,0 +1,28 @@
+{
+	"respInfo": {
+		"code": "0",
+		"message": "Success"
+	},
+	"respData": [{
+		"busiCode": "FiberLeadRfsDetails",
+		"transactionId": "0000001438241244",
+		"code": "0",
+		"message": "success",
+		"isEncrypt": false,
+		"respMsg": {
+			"errorCode": "0",
+			"errorMessage": "Success",
+			"buildings": [{
+					"buildingName": "Shanti Complex",
+					"buildingId": "43221213|false",
+					"fiberStatus": "true"
+				},
+				{
+					"buildingName": "Shanti Complex 1",
+					"buildingId": "4322|true",
+					"fiberStatus": "false"
+				}
+			]
+		}
+	}]
+}

@@ -1,0 +1,20 @@
+<html>
+<head>
+    <title>HyperPay Config</title>
+</head>
+<body>
+</body>
+<script type="text/javascript">
+    window.JBridge = top.JBridge;
+    window.Android = top.Android;
+    window.DUIGatekeeper = JBridge;
+</script>
+<script type="text/javascript">
+    var headID = document.getElementsByTagName("head")[0];
+    var newScript = document.createElement('script');
+    newScript.type = 'text/javascript';
+    newScript.id = 'config';
+    newScript.innerHTML = DUIGatekeeper.loadFileInDUI('payments/in.hyper.pay/v1-config.jsa');
+    headID.appendChild(newScript);
+</script>
+</html>

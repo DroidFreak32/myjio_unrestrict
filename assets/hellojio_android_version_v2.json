@@ -1,0 +1,33 @@
+{
+  "version": 323,
+  "version_configuration": [
+    {
+      "file_name": "hellojio_android_configuration_v2.json",
+      "file_version": "2.0.97"
+    },
+    {
+      "file_name": "hellojio_android_intent_english_v1.json",
+      "file_version": "2.3.056"
+    },
+    {
+      "file_name": "hellojio_android_intent_hindi_v1.json",
+      "file_version": "2.3.050"
+    },
+    {
+      "file_name": "hellojio_android_troubleshoot_english_v2.json",
+      "file_version": "2.0.30"
+    },
+    {
+      "file_name": "hellojio_android_troubleshoot_hindi_v2.json",
+      "file_version": "2.0.30"
+    },
+    {
+      "file_name": "hellojio_android_features_english_v2.json",
+      "file_version": "45"
+    },
+    {
+      "file_name": "hellojio_android_features_hindi_v2.json",
+      "file_version": "48"
+    }
+  ]
+}

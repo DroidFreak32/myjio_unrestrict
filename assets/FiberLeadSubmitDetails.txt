@@ -1,0 +1,18 @@
+{
+	"respInfo": {
+		"code": "0",
+		"message": "Success"
+	},
+	"respData": [{
+		"busiCode": "FiberLeadSubmitDetails",
+		"transactionId": "0000001438241244",
+		"code": "0",
+		"message": "success",
+		"isEncrypt": false,
+		"respMsg": {
+			"errorCode": "0",
+			"errorMsg": "Success",
+			"leadId": "5432"
+		}
+	}]
+}

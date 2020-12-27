@@ -1,0 +1,182 @@
+{
+	"jio": {
+		"PrimeTabs": [{
+			"earn": {
+				"text": "Earn points",
+				"titleID": "60123",
+				"textColor": "",
+				"textBackgroundColor": ""
+			},
+			"redeem": {
+				"text": "Redeem points",
+				"titleID": "60124",
+				"textColor": "",
+				"textBackgroundColor": ""
+			}
+		}],
+		"PrimePointAccount": {
+			"order": "1",
+			"title": "",
+			"visibility": "1",
+			"txtColor": "",
+			"primeAccountText": "Prime Account",
+			"titleID": "60127",
+			"switchAccountText": "Switch Account",
+			"pointText": "Points"
+		},
+		"jioPrimePoints": [{
+				"order": "0",
+				"title": "New Banner",
+				"bannerTitle": "New Banner",
+				"accessibilityContent": "JioPhone exchange program",
+				"visibility": "0",
+				"type": "OL011",
+				"res": "",
+				"icon": "https://rtss-prod.jioconnect.com/upload/staticfiles/pic/jpo_apps.png",
+				"items": [{
+					"title": "Redeem Points",
+					"titleID": "10129",
+					"accessibilityContent": "JioPhone exchange program",
+					"callActionLink": "prime_points_account_web",
+					"bannerUrl": "https://jep-asset.akamaized.net/MyJio_Client/JioPrime/redeem_reliance.png",
+					"appVersion": "5000",
+					"visibility": "0",
+					"commonActionURL": "https://www.jio.com/jp-hd?utm_source=myjio&utm_medium=banner&utm_campaign=jpxcn2",
+					"actionTag": "",
+					"bannerJTokenTag": "D000"
+				}]
+			},
+			{
+				"order": "3",
+				"title": "Prime First banner",
+				"bannerTitle": "New Banner",
+				"accessibilityContent": "JioPhone exchange program",
+				"visibility": "1",
+				"type": "OL013",
+				"res": "",
+				"icon": "https://rtss-prod.jioconnect.com/upload/staticfiles/pic/jpo_apps.png",
+				"items": [{
+						"title": "Redeem Points",
+						"titleID": "10129",
+						"accessibilityContent": "JioPhone exchange program",
+						"callActionLink": "prime_points_account_web",
+						"bannerUrl": "https://jep-asset.akamaized.net/MyJio_Client/JioPrime/redeem_reliance.png",
+						"appVersion": "5000",
+						"visibility": "1",
+						"commonActionURL": "",
+						"actionTag": "",
+						"bannerJTokenTag": "D000"
+					},
+					{
+						"title": "Recharge",
+						"titleID": "10129",
+						"accessibilityContent": "JioPhone exchange program",
+						"callActionLink": "prime_points_account_web",
+						"bannerUrl": "https://jep-asset.akamaized.net/MyJio_Client/JioPrime/redeembanner_recharge.png",
+						"appVersion": "5000",
+						"visibility": "1",
+						"commonActionURL": "https://rtss-prod.jioconnect.com/MappServer3/primeRecharge?param=",
+						"actionTag": "T006",
+						"bannerJTokenTag": "D000"
+					},
+					{
+						"title": "",
+						"titleID": "10129",
+						"accessibilityContent": "JioPhone exchange program",
+						"callActionLink": "prime_points_account_web",
+						"bannerUrl": "https://jep-asset.akamaized.net/MyJio_Client/JioPrime/relianceretailbanner.png",
+						"appVersion": "5000",
+						"visibility": "1",
+						"commonActionURL": "",
+						"actionTag": "",
+						"bannerJTokenTag": "D000"
+					}
+				]
+			}
+		]
+	},
+	"nonjio": {
+		"PrimeTabs": [{
+			"earn": {
+				"text": "Earn points",
+				"titleID": "60123",
+				"textColor": "",
+				"textBackgroundColor": ""
+			},
+			"redeem": {
+				"text": "Redeem points",
+				"titleID": "60124",
+				"textColor": "",
+				"textBackgroundColor": ""
+			}
+		}],
+		"PrimePointAccount": {
+			"order": "1",
+			"title": "",
+			"visibility": "1",
+			"txtColor": "",
+			"primeAccountText": "Prime Account",
+			"titleID": "60127",
+			"switchAccountText": "Switch Account",
+			"pointText": "Points"
+		},
+		"jioPrimePoints": [{
+				"order": "0",
+				"title": "New Banner",
+				"bannerTitle": "New Banner",
+				"accessibilityContent": "JioPhone exchange program",
+				"visibility": "0",
+				"type": "OL011",
+				"res": "",
+				"icon": "https://rtss-prod.jioconnect.com/upload/staticfiles/pic/jpo_apps.png",
+				"items": [{
+					"title": "Redeem Points",
+					"titleID": "10129",
+					"accessibilityContent": "JioPhone exchange program",
+					"callActionLink": "prime_points_account_web",
+					"bannerUrl": "https://jep-asset.akamaized.net/MyJio_Client/JioPrime/redeem_reliance.png",
+					"appVersion": "5000",
+					"visibility": "0",
+					"commonActionURL": "https://www.jio.com/jp-hd?utm_source=myjio&utm_medium=banner&utm_campaign=jpxcn2",
+					"actionTag": "",
+					"bannerJTokenTag": "D000"
+				}]
+			},
+			{
+				"order": "3",
+				"title": "Prime First banner",
+				"bannerTitle": "New Banner",
+				"accessibilityContent": "JioPhone exchange program",
+				"visibility": "1",
+				"type": "OL013",
+				"res": "",
+				"icon": "https://rtss-prod.jioconnect.com/upload/staticfiles/pic/jpo_apps.png",
+				"items": [{
+						"title": "Redeem Points",
+						"titleID": "10129",
+						"accessibilityContent": "JioPhone exchange program",
+						"callActionLink": "prime_points_account_web",
+						"bannerUrl": "https://jep-asset.akamaized.net/MyJio_Client/JioPrime/redeem_reliance.png",
+						"appVersion": "5000",
+						"visibility": "1",
+						"commonActionURL": "",
+						"actionTag": "",
+						"bannerJTokenTag": "D000"
+					},
+					{
+						"title": "",
+						"titleID": "10129",
+						"accessibilityContent": "JioPhone exchange program",
+						"callActionLink": "prime_points_account_web",
+						"bannerUrl": "https://jep-asset.akamaized.net/MyJio_Client/JioPrime/relianceretailbanner.png",
+						"appVersion": "5000",
+						"visibility": "1",
+						"commonActionURL": "",
+						"actionTag": "",
+						"bannerJTokenTag": "D000"
+					}
+				]
+			}
+		]
+	}
+}

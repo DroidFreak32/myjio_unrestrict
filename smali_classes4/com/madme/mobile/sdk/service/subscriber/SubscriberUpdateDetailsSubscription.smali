@@ -1,0 +1,24 @@
+.class public Lcom/madme/mobile/sdk/service/subscriber/SubscriberUpdateDetailsSubscription;
+.super Ljava/lang/Object;
+.source "SubscriberUpdateDetailsSubscription.java"
+
+
+# instance fields
+.field public opCoId:Ljava/lang/String;
+
+.field public slotIndex:I
+
+.field public uuid1:Ljava/lang/String;
+
+.field public uuid2:Ljava/lang/String;
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method

@@ -1,0 +1,63 @@
+{
+   "jioChatStories":[
+      {
+         "id":"70",
+         "name":"Pinkvilla",
+         "logoURL":"https://explores.jiochat.com/sites/default/files/PV-2x2.svg",
+         "stories":[
+            {
+               "index":"0",
+               "type":3,
+               "logoURL":"https://explores.jiochat.com/sites/default/files/PV-2x2.svg",
+               "uri":"https://explores.jiochat.com/?q=node/68349&t=1568957626",
+               "title":"The Zoya Factor Review: Dulquer Shines In This Romantic Drama",
+               "image":"https://explores.jiochat.com/sites/default/files/zoya_factor_main_image_R1.jpg",
+               "dash":"",
+               "hls":"",
+               "readmore":""
+            },
+            {
+               "index":"1",
+               "type":3,
+               "logoURL":"https://explores.jiochat.com/sites/default/files/PV-2x2.svg",
+               "uri":"https://explores.jiochat.com/?q=node/68353&t=1568957626",
+               "title":"Ranveer Reveals Getting Statue Next To Deepika At Madame Tussauds",
+               "image":"https://explores.jiochat.com/sites/default/files/deepika-ranveer-wax-madametussauds-R1.jpg",
+               "dash":"",
+               "hls":"",
+               "readmore":""
+            }
+         ]
+      },
+      {
+         "id":"7",
+         "name":"DataBaaz",
+         "logoURL":"https://explores.jiochat.com/sites/default/files/Databaaz%204x2.svg",
+         "stories":[
+            {
+               "index":"0",
+               "type":1,
+               "logoURL":"https://explores.jiochat.com/sites/default/files/PV-2x2.svg",
+               "uri":"https://pp.jiochat.com/swift/v1/j14/67851_India_s_Fertile_Land-new.mp4",
+               "title":"India's Fertile Land Is Degrading At A Fast Rate",
+               "image":"https://explores.jiochat.com/sites/default/files/India%20Fertile%20Land.jpg",
+               "dash":"https://pp.jiochat.com/swift/v1/j15/%@/75_67851_556/75_67851_556.mpd",
+               "hls":"https://pp.jiochat.com/swift/v1/j15/%@/75_67851_556/7master.m3u8",
+               "readmore":""
+            },
+            {
+               "index":"1",
+               "type":1,
+               "logoURL":"https://explores.jiochat.com/sites/default/files/PV-2x2.svg",
+               "uri":"https://pp.jiochat.com/swift/v1/j14/67851_India_s_Fertile_Land-new.mp4",
+               "title":"India's Fertile Land Is Degrading At A Fast Rate",
+               "image":"https://explores.jiochat.com/sites/default/files/India%20Fertile%20Land.jpg",
+               "dash":"https://pp.jiochat.com/swift/v1/j15/%@/75_67851_556/75_67851_556.mpd",
+               "hls":"https://pp.jiochat.com/swift/v1/j15/%@/75_67851_556/7master.m3u8",
+               "readmore":""
+            }
+         ]
+      }
+   ],
+   "accessToken":"f9obieotlodnmn9nff0mv8lvp7tk5cdhdvap92oklh027ld253re2pvo7lmtfbb80ll1luc3opmbq==="
+}

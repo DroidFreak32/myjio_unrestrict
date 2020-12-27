@@ -1,0 +1,34 @@
+{
+	"respInfo": {
+		"code": "0",
+		"message": "Success"
+	},
+	"respData": [{
+		"busiCode": "FiberLeadStateCitiDetails",
+		"transactionId": "0000001438241244",
+		"code": "0",
+		"message": "success",
+		"isEncrypt": false,
+		"respMsg": {
+			"errorCode": "0",
+			"errorMessage": "Success",
+			"states": [{
+					"stateName": "Maharastra",
+					"cities": [{
+							"cityName": "Mumbai"
+						},
+						{
+							"cityName": "Navi Mumbai"
+						}
+					]
+				},
+				{
+					"stateName": "Gujarat",
+					"cities": [{
+						"cityName": "Ahmedabad"
+					}]
+				}
+			]
+		}
+	}]
+}

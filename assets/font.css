@@ -1,0 +1,26 @@
+@font-face {
+    font-family: 'JioTypeW04-Light';
+    src: url('file:///android_asset/font/jio_type_light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'JioTypeW04-Medium';
+    src: url('file:///android_asset/font/jio_type_medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.JioTypeW04_Light {
+    font-family: 'JioTypeW04-Light';
+}
+
+.JioTypeW04_Medium {
+    font-family: 'JioTypeW04-Medium';
+}
+
+
+body {
+    font-family: 'JioTypeW04-Medium';
+}

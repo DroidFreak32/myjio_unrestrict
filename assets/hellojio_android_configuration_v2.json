@@ -1,0 +1,6564 @@
+{
+  "version": "2.0.97",
+  "name": "MyJio",
+  "files_download_method": "AWS",
+  "files_download_url": "https://jep-asset.akamaized.net/MyJio_Client/android_files/prod/hellojio_files/",
+  "version_file_name": "hellojio_android_version_v2.json",
+  "server_configuration": [
+    {
+      "engine": "ml",
+      "url": "https://jioml.jio.com/predict",
+      "method": "GET",
+      "headers": [
+        {
+          "name": "hellojio",
+          "value": "aGVsbG9qaW86cGFwQGxhbUBkMFlaZWxv",
+          "type": "_AUTH_"
+        }
+      ]
+    },
+    {
+      "engine": "ml_v2",
+      "url": "https://hellojiov2.jioengageapps.com/predictv2",
+      "method": "POST",
+      "headers": [
+        {
+          "name": "hellojio",
+          "value": "aGVsbG9qaW86cGFwQGxhbUBkMFlaZWxv",
+          "type": "_AUTH_"
+        }
+      ]
+    }
+  ],
+  "data_configuration": [
+    {
+      "id": "en",
+      "engine": "ml",
+      "model": "default",
+      "threshold": "0.15",
+      "locale": "en",
+      "actual_lang": "en",
+      "lang_tag": "en",
+      "voice_engine": "google",
+      "voice_locale": "en_US",
+      "intent_file_name": "hellojio_android_intent_english_v1.json",
+      "dag_file_name": "hellojio_android_troubleshoot_english_v2.json",
+      "feature_file_name": "hellojio_android_features_english_v2.json"
+    },
+    {
+      "id": "hi",
+      "engine": "ml",
+      "model": "default",
+      "threshold": "0.15",
+      "locale": "hi",
+      "actual_lang": "hi",
+      "lang_tag": "dev",
+      "voice_engine": "google",
+      "voice_locale": "hi",
+      "intent_file_name": "hellojio_android_intent_hindi_v1.json",
+      "dag_file_name": "hellojio_android_troubleshoot_hindi_v2.json",
+      "feature_file_name": "hellojio_android_features_hindi_v2.json"
+    },
+    {
+      "id": "ml_v2_whitelisted_circles",
+      "engine": "ml_v2",
+      "model": "hj_en_v1",
+      "threshold": "0.15",
+      "locale": "en",
+      "actual_lang": "en",
+      "lang_tag": "en",
+      "voice_engine": "google",
+      "voice_locale": "en_US",
+      "intent_file_name": "hellojio_android_intent_english_v1.json",
+      "dag_file_name": "hellojio_android_troubleshoot_english_v2.json",
+      "feature_file_name": "hellojio_android_features_english_v2.json"
+    },
+    {
+      "id": "ml_v2_whitelisted_circles",
+      "engine": "ml_v2",
+      "model": "hj_dev_v1",
+      "threshold": "0.15",
+      "locale": "hi",
+      "actual_lang": "hi",
+      "lang_tag": "dev",
+      "voice_engine": "google",
+      "voice_locale": "hi",
+      "intent_file_name": "hellojio_android_intent_hindi_v1.json",
+      "dag_file_name": "hellojio_android_troubleshoot_hindi_v2.json",
+      "feature_file_name": "hellojio_android_features_hindi_v2.json"
+    }
+  ],
+  "remote_calls": [
+    {
+      "id": "jiosaavn",
+      "package_name": "com.jio.media.jiobeats",
+      "url": "https://www.jiosaavn.com/api.php?__call=hellojio.search&language=%s&ctx=hellojio&api_version=4&_format=json&_marker=0&query=%s",
+      "request_type": "GET",
+      "parameters_type": "NORMAL",
+      "parameters": [
+        {
+          "name": "",
+          "value": "",
+          "value_type": ""
+        }
+      ],
+      "headers": [
+        {
+          "name": "",
+          "value": "",
+          "type": ""
+        }
+      ],
+      "extra_url": "",
+      "base_image_url": "",
+      "deep_link": "https://play.google.com/store/apps/details?id=com.jio.media.jiobeats"
+    },
+    {
+      "id": "jiocinema",
+      "package_name": "com.jio.media.ondemand",
+      "url": "https://prod.media.jio.com/apis/common/v2.7/search/search",
+      "request_type": "POST",
+      "parameters_type": "NORMAL",
+      "parameters": [
+        {
+          "name": "q",
+          "value": "",
+          "value_type": "_USER_QUERY_"
+        }
+      ],
+      "headers": [
+        {
+          "name": "imageurl",
+          "value": "https://prod.media.jio.com/apis/common/v2.7/getconfig/geturl/39ee6ded40812c593ed8",
+          "type": "_DIRECT_"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded",
+          "type": "_DIRECT_"
+        }
+      ],
+      "extra_url": "https://prod.media.jio.com/apis/common/v2.7/getconfig/geturl/39ee6ded40812c593ed8",
+      "base_image_url": "",
+      "deep_link": "jioondemand://?id=%s&type=%s"
+    },
+    {
+      "id": "diagnosticlogs",
+      "package_name": "",
+      "url": "https://jioml.jio.com/diagnostics?t=1JRH9YzMLcmAOe8FTGHOOQ&sid=myjio&platform=android",
+      "request_type": "POST",
+      "parameters_type": "NORMAL",
+      "parameters": [
+        {
+          "name": "",
+          "value": "",
+          "value_type": ""
+        }
+      ],
+      "headers": [
+        {
+          "name": "hellojio",
+          "value": "aGVsbG9qaW86cGFwQGxhbUBkMFlaZWxv",
+          "type": "_AUTH_"
+        }
+      ],
+      "extra_url": "",
+      "base_image_url": "",
+      "deep_link": ""
+    },
+    {
+      "id": "forecast_data_api",
+      "package_name": "",
+      "url": "https://jioml.jio.com/forecast",
+      "request_type": "POST",
+      "parameters_type": "NORMAL",
+      "parameters": [
+        {
+          "name": "",
+          "value": "",
+          "value_type": ""
+        }
+      ],
+      "headers": [
+        {
+          "name": "jiochat",
+          "value": "amlvY2hhdDoxSlJIOVl6TUxjbUFPZThGVEdIT09R",
+          "type": "_AUTH_"
+        }
+      ],
+      "extra_url": "",
+      "base_image_url": "",
+      "deep_link": ""
+    },
+    {
+      "id": "jiocare_feedback_getquestion",
+      "package_name": "",
+      "url": "https://www.jio.com/cs/Satellite?pagename=RIL/Survey/CreateJson",
+      "request_type": "GET",
+      "parameters_type": "NORMAL",
+      "parameters": [
+        {
+          "name": "",
+          "value": "",
+          "value_type": ""
+        }
+      ],
+      "headers": [
+        {
+          "name": "",
+          "value": "",
+          "type": ""
+        }
+      ],
+      "extra_url": "",
+      "base_image_url": "",
+      "deep_link": ""
+    },
+    {
+      "id": "jiocare_send_feedback",
+      "package_name": "",
+      "url": "https://www.jio.com/cs/Satellite?pagename=RIL/Survey/HelloJioResponse",
+      "request_type": "POST",
+      "parameters_type": "NORMAL",
+      "parameters": [
+        {
+          "name": "",
+          "value": "",
+          "value_type": ""
+        }
+      ],
+      "headers": [
+        {
+          "name": "",
+          "value": "",
+          "type": ""
+        }
+      ],
+      "extra_url": "",
+      "base_image_url": "",
+      "deep_link": ""
+    },
+    {
+      "id": "feedbacklogs",
+      "package_name": "",
+      "url": "https://jioml.jio.com/feedback?t=1JRH9YzMLcmAOe8FTGHOOQ&sid=myjio&platform=android",
+      "request_type": "POST",
+      "parameters_type": "NORMAL",
+      "parameters": [
+        {
+          "name": "user_feedback",
+          "value": "",
+          "value_type": "_USER_QUERY_"
+        },
+        {
+          "name": "payload",
+          "value": "",
+          "value_type": "_USER_QUERY_1"
+        }
+      ],
+      "headers": [
+        {
+          "name": "hellojio",
+          "value": "aGVsbG9qaW86cGFwQGxhbUBkMFlaZWxv",
+          "type": "_AUTH_"
+        }
+      ],
+      "extra_url": "",
+      "base_image_url": "",
+      "deep_link": ""
+    },
+    {
+      "id": "jiotv",
+      "package_name": "com.jio.jioplay.tv",
+      "url": "https://tv.media.jio.com/apis/v1.2/search/search?query=%s",
+      "request_type": "GET",
+      "parameters_type": "NORMAL",
+      "parameters": [
+        {
+          "name": "query",
+          "value": "",
+          "value_type": "_USER_QUERY_"
+        }
+      ],
+      "headers": [
+        {
+          "name": "",
+          "value": "",
+          "type": ""
+        }
+      ],
+      "extra_url": "",
+      "base_image_url": "",
+      "deep_link": "jioplay://guide/live/%s?action=play%s"
+    }
+  ],
+  "appData": [
+    {
+      "name": "YouTube",
+      "package_name": "com.google.android.youtube",
+      "latest_version": "15.26.34",
+      "android_support_version": "5.3",
+      "pattern": [
+        "youtube",
+        "you tube",
+        "YouTube",
+        "u tube",
+        "You Tube",
+        "you Tube",
+        "YOUTUBE",
+        "यूट्यूब",
+        "यू ट्यूब"
+      ]
+    },
+    {
+      "name": "FaceBook",
+      "package_name": "com.facebook.katana",
+      "latest_version": "278.0.0.51.119",
+      "android_support_version": "5.3",
+      "pattern": [
+        "facebook",
+        "face book",
+        "FaceBook",
+        "Face Book",
+        "face Book",
+        "FACEBOOK",
+        "फेसबुक",
+        "फेस बुक"
+      ]
+    },
+    {
+      "name": "JioMeet",
+      "package_name": "com.jio.rilconferences",
+      "latest_version": "2.24.77",
+      "android_support_version": "5.3",
+      "pattern": [
+        "jiomeet",
+        "jio meet",
+        "JioMeet",
+        "JIOMEET",
+        "Jio meet",
+        "जिओ मीट",
+        "जिओमीट "
+      ]
+    },
+    {
+      "name": "JioBrowser",
+      "package_name": "com.jio.web",
+      "latest_version": "1.4.7",
+      "android_support_version": "5.3",
+      "pattern": [
+        "JioBrowser",
+        "jiobrowser",
+        "jio browser",
+        "JIOBROWSER",
+        "jio Browser",
+        "जिओब्राउज़र",
+        "जिओ ब्राउज़र",
+        "जिओ ब्राउसर",
+        "जिओ ब्राउजर"
+      ]
+    },
+    {
+      "name": "Photos",
+      "package_name": "com.google.android.apps.photos",
+      "latest_version": "5.0.0.317714334",
+      "android_support_version": "5.3",
+      "pattern": [
+        "Photos",
+        "photos",
+        "googlephotos",
+        "google photos",
+        "PHOTOS",
+        "photo",
+        "फोटोज",
+        "फोटो",
+        "चित्र"
+      ]
+    },
+    {
+      "name": "Reliance Digital",
+      "package_name": "in.digital.reliance",
+      "latest_version": "2.1.0",
+      "android_support_version": "5.3",
+      "pattern": [
+        "RelianceDigital",
+        "reliancedigital",
+        "Reliancedigital",
+        "Reliance Digital",
+        "RELIANCEDIGITAL",
+        "reliance digital",
+        "रिलायंस डिजिटल",
+        "रिलायंसडिजिटल"
+      ]
+    },
+    {
+      "name": "WhatsApp Messenger",
+      "package_name": "com.whatsapp",
+      "latest_version": "2.20.194.16",
+      "android_support_version": "5.3",
+      "pattern": [
+        "whatsapp",
+        "Whats app",
+        "WHATSAPP",
+        "whatsApp",
+        "wasapp",
+        "व्हाट्स एप्प",
+        "व्हाट्सएप्प",
+        "व्हाट्स अप्प",
+        "व्हाट्सएप"
+      ]
+    },
+    {
+      "name": "mHere Pro",
+      "package_name": "com.jio.lbs.mhere",
+      "latest_version": "3.1.4",
+      "android_support_version": "5.3",
+      "pattern": [
+        "mHere",
+        "m here",
+        "mhere",
+        "M here",
+        "m Here",
+        "am here",
+        "ऍम हियर",
+        "ऍमहियर",
+        "एम हेयर",
+        "एमहेयर",
+        "एम हियर",
+        "एमहियर"
+      ]
+    },
+    {
+      "name": "Instagram",
+      "package_name": "com.instagram.android",
+      "latest_version": "149.0.0.25.120",
+      "android_support_version": "5.3",
+      "pattern": [
+        "instagram",
+        "Instagram",
+        "Insta gram",
+        "Insta Gram",
+        "insta gram",
+        "इंस्टाग्राम",
+        "इन्स्टाग्राम"
+      ]
+    },
+    {
+      "name": "JioMart",
+      "package_name": "com.jpl.jiomart",
+      "latest_version": "1.0.3",
+      "android_support_version": "5.3",
+      "pattern": [
+        "jiomart",
+        "JIOMART",
+        "jio mart",
+        "Jio Mart",
+        "jio Mart",
+        "जिओ मार्ट",
+        "जिओमार्ट"
+      ]
+    },
+    {
+      "name": "JioTV",
+      "package_name": "com.jio.jioplay.tv",
+      "latest_version": "5.9.2",
+      "android_support_version": "4.3",
+      "pattern": [
+        "Jio TV",
+        "JioTV",
+        "TV",
+        "जिओ टीवी",
+        "जिओटीवी"
+      ]
+    },
+    {
+      "name": "MyJio",
+      "package_name": "com.jio.myjio",
+      "latest_version": "6.0.06",
+      "android_support_version": "4.3",
+      "pattern": [
+        "myjio",
+        "my jio",
+        "my gio",
+        "my jio app",
+        "MyJio",
+        "माय जियो",
+        "माय जिओ"
+      ]
+    },
+    {
+      "name": "JioCinema",
+      "package_name": "com.jio.media.ondemand",
+      "latest_version": "1.6.0.4",
+      "android_support_version": "4.4",
+      "pattern": [
+        "jiocinema",
+        "jio cinema",
+        "jio cinema app",
+        "जिओ सिनेमा",
+        "जियो सिनेमा",
+        "जिओसिनेमा",
+        "जियोसिनेमा"
+      ]
+    },
+    {
+      "name": "JioSaavn",
+      "package_name": "com.jio.media.jiobeats",
+      "latest_version": "6.8.2",
+      "android_support_version": "4.3",
+      "pattern": [
+        "jiomusic",
+        "jio music",
+        "jio music app",
+        "jiosaavn",
+        "jio saavn",
+        "jio saavn app",
+        "जिओ म्यूजिक",
+        "जियो म्यूजिक",
+        "जियोम्यूजिक",
+        "जिओम्यूजिक",
+        "जिओसावन",
+        "जिओ सावन"
+      ]
+    },
+    {
+      "name": "JioCall",
+      "package_name": "com.jio.join",
+      "latest_version": "5.3.0",
+      "android_support_version": "4.1",
+      "pattern": [
+        "jio call",
+        "jio call app",
+        "jiocall",
+        "जियो 4जी वॉयस",
+        "जियो कॉल",
+        "जियोकॉल",
+        "जिओ 4जी वॉयस",
+        "जिओ 4G वॉयस",
+        "जिओ 4g वॉयस",
+        "जिओ कॉल",
+        "जिओ 4G वॉइस",
+        "जिओ 4g वॉइस"
+      ]
+    },
+    {
+      "name": "JioChat",
+      "package_name": "com.jiochat.jiochatapp",
+      "latest_version": "3.2.7.2.0927",
+      "android_support_version": "4.4",
+      "pattern": [
+        "jiochat",
+        "jio chat",
+        "jio chat app",
+        "जिओ चैट",
+        "जियो चैट"
+      ]
+    },
+    {
+      "name": "JioSecurity",
+      "package_name": "com.reliancejio.mobilesecurity",
+      "latest_version": "4.7.0.4456",
+      "android_support_version": "4.0.3",
+      "pattern": [
+        "jiosecurity",
+        "jio security",
+        "jio security app",
+        "जिओसिक्योरिटी",
+        "जियो सिक्योरिटी",
+        "जिओ सिक्योरिटी"
+      ]
+    },
+    {
+      "name": "JioCloud",
+      "package_name": "jio.cloud.drive",
+      "latest_version": "17.14.16",
+      "android_support_version": "4.4",
+      "pattern": [
+        "jiocloud",
+        "jio cloud",
+        "jio cloud app",
+        "jiodrive",
+        "jio drive",
+        "jio drive app",
+        "जियो क्लाउड",
+        "जिओक्लाउड",
+        "जियोक्लाउड",
+        "जिओ ड्राइव",
+        "जियो ड्राइव",
+        "जिओड्राइव",
+        "जियोड्राइव",
+        "जियो क्लाउ",
+        "जिओ क्लाउ",
+        "जिओ क्लाउड"
+      ]
+    },
+    {
+      "name": "JioMoney",
+      "package_name": "com.corpay.mwallet",
+      "latest_version": "3.3.2.17183",
+      "android_support_version": "4.1",
+      "pattern": [
+        "jiomoney",
+        "jio money",
+        "jio money app",
+        "जियो मनी",
+        "जिओ मनी"
+      ]
+    },
+    {
+      "name": "AJIO",
+      "package_name": "com.ril.ajio",
+      "latest_version": "5.14",
+      "android_support_version": "4.1",
+      "pattern": [
+        "ajio",
+        "a jio",
+        "a jio app",
+        "एजिओ",
+        "एजियो",
+        "एजियो ऐप",
+        "ए जियो",
+        "ए जियो ऐप",
+        "ए जिओ",
+        "ए जिओ ऐप",
+        "एजिओ ऐप"
+      ]
+    },
+    {
+      "name": "JioHealthHub",
+      "package_name": "com.hh.healthhub",
+      "latest_version": "3.3.33",
+      "android_support_version": "4.2",
+      "pattern": [
+        "jio healthhub",
+        "jiohealthhub",
+        "jio health hub",
+        "jiohealth hub",
+        "health hub",
+        "healthhub",
+        "jio health",
+        "jio health app"
+      ]
+    },
+    {
+      "name": "NetVelocity",
+      "package_name": "com.inn.nvengineer",
+      "latest_version": "3.6.9",
+      "android_support_version": "4.2",
+      "pattern": [
+        "NetVelocity",
+        "Net Velocity",
+        "NetVelocity app",
+        "Net Velocity app",
+        "NetVelocity ऐप",
+        "नेट वेलोसिटी",
+        "नेटवेलोसिटी",
+        "नेट वेलॉसिटी",
+        "नेटवेलॉसिटी"
+      ]
+    },
+    {
+      "name": "JioSwitch",
+      "package_name": "com.reliance.jio.jioswitch",
+      "latest_version": "4.6.1.4415",
+      "android_support_version": "4.3",
+      "pattern": [
+        "jio switch",
+        "jioswitch",
+        "jio switch app",
+        "जिओ स्विच",
+        "जियो स्विच",
+        "जीओस्वीट्च",
+        "जिओ स्विच"
+      ]
+    },
+    {
+      "name": "JioNews",
+      "package_name": "com.jio.media.jioxpressnews",
+      "latest_version": "3.1.5",
+      "android_support_version": "5.1",
+      "pattern": [
+        "jioxpressNews",
+        "jio express news",
+        "jio express news app",
+        "jio news paper",
+        "jio newspaper",
+        "jionewspaper",
+        "Jio Magazine",
+        "Jio Mags",
+        "jiomags",
+        "jio news paper app",
+        "jio news",
+        "jionews",
+        "jio news app",
+        "जिओ एक्सप्रेस न्यूज़",
+        "जिओ मैगज़ीन",
+        "जिओमैगज़ीन",
+        "जियो एक्सप्रेस न्यूज़",
+        "जियो मैगज़ीन",
+        "जियो मैगजीन्स",
+        "मैगज़ीन",
+        "मैगजीन",
+        "मैगजीन्स",
+        "जियो न्यूज़",
+        "जिओ न्यूज",
+        "जिओ न्यूज़"
+      ]
+    },
+    {
+      "name": "PlayStore",
+      "package_name": "com.android.vending",
+      "latest_version": "3.1.5",
+      "android_support_version": "5.1",
+      "pattern": [
+        "play store",
+        "google play store",
+        "playstore",
+        "playstore app",
+        "google play",
+        "प्ले स्टोर",
+        "गूगल प्ले स्टोर"
+      ]
+    }
+  ],
+  "features": [
+    {
+      "name": "atpTag",
+      "is_enabled": true,
+      "values": "on"
+    },
+    {
+      "name": "ml_v2_whitelisted_circles",
+      "is_enabled": true,
+      "values": "*"
+    },
+    {
+      "name": "singlewords",
+      "is_enabled": false,
+      "values": "hi#hello#"
+    },
+    {
+      "name": "jiophone_plan",
+      "is_enabled": true,
+      "values": "1007606#1007607#1007608#1007609#1007610#1007611#1007612#1007613#1007614#1007615#1007616#1007617#1007534#1007542#1007544#1007553#1007554#1007555#1007574#1007575#1007576#1007577#1007578#1007579#1007765#1007766#1007769#1007770#1007772#1007773#1007790#1007779#1007791#1007777#1007784#1007787#1007961#1007962#1007963#1007965#1007964#1007966#1007957#1007960#1007959#1007955#1007956#1007958#1008160#1008162#1008163#1008164#1007236#1007237#1007238#1007239"
+    },
+    {
+      "name": "jio_all_in_one_plan_ids",
+      "is_enabled": true,
+      "values": "1008048#1008201#1008039#1008043#1008051#1008363"
+    }
+  ],
+  "correctionStringData": {
+    "englishCorrectionArray": [
+      {
+        "corrected": "100 percent",
+        "source": "100%"
+      },
+      {
+        "corrected": "billing",
+        "source": "building"
+      },
+      {
+        "corrected": "volte",
+        "source": "bolati"
+      },
+      {
+        "corrected": "high postpaid",
+        "source": "hi postpaid"
+      },
+      {
+        "corrected": "1999",
+        "source": "1 999"
+      },
+      {
+        "corrected": "1999",
+        "source": "1 9999"
+      },
+      {
+        "corrected": "2 6 11",
+        "source": "2611"
+      },
+      {
+        "corrected": "2 6 11",
+        "source": "2 611"
+      },
+      {
+        "corrected": "3g",
+        "source": "three g"
+      },
+      {
+        "corrected": "4g",
+        "source": "for jee"
+      },
+      {
+        "corrected": "4g",
+        "source": "fauji"
+      },
+      {
+        "corrected": "4x",
+        "source": "forex"
+      },
+      {
+        "corrected": "4x",
+        "source": "4 x"
+      },
+      {
+        "corrected": "4x",
+        "source": "xxxx"
+      },
+      {
+        "corrected": "7a",
+        "source": "seven a"
+      },
+      {
+        "corrected": "7a",
+        "source": "sevena"
+      },
+      {
+        "corrected": "808",
+        "source": "80 8"
+      },
+      {
+        "corrected": "808",
+        "source": "8 08"
+      },
+      {
+        "corrected": "a jio",
+        "source": "I jio"
+      },
+      {
+        "corrected": "a jio",
+        "source": "azio"
+      },
+      {
+        "corrected": "a jio",
+        "source": "ago"
+      },
+      {
+        "corrected": "a jio",
+        "source": "e jio"
+      },
+      {
+        "corrected": "a jio",
+        "source": "agio"
+      },
+      {
+        "corrected": "a jio",
+        "source": "on ig"
+      },
+      {
+        "corrected": "a jio",
+        "source": "Azure"
+      },
+      {
+        "corrected": "a jio",
+        "source": "aa jaiyo"
+      },
+      {
+        "corrected": "a jio are",
+        "source": "a g or"
+      },
+      {
+        "corrected": "a jio order",
+        "source": "a g order"
+      },
+      {
+        "corrected": "a jio order",
+        "source": "og order"
+      },
+      {
+        "corrected": "a jio refund",
+        "source": "a jio roof on"
+      },
+      {
+        "corrected": "a jio refund",
+        "source": "age youre a fun"
+      },
+      {
+        "corrected": "a jio refund",
+        "source": "age you are a fun"
+      },
+      {
+        "corrected": "a jio refund",
+        "source": "is your fun"
+      },
+      {
+        "corrected": "a9",
+        "source": "a nine"
+      },
+      {
+        "corrected": "aadhaar",
+        "source": "aadhar"
+      },
+      {
+        "corrected": "airplane",
+        "source": "aeroplane"
+      },
+      {
+        "corrected": "all in one",
+        "source": "all-in-one"
+      },
+      {
+        "corrected": "and",
+        "source": "&"
+      },
+      {
+        "corrected": "annual",
+        "source": "animal"
+      },
+      {
+        "corrected": "billers",
+        "source": "builders"
+      },
+      {
+        "corrected": "bitesize",
+        "source": "bytesize"
+      },
+      {
+        "corrected": "bitesize",
+        "source": "bitsize"
+      },
+      {
+        "corrected": "cant",
+        "source": "can't"
+      },
+      {
+        "corrected": "centrex",
+        "source": "centrix"
+      },
+      {
+        "corrected": "corona",
+        "source": "ko rona"
+      },
+      {
+        "corrected": "corona",
+        "source": "karo na"
+      },
+      {
+        "corrected": "coupon",
+        "source": "copan"
+      },
+      {
+        "corrected": "covid 19",
+        "source": "covid-19"
+      },
+      {
+        "corrected": "delink",
+        "source": "D Link"
+      },
+      {
+        "corrected": "do not",
+        "source": "don't"
+      },
+      {
+        "corrected": "easy gov",
+        "source": "easy girl"
+      },
+      {
+        "corrected": "easy gov",
+        "source": "easy go"
+      },
+      {
+        "corrected": "ebill",
+        "source": "evil"
+      },
+      {
+        "corrected": "entitle",
+        "source": "and title"
+      },
+      {
+        "corrected": "esim",
+        "source": "ecm"
+      },
+      {
+        "corrected": "esim",
+        "source": "e sim"
+      },
+      {
+        "corrected": "fiber",
+        "source": "phiber"
+      },
+      {
+        "corrected": "fiber",
+        "source": "fibre"
+      },
+      {
+        "corrected": "fup",
+        "source": "fqp"
+      },
+      {
+        "corrected": "handset",
+        "source": "hand side"
+      },
+      {
+        "corrected": "hathway",
+        "source": "hathaway"
+      },
+      {
+        "corrected": "hide",
+        "source": "height"
+      },
+      {
+        "corrected": "high",
+        "source": "hai"
+      },
+      {
+        "corrected": "home pack",
+        "source": "home back"
+      },
+      {
+        "corrected": "honor",
+        "source": "honour"
+      },
+      {
+        "corrected": "in jio upi",
+        "source": "NGO u p"
+      },
+      {
+        "corrected": "iql",
+        "source": "IQ well"
+      },
+      {
+        "corrected": "iql",
+        "source": "IQ L"
+      },
+      {
+        "corrected": "iql",
+        "source": "IQit"
+      },
+      {
+        "corrected": "iql",
+        "source": "IQ it"
+      },
+      {
+        "corrected": "iql",
+        "source": "I QL"
+      },
+      {
+        "corrected": "ir",
+        "source": "Iyer"
+      },
+      {
+        "corrected": "ir",
+        "source": "are yaar"
+      },
+      {
+        "corrected": "isd sms",
+        "source": "isdsms"
+      },
+      {
+        "corrected": "isd sms",
+        "source": "istsms"
+      },
+      {
+        "corrected": "iuc",
+        "source": "Aayushi"
+      },
+      {
+        "corrected": "iuc",
+        "source": "are you see"
+      },
+      {
+        "corrected": "iuc",
+        "source": "Ayush"
+      },
+      {
+        "corrected": "iuc",
+        "source": "Khushi"
+      },
+      {
+        "corrected": "iuc",
+        "source": "r u c"
+      },
+      {
+        "corrected": "jio",
+        "source": "geo"
+      },
+      {
+        "corrected": "jio",
+        "source": "gio"
+      },
+      {
+        "corrected": "jio 4g",
+        "source": "rio 4G"
+      },
+      {
+        "corrected": "jio 5g",
+        "source": "jiofiG"
+      },
+      {
+        "corrected": "jio disney",
+        "source": "judiciary"
+      },
+      {
+        "corrected": "jio engage",
+        "source": "rio engage"
+      },
+      {
+        "corrected": "jio engage",
+        "source": "jio in gate"
+      },
+      {
+        "corrected": "jio gigafiber",
+        "source": "jio giga for your"
+      },
+      {
+        "corrected": "jio gigafiber",
+        "source": "gov the fiber"
+      },
+      {
+        "corrected": "jio payment",
+        "source": "jiopayment"
+      },
+      {
+        "corrected": "jio payment bank",
+        "source": "jiopaymentbank"
+      },
+      {
+        "corrected": "jio payments bank",
+        "source": "jiopayment Bank"
+      },
+      {
+        "corrected": "jio payments bank",
+        "source": "jiopayments Bank"
+      },
+      {
+        "corrected": "jio phonepe",
+        "source": "jiophonepe"
+      },
+      {
+        "corrected": "jio upi",
+        "source": "jio UTI"
+      },
+      {
+        "corrected": "jio upi",
+        "source": "jio ubi"
+      },
+      {
+        "corrected": "jio upi",
+        "source": "jio uk"
+      },
+      {
+        "corrected": "jio4gvoice",
+        "source": "jio for g voice"
+      },
+      {
+        "corrected": "jio4gvoice",
+        "source": "jio4g voice"
+      },
+      {
+        "corrected": "jio4gvoice",
+        "source": "jio 4g voice"
+      },
+      {
+        "corrected": "jio4gvoice",
+        "source": "jio 4gvoice"
+      },
+      {
+        "corrected": "jioapp",
+        "source": "jio app"
+      },
+      {
+        "corrected": "jiochat",
+        "source": "jio chat"
+      },
+      {
+        "corrected": "jiocinema",
+        "source": "jio cinema"
+      },
+      {
+        "corrected": "jiocloud",
+        "source": "jio cloud"
+      },
+      {
+        "corrected": "jiocloud",
+        "source": "joke loud"
+      },
+      {
+        "corrected": "jioengage",
+        "source": "jioengajioe"
+      },
+      {
+        "corrected": "jiofi",
+        "source": "jio five"
+      },
+      {
+        "corrected": "jiofi",
+        "source": "jio 5"
+      },
+      {
+        "corrected": "jiofi",
+        "source": "jio fi"
+      },
+      {
+        "corrected": "jiofi 1999",
+        "source": "jio 51999"
+      },
+      {
+        "corrected": "jiofi 1999",
+        "source": "jiofi199"
+      },
+      {
+        "corrected": "jiofi 1999",
+        "source": "jiofi1 99"
+      },
+      {
+        "corrected": "jiofi sim",
+        "source": "jio fivesim"
+      },
+      {
+        "corrected": "jiofiber",
+        "source": "jio fiber"
+      },
+      {
+        "corrected": "jiofiber",
+        "source": "jio fibre"
+      },
+      {
+        "corrected": "jiogigafiber",
+        "source": "chico giga fiber"
+      },
+      {
+        "corrected": "jioid",
+        "source": "jio id"
+      },
+      {
+        "corrected": "jiomags",
+        "source": "jio mags"
+      },
+      {
+        "corrected": "jiomeet",
+        "source": "Jio Meet"
+      },
+      {
+        "corrected": "jiomoney",
+        "source": "jio money"
+      },
+      {
+        "corrected": "jiomusic",
+        "source": "jio music"
+      },
+      {
+        "corrected": "jionet",
+        "source": "jio net"
+      },
+      {
+        "corrected": "jionet",
+        "source": "G-unit"
+      },
+      {
+        "corrected": "jionews",
+        "source": "jio news"
+      },
+      {
+        "corrected": "jionews",
+        "source": "geo news"
+      },
+      {
+        "corrected": "jionews",
+        "source": "jeevan news"
+      },
+      {
+        "corrected": "jionewspaper",
+        "source": "jio news paper"
+      },
+      {
+        "corrected": "jiopay",
+        "source": "jio pay"
+      },
+      {
+        "corrected": "jiophone",
+        "source": "jiopjone"
+      },
+      {
+        "corrected": "jiophone",
+        "source": "jio phone"
+      },
+      {
+        "corrected": "jiophone kumbh",
+        "source": "jio full cum"
+      },
+      {
+        "corrected": "jiophones",
+        "source": "jio phones"
+      },
+      {
+        "corrected": "jioplay",
+        "source": "jio play"
+      },
+      {
+        "corrected": "jiosaavn",
+        "source": "jio saavn"
+      },
+      {
+        "corrected": "jiosaavn",
+        "source": "jio seven"
+      },
+      {
+        "corrected": "jiosecurity",
+        "source": "jio security"
+      },
+      {
+        "corrected": "jiotune",
+        "source": "jio tune"
+      },
+      {
+        "corrected": "jiotunes",
+        "source": "jio tunes"
+      },
+      {
+        "corrected": "jiotv",
+        "source": "jio tv"
+      },
+      {
+        "corrected": "jioxpressnews",
+        "source": "jio xpress news"
+      },
+      {
+        "corrected": "jioxpressnews",
+        "source": "jio express news"
+      },
+      {
+        "corrected": "kumbh",
+        "source": "cum"
+      },
+      {
+        "corrected": "lg tv",
+        "source": "lgtv"
+      },
+      {
+        "corrected": "lg w10",
+        "source": "lgw 10"
+      },
+      {
+        "corrected": "lg w30",
+        "source": "lgw 30"
+      },
+      {
+        "corrected": "local aadhaar",
+        "source": "Locallaadhar"
+      },
+      {
+        "corrected": "logged in",
+        "source": "logged-in"
+      },
+      {
+        "corrected": "lyf",
+        "source": "life"
+      },
+      {
+        "corrected": "medlife",
+        "source": "medlyf"
+      },
+      {
+        "corrected": "medlife",
+        "source": "metlife"
+      },
+      {
+        "corrected": "mhere",
+        "source": "am here"
+      },
+      {
+        "corrected": "mhere",
+        "source": "em here"
+      },
+      {
+        "corrected": "mistakely",
+        "source": "mistake lee"
+      },
+      {
+        "corrected": "mpin",
+        "source": "M pin"
+      },
+      {
+        "corrected": "mpin",
+        "source": "and pen"
+      },
+      {
+        "corrected": "my mpin",
+        "source": "Im pin"
+      },
+      {
+        "corrected": "my upi",
+        "source": "my UPA"
+      },
+      {
+        "corrected": "myjio",
+        "source": "my jio"
+      },
+      {
+        "corrected": "myjio fiber",
+        "source": "Myjio fibre"
+      },
+      {
+        "corrected": "myjio fiber",
+        "source": "Myjiofiber"
+      },
+      {
+        "corrected": "myjio upi",
+        "source": "myjio UPA"
+      },
+      {
+        "corrected": "myjio upi",
+        "source": "myjio u p a"
+      },
+      {
+        "corrected": "myjio upi id",
+        "source": "myjio UID"
+      },
+      {
+        "corrected": "note10",
+        "source": "note 10"
+      },
+      {
+        "corrected": "of esim",
+        "source": "of pcm"
+      },
+      {
+        "corrected": "one sim",
+        "source": "onesim"
+      },
+      {
+        "corrected": "oneplus 6t",
+        "source": "1 + 60"
+      },
+      {
+        "corrected": "oneplus 8",
+        "source": "one +8"
+      },
+      {
+        "corrected": "oneplus 8",
+        "source": "1+8"
+      },
+      {
+        "corrected": "percent",
+        "source": "%"
+      },
+      {
+        "corrected": "pooja",
+        "source": "puja"
+      },
+      {
+        "corrected": "prime",
+        "source": "crime"
+      },
+      {
+        "corrected": "quikr",
+        "source": "quicker"
+      },
+      {
+        "corrected": "realme",
+        "source": "real me"
+      },
+      {
+        "corrected": "recharge toll in",
+        "source": "Richa stolen"
+      },
+      {
+        "corrected": "redmi",
+        "source": "red me"
+      },
+      {
+        "corrected": "redmi 7a",
+        "source": "redmi 78"
+      },
+      {
+        "corrected": "redmi 8a",
+        "source": "redmi 80"
+      },
+      {
+        "corrected": "regional",
+        "source": "reginoal"
+      },
+      {
+        "corrected": "reno",
+        "source": "renault"
+      },
+      {
+        "corrected": "return desk",
+        "source": "written desk"
+      },
+      {
+        "corrected": "rider",
+        "source": "Raider"
+      },
+      {
+        "corrected": "ringtone",
+        "source": "rigton"
+      },
+      {
+        "corrected": "rog",
+        "source": "rouge"
+      },
+      {
+        "corrected": "rog",
+        "source": "rogue"
+      },
+      {
+        "corrected": "rs 808",
+        "source": "rs.8 08"
+      },
+      {
+        "corrected": "s10",
+        "source": "S Rs..10"
+      },
+      {
+        "corrected": "s10",
+        "source": "s 10"
+      },
+      {
+        "corrected": "salt iql",
+        "source": "salt i ql"
+      },
+      {
+        "corrected": "service",
+        "source": "sarvis"
+      },
+      {
+        "corrected": "slash",
+        "source": "/"
+      },
+      {
+        "corrected": "sodexo",
+        "source": "soda axo"
+      },
+      {
+        "corrected": "sodexo",
+        "source": "sword XO"
+      },
+      {
+        "corrected": "sodexo",
+        "source": "so dexo"
+      },
+      {
+        "corrected": "sodexo",
+        "source": "Sadak so"
+      },
+      {
+        "corrected": "sodexo",
+        "source": "so deck so"
+      },
+      {
+        "corrected": "sodexo",
+        "source": "show deck so"
+      },
+      {
+        "corrected": "sodexo",
+        "source": "shudhanshu"
+      },
+      {
+        "corrected": "sodexo",
+        "source": "sudeck so"
+      },
+      {
+        "corrected": "ssid",
+        "source": "ss id"
+      },
+      {
+        "corrected": "ssid",
+        "source": "sss id"
+      },
+      {
+        "corrected": "statement",
+        "source": "satement"
+      },
+      {
+        "corrected": "statement",
+        "source": "statment"
+      },
+      {
+        "corrected": "statement",
+        "source": "stetment"
+      },
+      {
+        "corrected": "statement",
+        "source": "stement"
+      },
+      {
+        "corrected": "statement",
+        "source": "stemented"
+      },
+      {
+        "corrected": "statement",
+        "source": "satetment"
+      },
+      {
+        "corrected": "tambola",
+        "source": "tombola"
+      },
+      {
+        "corrected": "tele verification",
+        "source": "tele-verification"
+      },
+      {
+        "corrected": "tele verify",
+        "source": "tele-verify"
+      },
+      {
+        "corrected": "todays",
+        "source": "today's"
+      },
+      {
+        "corrected": "unredeemed",
+        "source": "on redeemed"
+      },
+      {
+        "corrected": "upi",
+        "source": "upsc"
+      },
+      {
+        "corrected": "upi",
+        "source": "u p i"
+      },
+      {
+        "corrected": "upi",
+        "source": "upii"
+      },
+      {
+        "corrected": "upi",
+        "source": "UPA"
+      },
+      {
+        "corrected": "upi bill",
+        "source": "UTI bill"
+      },
+      {
+        "corrected": "upi bill",
+        "source": "UPPCL"
+      },
+      {
+        "corrected": "upi id",
+        "source": "u p i d"
+      },
+      {
+        "corrected": "upi id",
+        "source": "upi i d"
+      },
+      {
+        "corrected": "using upi",
+        "source": "using ubi"
+      },
+      {
+        "corrected": "using upi",
+        "source": "using API"
+      },
+      {
+        "corrected": "v19",
+        "source": "v9 3"
+      },
+      {
+        "corrected": "v19",
+        "source": "v 19"
+      },
+      {
+        "corrected": "viewing",
+        "source": "weaving"
+      },
+      {
+        "corrected": "volte",
+        "source": "bolti"
+      },
+      {
+        "corrected": "volte",
+        "source": "vaulty"
+      },
+      {
+        "corrected": "volte",
+        "source": "voltage"
+      },
+      {
+        "corrected": "volte",
+        "source": "volti"
+      },
+      {
+        "corrected": "volte",
+        "source": "voltei"
+      },
+      {
+        "corrected": "voucher",
+        "source": "vocher"
+      },
+      {
+        "corrected": "whats",
+        "source": "what's"
+      },
+      {
+        "corrected": "low",
+        "source": "lo"
+      },
+      {
+        "corrected": "whatsapp",
+        "source": "what isApp"
+      },
+      {
+        "corrected": "wheel",
+        "source": "veal"
+      },
+      {
+        "corrected": "wifi",
+        "source": "wi fi"
+      },
+      {
+        "corrected": "wifi",
+        "source": "Wi-Fi"
+      },
+      {
+        "corrected": "with upi",
+        "source": "with UTI"
+      },
+      {
+        "corrected": "with upi",
+        "source": "with uk"
+      },
+      {
+        "corrected": "say",
+        "source": "se"
+      },
+      {
+        "corrected": "technical problem",
+        "source": "technicallproblem"
+      },
+      {
+        "corrected": "medical schemes",
+        "source": "medicallschemes"
+      },
+      {
+        "corrected": "oppo",
+        "source": "opera"
+      },
+      {
+        "corrected": "wheel",
+        "source": "we'll"
+      },
+      {
+        "corrected": "regional",
+        "source": "reJional"
+      },
+      {
+        "corrected": "paygo",
+        "source": "pago"
+      },
+      {
+        "corrected": "create",
+        "source": "creata"
+      },
+      {
+        "corrected": "statement",
+        "source": "steatment"
+      },
+      {
+        "corrected": "jio upi",
+        "source": "jio API"
+      },
+      {
+        "corrected": "resume",
+        "source": "resuma"
+      },
+      {
+        "corrected": "online sim",
+        "source": "onlinesim"
+      },
+      {
+        "corrected": "documents",
+        "source": "dokubhents"
+      },
+      {
+        "corrected": "invite",
+        "source": "invita"
+      },
+      {
+        "corrected": "callertune",
+        "source": "collertune"
+      },
+      {
+        "corrected": "callertune",
+        "source": "callartune"
+      },
+      {
+        "corrected": "Medical Services",
+        "source": "MedicallServices"
+      },
+      {
+        "corrected": "callertune",
+        "source": "colertune"
+      },
+      {
+        "corrected": "callertune",
+        "source": "callrtune"
+      },
+      {
+        "corrected": "callertune",
+        "source": "calltune"
+      },
+      {
+        "corrected": "callertune",
+        "source": "kala tune"
+      },
+      {
+        "corrected": "jiotones",
+        "source": "jiotons"
+      },
+      {
+        "corrected": "my plan",
+        "source": "my paln"
+      },
+      {
+        "corrected": "ringtone",
+        "source": "ringtoon"
+      },
+      {
+        "corrected": "statement",
+        "source": "my stament"
+      },
+      {
+        "corrected": "statement",
+        "source": "my steatment"
+      },
+      {
+        "corrected": "statement",
+        "source": "my stetmant"
+      },
+      {
+        "corrected": "statement",
+        "source": "my stetament"
+      },
+      {
+        "corrected": "voucher",
+        "source": "vauchar"
+      },
+      {
+        "corrected": "voucher",
+        "source": "vochar"
+      },
+      {
+        "corrected": "voucher",
+        "source": "vaucher"
+      },
+      {
+        "corrected": "voucher",
+        "source": "vouchar"
+      },
+      {
+        "corrected": "problem",
+        "source": "priblem"
+      }
+    ],
+    "hindiCorrectionArray": [
+      {
+        "corrected": "2 6 11 एरर",
+        "source": "तो छे ग्यारा इधर"
+      },
+      {
+        "corrected": "2.2",
+        "source": "टू डोर टू"
+      },
+      {
+        "corrected": "40 gb",
+        "source": "फोर्टी gb"
+      },
+      {
+        "corrected": "44 डिस्काउंट",
+        "source": "पॉटी फ़ोर्ड डिस्काउंट"
+      },
+      {
+        "corrected": "4g",
+        "source": "फौजी"
+      },
+      {
+        "corrected": "4g",
+        "source": "फ़ोरजी"
+      },
+      {
+        "corrected": "4g",
+        "source": "फोजी"
+      },
+      {
+        "corrected": "4g वॉइस",
+        "source": "फ़ोरजी वो इसमें"
+      },
+      {
+        "corrected": "4g वॉइस",
+        "source": "फ़ोरजी वो किसी"
+      },
+      {
+        "corrected": "4g वॉइस",
+        "source": "फ़ोरजिओ इसके"
+      },
+      {
+        "corrected": "4g वॉइस",
+        "source": "फ़ोरजी वो इसके"
+      },
+      {
+        "corrected": "4g वॉइस",
+        "source": "खोजी वॉयस"
+      },
+      {
+        "corrected": "4g वॉइस",
+        "source": "फ़ोर जी वॉइस"
+      },
+      {
+        "corrected": "4g वॉइस",
+        "source": "4जी वॉयस"
+      },
+      {
+        "corrected": "4g वॉइस ऐप",
+        "source": "फ़ोरजी वॉट्सऐप"
+      },
+      {
+        "corrected": "7a",
+        "source": "सेवन ए"
+      },
+      {
+        "corrected": "7a",
+        "source": "स्वैन एक"
+      },
+      {
+        "corrected": "8a",
+        "source": "8 ए"
+      },
+      {
+        "corrected": "8a",
+        "source": "आठे"
+      },
+      {
+        "corrected": "999",
+        "source": "नौ नौ9"
+      },
+      {
+        "corrected": "a9",
+        "source": "कैनाइन"
+      },
+      {
+        "corrected": "g8",
+        "source": "जी 8"
+      },
+      {
+        "corrected": "g8 प्लस",
+        "source": "जी 8 क्लास"
+      },
+      {
+        "corrected": "s10",
+        "source": "एस टैब"
+      },
+      {
+        "corrected": "s10",
+        "source": "एस t एन"
+      },
+      {
+        "corrected": "s10",
+        "source": "एस ट्रेन"
+      },
+      {
+        "corrected": "w10",
+        "source": "डब्ल्यू टेन"
+      },
+      {
+        "corrected": "w30",
+        "source": "डब्ल्यू था ड्रिंक"
+      },
+      {
+        "corrected": "w30",
+        "source": "डब्लू 30"
+      },
+      {
+        "corrected": "अकाउंट",
+        "source": "फाउंटेन"
+      },
+      {
+        "corrected": "अकाउंट लिंक",
+        "source": "काउंसलिंग"
+      },
+      {
+        "corrected": "अनइंस्टॉल",
+        "source": "आनंद स्टॉल"
+      },
+      {
+        "corrected": "अनकंडीशनल",
+        "source": "अन कंडीशनर"
+      },
+      {
+        "corrected": "अनलिंक",
+        "source": "अंडरलिंग"
+      },
+      {
+        "corrected": "अमाउंट",
+        "source": "माउंट"
+      },
+      {
+        "corrected": "अमेजॉन",
+        "source": "अमेज़न"
+      },
+      {
+        "corrected": "अमेजॉन",
+        "source": "ऐमेज़ॉन"
+      },
+      {
+        "corrected": "अमेजॉन",
+        "source": "अमेजोन"
+      },
+      {
+        "corrected": "अमेजॉन प्राइम",
+        "source": "रमज़ान प्राइवेट"
+      },
+      {
+        "corrected": "अमेजॉन प्राइम",
+        "source": "वर्जन प्राइवेट"
+      },
+      {
+        "corrected": "अमेजॉन प्राइम",
+        "source": "अर्थव्यवस्थाएं"
+      },
+      {
+        "corrected": "अमेजॉन प्राइम",
+        "source": "आवाज़ा प्राइवेट"
+      },
+      {
+        "corrected": "अमेजॉन प्राइम ऑफर",
+        "source": "सैमसन प्राइम होटल"
+      },
+      {
+        "corrected": "अमेजॉन प्राइम ऑफर",
+        "source": "सैमसन प्राइम काम कर"
+      },
+      {
+        "corrected": "अलर्ट",
+        "source": "झालर"
+      },
+      {
+        "corrected": "अल्टरनेट",
+        "source": "डोनेट"
+      },
+      {
+        "corrected": "अवेल",
+        "source": "फ़ील"
+      },
+      {
+        "corrected": "असूस आर ओ जी",
+        "source": "आसुस आओ जी"
+      },
+      {
+        "corrected": "आंसर",
+        "source": "आन्सर"
+      },
+      {
+        "corrected": "आईआर",
+        "source": "आई आर"
+      },
+      {
+        "corrected": "आईआर",
+        "source": "आयी आर"
+      },
+      {
+        "corrected": "आईआर प्लान",
+        "source": "आए और प्लान"
+      },
+      {
+        "corrected": "आईआर प्लान",
+        "source": "आयल प्लान"
+      },
+      {
+        "corrected": "आईएफएससी",
+        "source": "आयी f ए"
+      },
+      {
+        "corrected": "आईएफएससी",
+        "source": "आए फाँसी"
+      },
+      {
+        "corrected": "आईएफएससी",
+        "source": "आए फिर से"
+      },
+      {
+        "corrected": "आईएफएससी",
+        "source": "आयी f ए"
+      },
+      {
+        "corrected": "आईएसडी",
+        "source": "आईएसडीडी"
+      },
+      {
+        "corrected": "आईडी",
+        "source": "आयी t"
+      },
+      {
+        "corrected": "आईफोन",
+        "source": "आयी फ़ोन"
+      },
+      {
+        "corrected": "आईयूसी",
+        "source": "आयुषी"
+      },
+      {
+        "corrected": "आईयूसी",
+        "source": "आए यूसी"
+      },
+      {
+        "corrected": "आईयूसी",
+        "source": "आय यू सी"
+      },
+      {
+        "corrected": "आईयूसी",
+        "source": "आयी यू सी"
+      },
+      {
+        "corrected": "आईयूसी",
+        "source": "आइए उसी"
+      },
+      {
+        "corrected": "आईयूसी",
+        "source": "आइ यू सी"
+      },
+      {
+        "corrected": "आर एम एन",
+        "source": "आर m एन"
+      },
+      {
+        "corrected": "आर एम एन",
+        "source": "आरे मैंने"
+      },
+      {
+        "corrected": "आर एम एन",
+        "source": "आर्यमन"
+      },
+      {
+        "corrected": "आसुस",
+        "source": "आंसू"
+      },
+      {
+        "corrected": "इंटरकनेक्ट",
+        "source": "इंटर कला"
+      },
+      {
+        "corrected": "इंटरकनेक्ट",
+        "source": "एंटर कनेक्ट"
+      },
+      {
+        "corrected": "इंटरकनेक्ट यूसेज",
+        "source": "इंटर करने यूसेज"
+      },
+      {
+        "corrected": "इंटरकनेक्ट यूसेज",
+        "source": "एंटर करने यूसेज़"
+      },
+      {
+        "corrected": "इंटरकनेक्ट यूसेज",
+        "source": "इंटर करने के यूसेज़"
+      },
+      {
+        "corrected": "इंटरकनेक्ट यूसेज",
+        "source": "इंटर करना है यूजर्ज़"
+      },
+      {
+        "corrected": "इंटरफेस",
+        "source": "इंटरफ़ेस"
+      },
+      {
+        "corrected": "इंटरफेस पेज",
+        "source": "इंटरफ़ेस psu"
+      },
+      {
+        "corrected": "इंटरफेस पेज",
+        "source": "इंटरफ़ेस बीच"
+      },
+      {
+        "corrected": "इंटरफेस पेज",
+        "source": "इंटरफ़ेस पैक"
+      },
+      {
+        "corrected": "इंटरफेस पेज",
+        "source": "इंटरफ़ेस पिच"
+      },
+      {
+        "corrected": "इंटरफेस पेज",
+        "source": "इंटरफ़ेस स्पीच"
+      },
+      {
+        "corrected": "इंटरफेस पेज",
+        "source": "इंटरफ़ेयर स्पीच"
+      },
+      {
+        "corrected": "इंटरैक्ट",
+        "source": "इंटरेक्ट"
+      },
+      {
+        "corrected": "इंडीकेट",
+        "source": "इंडिया गेट"
+      },
+      {
+        "corrected": "इंफिनिक्स",
+        "source": "इनसे नेक्स्ट"
+      },
+      {
+        "corrected": "इंफिनिक्स",
+        "source": "इन फीनिक्स"
+      },
+      {
+        "corrected": "इंफिनिक्स",
+        "source": "तनिष्क के"
+      },
+      {
+        "corrected": "इंफिनिक्स",
+        "source": "इन फिर नेक्स्ट"
+      },
+      {
+        "corrected": "इजी गवर्नमेंट",
+        "source": "ec गवर्मेंट"
+      },
+      {
+        "corrected": "इजी गवर्नमेंट",
+        "source": "eg ग्राफ"
+      },
+      {
+        "corrected": "इजी गवर्नमेंट",
+        "source": "ईज़ी गवर्मेंट"
+      },
+      {
+        "corrected": "इजी गवर्नमेंट",
+        "source": "ई जी गवर्मेंट"
+      },
+      {
+        "corrected": "इजी गवर्नमेंट",
+        "source": "इसी गवर्मेंट"
+      },
+      {
+        "corrected": "इजी गवर्नमेंट",
+        "source": "तीसरी गवर्मेंट"
+      },
+      {
+        "corrected": "ईज़ीगोव",
+        "source": "इजी योगी"
+      },
+      {
+        "corrected": "इजी गवर्नमेंट",
+        "source": "ec गवर्मेंट"
+      },
+      {
+        "corrected": "इन जिओ",
+        "source": "इन जीवों"
+      },
+      {
+        "corrected": "इनेबल",
+        "source": "अनेबल"
+      },
+      {
+        "corrected": "इनेबल",
+        "source": "निर्बल"
+      },
+      {
+        "corrected": "इशू",
+        "source": "यीशु"
+      },
+      {
+        "corrected": "ईज़ीगोव",
+        "source": "डिजिजीओवी"
+      },
+      {
+        "corrected": "ई बिल",
+        "source": "इविल"
+      },
+      {
+        "corrected": "ई बिल",
+        "source": "इ विल"
+      },
+      {
+        "corrected": "ई सिम",
+        "source": "ही सीन"
+      },
+      {
+        "corrected": "ई सिम",
+        "source": "ई सैम"
+      },
+      {
+        "corrected": "ई सिम",
+        "source": "इतनी सेम"
+      },
+      {
+        "corrected": "ई सिम आईडी",
+        "source": "एसएमआईडी"
+      },
+      {
+        "corrected": "ई सिम आईडी",
+        "source": "एसएम आईडी"
+      },
+      {
+        "corrected": "ईएमआई",
+        "source": "यह माइक"
+      },
+      {
+        "corrected": "ईएमआई",
+        "source": "यह माइ"
+      },
+      {
+        "corrected": "ईएमआई",
+        "source": "ई एम आई"
+      },
+      {
+        "corrected": "ईएमआई",
+        "source": "ईईएमआई"
+      },
+      {
+        "corrected": "ईज़ीगोव",
+        "source": "ec गाँव"
+      },
+      {
+        "corrected": "ईज़ीगोव",
+        "source": "eg गाँव"
+      },
+      {
+        "corrected": "ईज़ीगोव",
+        "source": "इधर ही गाँव"
+      },
+      {
+        "corrected": "ईज़ीगोव",
+        "source": "जीत ऑफ़"
+      },
+      {
+        "corrected": "ईज़ीगोव",
+        "source": "ईदगाह"
+      },
+      {
+        "corrected": "ईज़ीगोव",
+        "source": "ईज़ी गर्व"
+      },
+      {
+        "corrected": "ईज़ीगोव",
+        "source": "ईज़ी गाँव"
+      },
+      {
+        "corrected": "ईज़ीगोव",
+        "source": "इसी गाँव"
+      },
+      {
+        "corrected": "ईज़ीगोव",
+        "source": "इस जीत"
+      },
+      {
+        "corrected": "ईज़ीगोव",
+        "source": "eg गाँव"
+      },
+      {
+        "corrected": "ईज़ीगोव पे",
+        "source": "इसी गप्पे"
+      },
+      {
+        "corrected": "ईमेल आईडी",
+        "source": "ई मेल id"
+      },
+      {
+        "corrected": "ईमेल आईडी",
+        "source": "ईमेल id"
+      },
+      {
+        "corrected": "ए जिओ",
+        "source": "एजीयो"
+      },
+      {
+        "corrected": "ए जिओ",
+        "source": "एनजीओ"
+      },
+      {
+        "corrected": "ए जिओ",
+        "source": "हाजिओं"
+      },
+      {
+        "corrected": "ए जिओ",
+        "source": "अजिओ"
+      },
+      {
+        "corrected": "ए जिओ",
+        "source": "एचवीओ"
+      },
+      {
+        "corrected": "ए जिओ",
+        "source": "आईटीओ"
+      },
+      {
+        "corrected": "ए जिओ",
+        "source": "एसीओ"
+      },
+      {
+        "corrected": "ए जिओ",
+        "source": "एड़ियों"
+      },
+      {
+        "corrected": "ए जिओ",
+        "source": "एपीओ"
+      },
+      {
+        "corrected": "ए जिओ",
+        "source": "अज्जू"
+      },
+      {
+        "corrected": "ए जिओ",
+        "source": "अंखियों"
+      },
+      {
+        "corrected": "ए जिओ",
+        "source": "आ ज्यों"
+      },
+      {
+        "corrected": "ए जिओ",
+        "source": "आजिओ"
+      },
+      {
+        "corrected": "ए जिओ",
+        "source": "आज ज्यों"
+      },
+      {
+        "corrected": "ए जिओ",
+        "source": "आतंकियों"
+      },
+      {
+        "corrected": "ए जिओ",
+        "source": "आदमियों"
+      },
+      {
+        "corrected": "ए जिओ",
+        "source": "एक जीव"
+      },
+      {
+        "corrected": "ए जिओ",
+        "source": "आज योग"
+      },
+      {
+        "corrected": "ए जिओ",
+        "source": "अर्जिओं"
+      },
+      {
+        "corrected": "ए जिओ",
+        "source": "निजी योग"
+      },
+      {
+        "corrected": "ए जिओ",
+        "source": "आ जाओ"
+      },
+      {
+        "corrected": "ए जिओ",
+        "source": "अजीबो"
+      },
+      {
+        "corrected": "ए जिओ",
+        "source": "ये जीओर"
+      },
+      {
+        "corrected": "ए जिओ",
+        "source": "आइजीओह"
+      },
+      {
+        "corrected": "ए जिओ",
+        "source": "अजीब"
+      },
+      {
+        "corrected": "ए जिओ",
+        "source": "आंसुओं"
+      },
+      {
+        "corrected": "ए जिओ",
+        "source": "आठ ज़िलों"
+      },
+      {
+        "corrected": "ए जिओ",
+        "source": "एक योगा"
+      },
+      {
+        "corrected": "ए जिओ",
+        "source": "एजेंसियों"
+      },
+      {
+        "corrected": "ए जिओ",
+        "source": "एक जुओं"
+      },
+      {
+        "corrected": "ए जिओ",
+        "source": "अच जीओ"
+      },
+      {
+        "corrected": "ए जिओ",
+        "source": "एंजियो"
+      },
+      {
+        "corrected": "ए जिओ",
+        "source": "nजिओ"
+      },
+      {
+        "corrected": "ए जिओ",
+        "source": "अर्जियों"
+      },
+      {
+        "corrected": "ए जिओ",
+        "source": "अर्ज़ी"
+      },
+      {
+        "corrected": "ए जिओ",
+        "source": "एन जीओ"
+      },
+      {
+        "corrected": "ए जिओ के",
+        "source": "अजीब ok"
+      },
+      {
+        "corrected": "ए जिओ केयर",
+        "source": "आइजीओह ख़ैर"
+      },
+      {
+        "corrected": "ए जिओ केयर",
+        "source": "आज क्यों केर"
+      },
+      {
+        "corrected": "ए जिओ केयर",
+        "source": "आज जो ख़ैर"
+      },
+      {
+        "corrected": "ए जिओ केयर",
+        "source": "आज यॉर्कर"
+      },
+      {
+        "corrected": "एंटरप्राइज",
+        "source": "अंतरप्राइस"
+      },
+      {
+        "corrected": "एंटरप्राइज",
+        "source": "इंटरप्राइज"
+      },
+      {
+        "corrected": "एआरपी",
+        "source": "आर पी"
+      },
+      {
+        "corrected": "एआरपी",
+        "source": "ईआरपी"
+      },
+      {
+        "corrected": "एक्टिवेट",
+        "source": "ट्वीट"
+      },
+      {
+        "corrected": "एक्सचेंज",
+        "source": "x जीन"
+      },
+      {
+        "corrected": "एक्सपायर",
+        "source": "एक्सपाअर"
+      },
+      {
+        "corrected": "एक्सप्लोर",
+        "source": "एक्सप्लोरर"
+      },
+      {
+        "corrected": "एक्सप्लोर",
+        "source": "एक्स फ्लोर"
+      },
+      {
+        "corrected": "एक्सप्लोर",
+        "source": "टैक्स फ्लोर"
+      },
+      {
+        "corrected": "एक्सप्लोर",
+        "source": "एक्स प्लेयर"
+      },
+      {
+        "corrected": "एक्सेस",
+        "source": "एक्सिस"
+      },
+      {
+        "corrected": "एक्सेस",
+        "source": "टैक्सेस"
+      },
+      {
+        "corrected": "एक्सेसरीज",
+        "source": "ऐसे सर इस"
+      },
+      {
+        "corrected": "एक्सेसरीज",
+        "source": "ऐसे शरीफ"
+      },
+      {
+        "corrected": "एग्जाम",
+        "source": "एक जाम"
+      },
+      {
+        "corrected": "एचपी",
+        "source": "एच भी"
+      },
+      {
+        "corrected": "एचपी",
+        "source": "कैच भी"
+      },
+      {
+        "corrected": "एचपी",
+        "source": "एच जी"
+      },
+      {
+        "corrected": "एचपी क्रोमबुक",
+        "source": "एच पी क्रो भज्जी"
+      },
+      {
+        "corrected": "एचपी क्रोमबुक",
+        "source": "स्पेक्ट्रम भज्जी"
+      },
+      {
+        "corrected": "एड ऑन",
+        "source": "ऐलान"
+      },
+      {
+        "corrected": "एड ऑन पैक्स",
+        "source": "ऐलान पैक"
+      },
+      {
+        "corrected": "एडवाइजर",
+        "source": "एडवाइज़र"
+      },
+      {
+        "corrected": "एडिट",
+        "source": "ऑडिट"
+      },
+      {
+        "corrected": "एड्रेस",
+        "source": "एएड्रेस"
+      },
+      {
+        "corrected": "एड्रेस",
+        "source": "ऐएड्रेस"
+      },
+      {
+        "corrected": "एनरोल",
+        "source": "एंडरोल"
+      },
+      {
+        "corrected": "एनरोलिंग",
+        "source": "अनरोलिंग"
+      },
+      {
+        "corrected": "जिओफाई",
+        "source": "जियो फ़ाइ"
+      },
+      {
+        "corrected": "जिओफाई",
+        "source": "जियोफाई"
+      },
+      {
+        "corrected": "जिओफाई",
+        "source": "जियो फ़ाई"
+      },
+      {
+        "corrected": "एनुअल",
+        "source": "ऐन्यूअल"
+      },
+      {
+        "corrected": "एनुअल पैक",
+        "source": "अनिल पैक"
+      },
+      {
+        "corrected": "एनुअल प्लान",
+        "source": "अनवर प्लान"
+      },
+      {
+        "corrected": "एनेबल",
+        "source": "एनिमल"
+      },
+      {
+        "corrected": "एप्लीकेबल",
+        "source": "अपनी केवल"
+      },
+      {
+        "corrected": "एप्लीकेबल",
+        "source": "अप ली केबल"
+      },
+      {
+        "corrected": "एप्लीकेबल",
+        "source": "अब केबल"
+      },
+      {
+        "corrected": "एप्लीकेबल",
+        "source": "अप्लाई केवल"
+      },
+      {
+        "corrected": "एप्लीकेबल",
+        "source": "अगली केवल"
+      },
+      {
+        "corrected": "एप्लीकेबल",
+        "source": "अपनी केबल"
+      },
+      {
+        "corrected": "एप्लीकेशन",
+        "source": "आप्लिकेशन"
+      },
+      {
+        "corrected": "एप्लीकेशन",
+        "source": "अप्लिकेशन"
+      },
+      {
+        "corrected": "एफ यूपी",
+        "source": "याद यूपी"
+      },
+      {
+        "corrected": "एफ यूपी",
+        "source": "पीओपी"
+      },
+      {
+        "corrected": "एफ यूपी",
+        "source": "या पीओपी"
+      },
+      {
+        "corrected": "एफ यूपी",
+        "source": "ऐप्स यूपी"
+      },
+      {
+        "corrected": "एफ यूपी",
+        "source": "एप्पस यूपी"
+      },
+      {
+        "corrected": "एफयूपी",
+        "source": "एफ़ up"
+      },
+      {
+        "corrected": "एफयूपी",
+        "source": "एस up"
+      },
+      {
+        "corrected": "एफयूपी",
+        "source": "एस यू भी"
+      },
+      {
+        "corrected": "एमएमएस",
+        "source": "एम एम एस"
+      },
+      {
+        "corrected": "एमएमएस",
+        "source": "एमएनएस"
+      },
+      {
+        "corrected": "एमपिन",
+        "source": "एम पिन"
+      },
+      {
+        "corrected": "एमपिन",
+        "source": "एमपी"
+      },
+      {
+        "corrected": "एमपिन",
+        "source": "एम पीन"
+      },
+      {
+        "corrected": "एमपिन",
+        "source": "अंकल"
+      },
+      {
+        "corrected": "एमपिन",
+        "source": "m पिन"
+      },
+      {
+        "corrected": "एलजी",
+        "source": "एन जी"
+      },
+      {
+        "corrected": "एलटीइ",
+        "source": "एलटी"
+      },
+      {
+        "corrected": "एलटीइ",
+        "source": "एलटीइई"
+      },
+      {
+        "corrected": "एलटीइ",
+        "source": "एलटीइइ"
+      },
+      {
+        "corrected": "एलटीइ",
+        "source": "एंटी इस"
+      },
+      {
+        "corrected": "एलटीई",
+        "source": "l t ई"
+      },
+      {
+        "corrected": "एलिजिबल",
+        "source": "लीजिए ब्लू"
+      },
+      {
+        "corrected": "एलिजिबिलिटी",
+        "source": "लीचेबिलिटी"
+      },
+      {
+        "corrected": "एस एम डी पी",
+        "source": "ऐसे में dp"
+      },
+      {
+        "corrected": "एसएमएस",
+        "source": "एस एम एस"
+      },
+      {
+        "corrected": "एसएमएस",
+        "source": "एस m एस"
+      },
+      {
+        "corrected": "एसएस आईडी",
+        "source": "ऐसे cid"
+      },
+      {
+        "corrected": "एसएस आईडी",
+        "source": "एस एस आयी t"
+      },
+      {
+        "corrected": "एसएस आईडी",
+        "source": "ऐसे cआईडी"
+      },
+      {
+        "corrected": "एसएस आईडी",
+        "source": "ऐसे साइड b"
+      },
+      {
+        "corrected": "एसटीबी",
+        "source": "एसटीवी"
+      },
+      {
+        "corrected": "एसटीबी रिस्टार्ट",
+        "source": "stbir स्टार्ट"
+      },
+      {
+        "corrected": "ऐड",
+        "source": "आड़"
+      },
+      {
+        "corrected": "ऐडऑन",
+        "source": "डॉन"
+      },
+      {
+        "corrected": "ऐडऑन",
+        "source": "ऍड-ऑन्स"
+      },
+      {
+        "corrected": "ऐडऑन पैक्स",
+        "source": "ऐडऑनपेड्स"
+      },
+      {
+        "corrected": "ऐप",
+        "source": "ऍप"
+      },
+      {
+        "corrected": "ऐप",
+        "source": "अप्प"
+      },
+      {
+        "corrected": "ऐप",
+        "source": "ऐज"
+      },
+      {
+        "corrected": "ऐप",
+        "source": "आयात"
+      },
+      {
+        "corrected": "ऐप अनइंस्टॉल",
+        "source": "अपना नियंत्रण"
+      },
+      {
+        "corrected": "ऐप अनइंस्टॉल",
+        "source": "हम अनइंस्टॉल"
+      },
+      {
+        "corrected": "ऐप अनइंस्टॉल",
+        "source": "आप स्थान इंस्टॉल"
+      },
+      {
+        "corrected": "ऐप का फीडबैक",
+        "source": "आपका फ़ीट बात"
+      },
+      {
+        "corrected": "ऐप्स",
+        "source": "एप्प्स"
+      },
+      {
+        "corrected": "ऐप्स",
+        "source": "एप्स"
+      },
+      {
+        "corrected": "ऑटो पे",
+        "source": "टॉपर"
+      },
+      {
+        "corrected": "ऑटो पे",
+        "source": "ऑटो पर"
+      },
+      {
+        "corrected": "ऑटो पे",
+        "source": "ऑटोपे"
+      },
+      {
+        "corrected": "ऑटो पे",
+        "source": "और टोपे"
+      },
+      {
+        "corrected": "ऑटो पे",
+        "source": "और टोपी"
+      },
+      {
+        "corrected": "ऑटो पे",
+        "source": "ऑटो पय"
+      },
+      {
+        "corrected": "ऑपरेटर",
+        "source": "ऑपडेटर"
+      },
+      {
+        "corrected": "ऑफर",
+        "source": "ऑफ़र"
+      },
+      {
+        "corrected": "ऑफर",
+        "source": "ऑफ़िस"
+      },
+      {
+        "corrected": "ऑफर",
+        "source": "ऑफ़ वर्थ"
+      },
+      {
+        "corrected": "ऑफर्स",
+        "source": "ऑफिस"
+      },
+      {
+        "corrected": "ओएनटी",
+        "source": "ओएंटी"
+      },
+      {
+        "corrected": "ओएनटी",
+        "source": "ओएमटी"
+      },
+      {
+        "corrected": "ओएनटी",
+        "source": "एंटी"
+      },
+      {
+        "corrected": "ओवरराइट",
+        "source": "ओवरराईट"
+      },
+      {
+        "corrected": "कंजम्शन",
+        "source": "कंजंक्शन"
+      },
+      {
+        "corrected": "कंजम्शन",
+        "source": "कंजप्शन"
+      },
+      {
+        "corrected": "कंटेंट",
+        "source": "कंटेन"
+      },
+      {
+        "corrected": "कंटेंट",
+        "source": "गठन"
+      },
+      {
+        "corrected": "करंट",
+        "source": "करण"
+      },
+      {
+        "corrected": "कस्टमर",
+        "source": "कस्टोमर"
+      },
+      {
+        "corrected": "कांटेक्ट",
+        "source": "कॉम्पैक्ट"
+      },
+      {
+        "corrected": "कांफ्रेंस",
+        "source": "कॉंफ्रेंस"
+      },
+      {
+        "corrected": "कीमत",
+        "source": "क़ीमत"
+      },
+      {
+        "corrected": "कैंपेन",
+        "source": "कैंप्लान"
+      },
+      {
+        "corrected": "कैंसिल",
+        "source": "कैंसर"
+      },
+      {
+        "corrected": "कैशबैक",
+        "source": "कस्बा"
+      },
+      {
+        "corrected": "कैशबैक",
+        "source": "कैच बाग"
+      },
+      {
+        "corrected": "कॉन्फ़िगर",
+        "source": "कौन फिगर"
+      },
+      {
+        "corrected": "कॉन्फ्रेंस",
+        "source": "कॉन्फ़्रेंस"
+      },
+      {
+        "corrected": "कॉल फॉरवर्डिंग",
+        "source": "कॉलेज फॉर वेडिंग"
+      },
+      {
+        "corrected": "कॉलिंग",
+        "source": "कॉलिंक"
+      },
+      {
+        "corrected": "कोड",
+        "source": "कोर्स"
+      },
+      {
+        "corrected": "कोड",
+        "source": "कोर्ट"
+      },
+      {
+        "corrected": "कोरोना",
+        "source": "करोना"
+      },
+      {
+        "corrected": "कोविड 19",
+        "source": "गोविंद 19"
+      },
+      {
+        "corrected": "कौनकौन",
+        "source": "कौन-कौन"
+      },
+      {
+        "corrected": "क्याक्या",
+        "source": "क्या-क्या"
+      },
+      {
+        "corrected": "क्यूआर कोड",
+        "source": "क्यू आर कोड"
+      },
+      {
+        "corrected": "क्यूड",
+        "source": "क्विड"
+      },
+      {
+        "corrected": "क्यूड",
+        "source": "क्यूट"
+      },
+      {
+        "corrected": "क्यूड",
+        "source": "किवाड़"
+      },
+      {
+        "corrected": "क्रिकेट प्ले अलोंग",
+        "source": "क्रिकेट ले अलार्म"
+      },
+      {
+        "corrected": "क्रेडिट",
+        "source": "सिगरेट"
+      },
+      {
+        "corrected": "क्रोमबुक",
+        "source": "क्रोम भज्जी"
+      },
+      {
+        "corrected": "क्लेम",
+        "source": "क्लीन"
+      },
+      {
+        "corrected": "क्विकर",
+        "source": "विकर"
+      },
+      {
+        "corrected": "क्विकर",
+        "source": "क्क्विकर"
+      },
+      {
+        "corrected": "क्विकर",
+        "source": "कीकर"
+      },
+      {
+        "corrected": "खराब",
+        "source": "ख़राब"
+      },
+      {
+        "corrected": "खरीदा",
+        "source": "ख़रीदा"
+      },
+      {
+        "corrected": "खरीदी",
+        "source": "ख़रीदी"
+      },
+      {
+        "corrected": "खरीदू",
+        "source": "ख़रीदु"
+      },
+      {
+        "corrected": "खरीदो",
+        "source": "ख़रीदो"
+      },
+      {
+        "corrected": "गलत",
+        "source": "ग़लत"
+      },
+      {
+        "corrected": "गिफ्ट",
+        "source": "गिफ़्ट"
+      },
+      {
+        "corrected": "गिफ्ट व्रैप",
+        "source": "गिरफतार"
+      },
+      {
+        "corrected": "गीगा फाइबर",
+        "source": "की का फाइबर"
+      },
+      {
+        "corrected": "गीगा राउटर",
+        "source": "की गा राउटर"
+      },
+      {
+        "corrected": "गैस बिल",
+        "source": "गिलास बिल"
+      },
+      {
+        "corrected": "गैस बिल",
+        "source": "ग्यास बिल"
+      },
+      {
+        "corrected": "गैस बिल",
+        "source": "ज़्यादा ब्याज"
+      },
+      {
+        "corrected": "गैस बिल",
+        "source": "ज्ञात बिल"
+      },
+      {
+        "corrected": "चाइनीस",
+        "source": "चाइनीज़"
+      },
+      {
+        "corrected": "चार्ज",
+        "source": "चर्च"
+      },
+      {
+        "corrected": "चार्जेस",
+        "source": "साजिश"
+      },
+      {
+        "corrected": "चार्जेस",
+        "source": "चार्जर्स"
+      },
+      {
+        "corrected": "चिन्ह",
+        "source": "चिंतन"
+      },
+      {
+        "corrected": "चेक अप",
+        "source": "से कप"
+      },
+      {
+        "corrected": "चैट",
+        "source": "चार्ट"
+      },
+      {
+        "corrected": "चैट",
+        "source": "जेट"
+      },
+      {
+        "corrected": "चैरिटी",
+        "source": "जा रेड्डी"
+      },
+      {
+        "corrected": "चैरिटी",
+        "source": "मैच्योरिटी"
+      },
+      {
+        "corrected": "जिओ",
+        "source": "जियो"
+      },
+      {
+        "corrected": "जिओ",
+        "source": "जीवों"
+      },
+      {
+        "corrected": "जिओ",
+        "source": "जी वो"
+      },
+      {
+        "corrected": "जिओ",
+        "source": "जीयो"
+      },
+      {
+        "corrected": "जिओ",
+        "source": "जिया"
+      },
+      {
+        "corrected": "जिओ",
+        "source": "ज़ीरो"
+      },
+      {
+        "corrected": "जिओ",
+        "source": "जी यौर"
+      },
+      {
+        "corrected": "जिओ",
+        "source": "चीटियों"
+      },
+      {
+        "corrected": "जिओ",
+        "source": "जीवन"
+      },
+      {
+        "corrected": "जिओ",
+        "source": "रियो"
+      },
+      {
+        "corrected": "जिओ 2g या",
+        "source": "फैक्ट्रियों टूजी"
+      },
+      {
+        "corrected": "जिओ 4g",
+        "source": "जिओ फ़ोरजी"
+      },
+      {
+        "corrected": "जिओ एंगेज",
+        "source": "जिओ अंगेज"
+      },
+      {
+        "corrected": "जिओ एंगेज",
+        "source": "जिओ अंग्रेज"
+      },
+      {
+        "corrected": "जिओ एंगेज",
+        "source": "जिओ इंगेज"
+      },
+      {
+        "corrected": "जिओ एंगेज",
+        "source": "जियेंगे"
+      },
+      {
+        "corrected": "जिओ एंगेज",
+        "source": "जिएंगे"
+      },
+      {
+        "corrected": "जिओ ऑफर्स",
+        "source": "ख़ुशियों ऑफर्स"
+      },
+      {
+        "corrected": "जिओ के",
+        "source": "जी ok"
+      },
+      {
+        "corrected": "जिओ के",
+        "source": "जी योग के"
+      },
+      {
+        "corrected": "जिओ क्लाउड",
+        "source": "जिओ लाउड"
+      },
+      {
+        "corrected": "जिओ गीगा फाइबर",
+        "source": "जिओगी का फ़ाइबर"
+      },
+      {
+        "corrected": "जिओ गीगा फाइबर",
+        "source": "ज़ीका फ़ाइबर"
+      },
+      {
+        "corrected": "जिओ गीगा फाइबर",
+        "source": "राज्यों की का फ़ाइबर"
+      },
+      {
+        "corrected": "जिओ गीगा फाइबर",
+        "source": "जिनकी का फ़ाइबर"
+      },
+      {
+        "corrected": "जिओ गीगा फाइबर",
+        "source": "जी होंगी तो फ़ाइबर"
+      },
+      {
+        "corrected": "जिओ गीगा फाइबर",
+        "source": "जीओ b का फ़ाइबर"
+      },
+      {
+        "corrected": "जिओ गीगा फाइबर",
+        "source": "राज्य की का फ़ाइबर"
+      },
+      {
+        "corrected": "जिओ गीगा फाइबर",
+        "source": "जिओगी का फ़ायदा"
+      },
+      {
+        "corrected": "जिओ गीगा फाइबर",
+        "source": "जिओ की का फ़ाइबर"
+      },
+      {
+        "corrected": "जिओ गीगा फाइबर",
+        "source": "ज्यों की रफ़्तार"
+      },
+      {
+        "corrected": "जिओ गीगा फाइबर",
+        "source": "राधिका फ़ाइबर"
+      },
+      {
+        "corrected": "जिओ गीगा फाइबर",
+        "source": "जी वफ़ादार"
+      },
+      {
+        "corrected": "जिओ गीगा फाइबर",
+        "source": "जिगीगा गा फ़ाइबर"
+      },
+      {
+        "corrected": "जिओ गीगा फाइबर",
+        "source": "जिगीगा का फ़ाइबर"
+      },
+      {
+        "corrected": "जिओ गीगा राउटर",
+        "source": "जिओगी घर आउटर"
+      },
+      {
+        "corrected": "जिओ गीगा राउटर",
+        "source": "जिओगी को आउट"
+      },
+      {
+        "corrected": "जिओ गीगा राउटर",
+        "source": "जिगीगा घर राउटर"
+      },
+      {
+        "corrected": "जिओ चैट",
+        "source": "जो चैट"
+      },
+      {
+        "corrected": "जिओ चैट",
+        "source": "तो चैट"
+      },
+      {
+        "corrected": "जिओ चैट",
+        "source": "और जेट"
+      },
+      {
+        "corrected": "जिओ चैट",
+        "source": "जी यौर चैट"
+      },
+      {
+        "corrected": "जिओ चैट",
+        "source": "जो जाट"
+      },
+      {
+        "corrected": "जिओ चैट",
+        "source": "जिओ जाट"
+      },
+      {
+        "corrected": "जिओ चैट",
+        "source": "जिओ टच"
+      },
+      {
+        "corrected": "जिओ चैट",
+        "source": "ज्योचैट"
+      },
+      {
+        "corrected": "जिओ ट्यून्स",
+        "source": "ज्योतिष"
+      },
+      {
+        "corrected": "जिओ डबल",
+        "source": "जी वो डबल"
+      },
+      {
+        "corrected": "जिओ डबल बेनिफिट",
+        "source": "जी ओ डबलबेनिफिट"
+      },
+      {
+        "corrected": "जिओ नेट",
+        "source": "जिओनेट"
+      },
+      {
+        "corrected": "जिओ नेट",
+        "source": "जॉइंट"
+      },
+      {
+        "corrected": "जिओ नेट",
+        "source": "जी और नेट"
+      },
+      {
+        "corrected": "जिओ नेट",
+        "source": "चीज़ों नेट"
+      },
+      {
+        "corrected": "जिओ पेमेंट",
+        "source": "जी opd"
+      },
+      {
+        "corrected": "जिओ पेमेंट",
+        "source": "जीव पेमेंट"
+      },
+      {
+        "corrected": "जिओ पेमेंट बैंक",
+        "source": "यो पेमेंट बैंक"
+      },
+      {
+        "corrected": "जिओ पेमेंट बैंक",
+        "source": "ज्यों पेमेंट बैंक"
+      },
+      {
+        "corrected": "जिओ पेमेंट बैंक",
+        "source": "जो पेमेंट बैंक"
+      },
+      {
+        "corrected": "जिओ पेमेंट बैंक",
+        "source": "जी वो पेमेंट बैंक"
+      },
+      {
+        "corrected": "जिओ पेमेंट बैंक",
+        "source": "जी को पेमेंट बैंक"
+      },
+      {
+        "corrected": "जिओ प्राइम",
+        "source": "जीव प्राइम"
+      },
+      {
+        "corrected": "जिओ फाइबर",
+        "source": "जो फाइटर"
+      },
+      {
+        "corrected": "जिओ फाइबर",
+        "source": "जिओ फ़ाइबर"
+      },
+      {
+        "corrected": "जिओ फाइबर",
+        "source": "जो फ़ाइबर"
+      },
+      {
+        "corrected": "जिओ फोन",
+        "source": "जो फ़ोन"
+      },
+      {
+        "corrected": "जिओ फोन",
+        "source": "जी को फ़ोन"
+      },
+      {
+        "corrected": "जिओ फोन",
+        "source": "ज्यों फ़ोन"
+      },
+      {
+        "corrected": "जिओ फोन",
+        "source": "जीव फ़ोन"
+      },
+      {
+        "corrected": "जिओ फोन",
+        "source": "थियो फ़ोन"
+      },
+      {
+        "corrected": "जिओ फोन",
+        "source": "जिओ फ़ोन"
+      },
+      {
+        "corrected": "जिओ फोन",
+        "source": "चीनियों"
+      },
+      {
+        "corrected": "जिओ फोन",
+        "source": "चिड़ियों"
+      },
+      {
+        "corrected": "जिओ फोन",
+        "source": "जी ओ फ़ोन"
+      },
+      {
+        "corrected": "जिओ फोन टू",
+        "source": "जिओ फ़ोटो"
+      },
+      {
+        "corrected": "जिओ फोन टू",
+        "source": "जिओ तो तू"
+      },
+      {
+        "corrected": "जिओ मनी",
+        "source": "जो मनी"
+      },
+      {
+        "corrected": "जिओ म्यूजिक",
+        "source": "जिओमी"
+      },
+      {
+        "corrected": "जिओ वीवो",
+        "source": "जी वो भी वो"
+      },
+      {
+        "corrected": "जिओ वीवो सुपर",
+        "source": "gov वो सुपर"
+      },
+      {
+        "corrected": "जिओ सपोर्ट",
+        "source": "जी को सपोर्ट"
+      },
+      {
+        "corrected": "जिओ सपोर्ट",
+        "source": "जो सपोर्ट"
+      },
+      {
+        "corrected": "जिओ सर्विसेज",
+        "source": "जो सर्विसेज़"
+      },
+      {
+        "corrected": "जिओ सावन",
+        "source": "जिओसावण"
+      },
+      {
+        "corrected": "जिओ सावन",
+        "source": "जो सावन"
+      },
+      {
+        "corrected": "जिओ सावन",
+        "source": "यूरो सावन"
+      },
+      {
+        "corrected": "जिओ सिम",
+        "source": "जीएसएम"
+      },
+      {
+        "corrected": "जिओ हेल्थ हब",
+        "source": "जोहल"
+      },
+      {
+        "corrected": "जिओ हेल्थ हब",
+        "source": "योहेल्प"
+      },
+      {
+        "corrected": "जिओ हेल्थहब एप",
+        "source": "जिओ हेल्थ एप"
+      },
+      {
+        "corrected": "जिओ होनर",
+        "source": "जी ओनर"
+      },
+      {
+        "corrected": "जिओएक्सप्रेस",
+        "source": "जिओ एक्सप्रेस"
+      },
+      {
+        "corrected": "जिओएक्सप्रेस न्यूज़",
+        "source": "जिओएक्सप्रेसन्यूज़"
+      },
+      {
+        "corrected": "जिओटीवी",
+        "source": "झूठी"
+      },
+      {
+        "corrected": "जिओटीवी",
+        "source": "जिओ टीवी"
+      },
+      {
+        "corrected": "जिओटीवी",
+        "source": "जिओ tv"
+      },
+      {
+        "corrected": "जिओटीवी",
+        "source": "जीओटीवी"
+      },
+      {
+        "corrected": "जिओपे",
+        "source": "ज़ीरो प्ले"
+      },
+      {
+        "corrected": "जिओप्राइवेट नेट",
+        "source": "जिओ प्राइवेट नेट"
+      },
+      {
+        "corrected": "जिओफाई",
+        "source": "जिओ 5"
+      },
+      {
+        "corrected": "जिओफाई",
+        "source": "जिओ फाई"
+      },
+      {
+        "corrected": "जिओफाई",
+        "source": "जियो फ़ायर"
+      },
+      {
+        "corrected": "जिओफाई",
+        "source": "जिओफी"
+      },
+      {
+        "corrected": "जिओफाई",
+        "source": "सफाई"
+      },
+      {
+        "corrected": "जिओफाई",
+        "source": "जिओपाई"
+      },
+      {
+        "corrected": "जिओफाई",
+        "source": "जिओग्राफी"
+      },
+      {
+        "corrected": "जिओफाई",
+        "source": "go फ्रायड"
+      },
+      {
+        "corrected": "जिओफाई",
+        "source": "go फाय"
+      },
+      {
+        "corrected": "जिओफाई",
+        "source": "जीवन फाइट"
+      },
+      {
+        "corrected": "जिओफाई",
+        "source": "go फ़ायदे"
+      },
+      {
+        "corrected": "जिओफाई",
+        "source": "जियो फ़ाय"
+      },
+      {
+        "corrected": "जिओफाई",
+        "source": "go फ़ाई"
+      },
+      {
+        "corrected": "जिओफाई",
+        "source": "जिओफाईर"
+      },
+      {
+        "corrected": "जिओफाई",
+        "source": "go फाइट"
+      },
+      {
+        "corrected": "जिओफाई",
+        "source": "जिओफाईदे"
+      },
+      {
+        "corrected": "जिओफाई",
+        "source": "जी ऑफ़ आय"
+      },
+      {
+        "corrected": "जिओफाई",
+        "source": "जिओ पार्क"
+      },
+      {
+        "corrected": "जिओफाई",
+        "source": "जीव उपाय"
+      },
+      {
+        "corrected": "जिओफाई",
+        "source": "ज़ीरो5"
+      },
+      {
+        "corrected": "जिओफाई",
+        "source": "जीयो पाई"
+      },
+      {
+        "corrected": "जिओफाई",
+        "source": "जी वो पढ़ाई"
+      },
+      {
+        "corrected": "जिओफाई",
+        "source": "05 के"
+      },
+      {
+        "corrected": "जिओफाई",
+        "source": "जिओ उपाय"
+      },
+      {
+        "corrected": "जिओफाई",
+        "source": "go पाई"
+      },
+      {
+        "corrected": "जिओफाई",
+        "source": "जी हो पाया"
+      },
+      {
+        "corrected": "जिओफाई",
+        "source": "जिओ फ़ाइव"
+      },
+      {
+        "corrected": "जिओफाई",
+        "source": "go फ़ाइल"
+      },
+      {
+        "corrected": "जिओफाई",
+        "source": "जिओ वाइफ़"
+      },
+      {
+        "corrected": "जिओफाई",
+        "source": "जीओ फ़ायर"
+      },
+      {
+        "corrected": "जिओफाई",
+        "source": "जिओ फाया"
+      },
+      {
+        "corrected": "जिओफाई",
+        "source": "जीओवर"
+      },
+      {
+        "corrected": "जिओफाई",
+        "source": "जिओ पाएँ"
+      },
+      {
+        "corrected": "जिओफाई",
+        "source": "जिओ पाइप"
+      },
+      {
+        "corrected": "जिओफाई",
+        "source": "जिओ फाइट"
+      },
+      {
+        "corrected": "जिओफाई",
+        "source": "जिओ फ़ाइल"
+      },
+      {
+        "corrected": "जिओफाई",
+        "source": "जियो पाया"
+      },
+      {
+        "corrected": "जिओफाई",
+        "source": "जिओ फ़ाई"
+      },
+      {
+        "corrected": "जिओफाई",
+        "source": "ज़ीरो फ़ाइव"
+      },
+      {
+        "corrected": "जिओफाई",
+        "source": "go फॉर"
+      },
+      {
+        "corrected": "जिओफाई",
+        "source": "जी ओ पी"
+      },
+      {
+        "corrected": "जिओफाई",
+        "source": "जीओ पी"
+      },
+      {
+        "corrected": "जिओफाई",
+        "source": "go फ़ाय"
+      },
+      {
+        "corrected": "जिओफाई डिवाइस",
+        "source": "युवा डिवाइस"
+      },
+      {
+        "corrected": "जिओमैगजीन",
+        "source": "जिओ मैगजीन"
+      },
+      {
+        "corrected": "जिओमैगजीन",
+        "source": "जिओमाइनिंग"
+      },
+      {
+        "corrected": "जिओमैगजीन",
+        "source": "जिओ में सिंह"
+      },
+      {
+        "corrected": "जिओसिनेमा",
+        "source": "जी और सिनेमा"
+      },
+      {
+        "corrected": "जिओसिनेमा",
+        "source": "त्याज्य सिनेमा"
+      },
+      {
+        "corrected": "जिओसिनेमा",
+        "source": "जिओ सिनेमा"
+      },
+      {
+        "corrected": "जिओसिनेमा",
+        "source": "जैसलमेर"
+      },
+      {
+        "corrected": "जिओसिनेमा",
+        "source": "जो सिनेमा"
+      },
+      {
+        "corrected": "जिओसिनेमा",
+        "source": "goc नौ माह"
+      },
+      {
+        "corrected": "जिओसिनेमा",
+        "source": "जिओc ने माँ"
+      },
+      {
+        "corrected": "जिओसिनेमा",
+        "source": "जिओ सने माह"
+      },
+      {
+        "corrected": "जिओसिनेमा",
+        "source": "जी यह सिनेमा"
+      },
+      {
+        "corrected": "जिओसिनेमा",
+        "source": "यो सिनेमा"
+      },
+      {
+        "corrected": "जिओसिनेमा",
+        "source": "क्यों सिनेमा"
+      },
+      {
+        "corrected": "जीओ एवरीव्हेयर",
+        "source": "जीओ री वैर"
+      },
+      {
+        "corrected": "जेएंडके",
+        "source": "jandk"
+      },
+      {
+        "corrected": "जेन्युइन",
+        "source": "जेनुइन"
+      },
+      {
+        "corrected": "जॉनर",
+        "source": "जानवर"
+      },
+      {
+        "corrected": "जॉनर",
+        "source": "जॉन राष्ट्र"
+      },
+      {
+        "corrected": "जॉनर",
+        "source": "जॉन रॉस"
+      },
+      {
+        "corrected": "जॉनर",
+        "source": "जनरेस"
+      },
+      {
+        "corrected": "जॉनर",
+        "source": "जेनेरेस"
+      },
+      {
+        "corrected": "जॉनर",
+        "source": "जोनर"
+      },
+      {
+        "corrected": "जॉनर",
+        "source": "जनर"
+      },
+      {
+        "corrected": "जॉनर",
+        "source": "जोनरस"
+      },
+      {
+        "corrected": "ज्यादा",
+        "source": "ज़्यादा"
+      },
+      {
+        "corrected": "टर्न अराउंड टाइम",
+        "source": "टाइम आउट टाइम"
+      },
+      {
+        "corrected": "टीवी",
+        "source": "t वी"
+      },
+      {
+        "corrected": "टू द होम एफटीटीएच",
+        "source": "टू द हो एक्टिवेट"
+      },
+      {
+        "corrected": "टेली वेरिफिकेशन",
+        "source": "टेली-वेरिफिकेशन"
+      },
+      {
+        "corrected": "टेलीवेरीफाई",
+        "source": "दिल्ली वेरीफाई"
+      },
+      {
+        "corrected": "टेलीवेरीफाई",
+        "source": "टैली वेरीफाई"
+      },
+      {
+        "corrected": "टॉप अप",
+        "source": "टॉपअप"
+      },
+      {
+        "corrected": "ट्यूटोरियल",
+        "source": "टुटोरिअल"
+      },
+      {
+        "corrected": "ट्रबलशूट",
+        "source": "ट्रबलीशूट"
+      },
+      {
+        "corrected": "ट्रबलशूट",
+        "source": "ट्रबल सूट"
+      },
+      {
+        "corrected": "ट्रबलशूट",
+        "source": "प्रबल छूट"
+      },
+      {
+        "corrected": "ट्रबलशूट",
+        "source": "डबल सूट"
+      },
+      {
+        "corrected": "ट्रांजैक्शन",
+        "source": "ट्रांजैक्शंस"
+      },
+      {
+        "corrected": "ट्रांसफर",
+        "source": "ट्रैकफर"
+      },
+      {
+        "corrected": "ट्रैक",
+        "source": "ट्रक"
+      },
+      {
+        "corrected": "ट्रैक",
+        "source": "ट्रिश"
+      },
+      {
+        "corrected": "ट्रैक",
+        "source": "ट्रांस"
+      },
+      {
+        "corrected": "डबल डाटा",
+        "source": "डबल ऑटो"
+      },
+      {
+        "corrected": "डबल डाटा",
+        "source": "डबल डिप डेटा"
+      },
+      {
+        "corrected": "डाटा",
+        "source": "बेटा"
+      },
+      {
+        "corrected": "डिज्नी",
+        "source": "डिजनी"
+      },
+      {
+        "corrected": "डिज्नी",
+        "source": "डिग्गी"
+      },
+      {
+        "corrected": "डिज्नी",
+        "source": "डिज़्नी"
+      },
+      {
+        "corrected": "डिज्नी",
+        "source": "किडनी"
+      },
+      {
+        "corrected": "डिज्नी प्लस",
+        "source": "डिज्नीप्लस"
+      },
+      {
+        "corrected": "डिज्नी प्लस हॉटस्टार",
+        "source": "तीळ हॉटस्टार"
+      },
+      {
+        "corrected": "डिडक्ट",
+        "source": "डिट्टो"
+      },
+      {
+        "corrected": "डिपॉजिट",
+        "source": "डिपाजिट"
+      },
+      {
+        "corrected": "डिपॉजिट",
+        "source": "डिपोसिट"
+      },
+      {
+        "corrected": "डिपॉजिट",
+        "source": "डिपॉजिटरी"
+      },
+      {
+        "corrected": "डिपॉजिट",
+        "source": "डिपॉज़िट"
+      },
+      {
+        "corrected": "डिलीटेड फाइल्स",
+        "source": "रिलेटेड फ़ाइल"
+      },
+      {
+        "corrected": "डिले",
+        "source": "ढीले"
+      },
+      {
+        "corrected": "डिवाइसेज",
+        "source": "डिवाइस इस"
+      },
+      {
+        "corrected": "डिसकनेक्शन",
+        "source": "डिश कनेक्शन"
+      },
+      {
+        "corrected": "डिस्काउंट कूपंस",
+        "source": "डिस्काउंट गुळ"
+      },
+      {
+        "corrected": "डीएक्टिवेट",
+        "source": "डिएक्टिवेट"
+      },
+      {
+        "corrected": "डीलिंक",
+        "source": "डीलिंग"
+      },
+      {
+        "corrected": "डू नॉट डिस्टर्ब",
+        "source": "डू नोट डिस्टर्ब"
+      },
+      {
+        "corrected": "डू नॉट डिस्टर्ब",
+        "source": "दून नॉट डिस्टर्ब"
+      },
+      {
+        "corrected": "डू नॉट डिस्टर्ब",
+        "source": "दो नोट डिस्टर्ब"
+      },
+      {
+        "corrected": "डू नॉट डिस्टर्ब",
+        "source": "ढूँढा डिस्टर्ब"
+      },
+      {
+        "corrected": "डेटा",
+        "source": "बीटा"
+      },
+      {
+        "corrected": "डेटा बैलेंस",
+        "source": "डेटा बालन"
+      },
+      {
+        "corrected": "डेथ सर्टिफिकेट",
+        "source": "घर पे-सर्टिफ़िकेट"
+      },
+      {
+        "corrected": "डेथ सर्टिफिकेट",
+        "source": "डैड सर्टिफ़िकेट"
+      },
+      {
+        "corrected": "डेरी",
+        "source": "डेयरी"
+      },
+      {
+        "corrected": "डेस्क",
+        "source": "डान्स"
+      },
+      {
+        "corrected": "डेस्कटॉप",
+        "source": "टेक्स्ट ऑफ"
+      },
+      {
+        "corrected": "डेस्कटॉप",
+        "source": "10 टॉप"
+      },
+      {
+        "corrected": "डोंगल",
+        "source": "डोंगरी"
+      },
+      {
+        "corrected": "डोंगल",
+        "source": "डूंगर"
+      },
+      {
+        "corrected": "तारीख",
+        "source": "तारीख़"
+      },
+      {
+        "corrected": "देखूं",
+        "source": "देखू"
+      },
+      {
+        "corrected": "देखूं",
+        "source": "देखु"
+      },
+      {
+        "corrected": "नंबर",
+        "source": "नवंबर"
+      },
+      {
+        "corrected": "नंबर",
+        "source": "नम्बर"
+      },
+      {
+        "corrected": "नंबर मायजिओ",
+        "source": "नवंबर 22 ज़िलों"
+      },
+      {
+        "corrected": "नजदीकी",
+        "source": "नज़दीकी"
+      },
+      {
+        "corrected": "नेट वेलोसिटी",
+        "source": "नेट लॉस सिटी"
+      },
+      {
+        "corrected": "नेटवर्क स्ट्रैंथ",
+        "source": "नेटवर्क्स टेंथ"
+      },
+      {
+        "corrected": "नॉट रीचअबल",
+        "source": "नॉर्थ एलिजिबल"
+      },
+      {
+        "corrected": "नॉट रीचअबल",
+        "source": "नोट रिची बल"
+      },
+      {
+        "corrected": "नॉन जिओ नंबर",
+        "source": "नो जिओ नंबर"
+      },
+      {
+        "corrected": "नॉमिनी डीटेल्स",
+        "source": "नॉर्मली डिटेल्स"
+      },
+      {
+        "corrected": "नोट 10",
+        "source": "नोट टेन"
+      },
+      {
+        "corrected": "नोट 5",
+        "source": "नोटफ़ाइव"
+      },
+      {
+        "corrected": "पढ़ पाउँगा",
+        "source": "बढ़ पाऊंगा"
+      },
+      {
+        "corrected": "पर्टिकुलर",
+        "source": "पैकिकुलर"
+      },
+      {
+        "corrected": "पार्टनर कूपन",
+        "source": "पाटा बाटा ओपन"
+      },
+      {
+        "corrected": "पार्सल",
+        "source": "पार्षद"
+      },
+      {
+        "corrected": "पिकअप",
+        "source": "पिक अप"
+      },
+      {
+        "corrected": "पिन",
+        "source": "पिंड"
+      },
+      {
+        "corrected": "पिन कोड",
+        "source": "पिंक कोड"
+      },
+      {
+        "corrected": "पीयूके",
+        "source": "ब्यूटी"
+      },
+      {
+        "corrected": "पीयूके",
+        "source": "पीओके"
+      },
+      {
+        "corrected": "पीयूके",
+        "source": "पीयूकेके"
+      },
+      {
+        "corrected": "पेगो",
+        "source": "पेट को"
+      },
+      {
+        "corrected": "पैक",
+        "source": "पार्क"
+      },
+      {
+        "corrected": "पैक",
+        "source": "पाक"
+      },
+      {
+        "corrected": "पैक",
+        "source": "पार्ट"
+      },
+      {
+        "corrected": "पैक्स",
+        "source": "पैर"
+      },
+      {
+        "corrected": "पॉज",
+        "source": "पॉज़"
+      },
+      {
+        "corrected": "पोको",
+        "source": "बोको"
+      },
+      {
+        "corrected": "पोस्टपेड",
+        "source": "पोस्टर"
+      },
+      {
+        "corrected": "पोस्टपेड",
+        "source": "पोस्ट पेड़"
+      },
+      {
+        "corrected": "पोस्टपेड",
+        "source": "पोस्ट पीट"
+      },
+      {
+        "corrected": "पोस्टपेड",
+        "source": "हो उस पेड़"
+      },
+      {
+        "corrected": "पोस्टपेड",
+        "source": "उस पेड़"
+      },
+      {
+        "corrected": "प्रिफर्ड",
+        "source": "प्रिय फ़ोर्ड"
+      },
+      {
+        "corrected": "प्री ऑन",
+        "source": "प्रियम"
+      },
+      {
+        "corrected": "प्री ऑन",
+        "source": "ईऑन"
+      },
+      {
+        "corrected": "प्री ऑन पोस्ट",
+        "source": "प्रीपोन"
+      },
+      {
+        "corrected": "प्रीपेड",
+        "source": "पीपर"
+      },
+      {
+        "corrected": "प्रीपेड",
+        "source": "प्री पेड़"
+      },
+      {
+        "corrected": "प्रोडक्ट",
+        "source": "प्रणब"
+      },
+      {
+        "corrected": "प्रोडक्ट को",
+        "source": "प्रवर्तकों"
+      },
+      {
+        "corrected": "प्रोडक्ट्स",
+        "source": "सड़क"
+      },
+      {
+        "corrected": "प्रोडक्ट्स की",
+        "source": "प्रोडक्शन"
+      },
+      {
+        "corrected": "प्रोडक्ट्स की",
+        "source": "पूर्व डॉक्टर को"
+      },
+      {
+        "corrected": "प्रोफाइल",
+        "source": "प्रोफ़ाइल"
+      },
+      {
+        "corrected": "प्रोरेटेड",
+        "source": "प्रोडेटेड"
+      },
+      {
+        "corrected": "प्लांस",
+        "source": "प्लांट्स"
+      },
+      {
+        "corrected": "प्लांस",
+        "source": "डांस"
+      },
+      {
+        "corrected": "प्लान",
+        "source": "प्लेन"
+      },
+      {
+        "corrected": "प्लान",
+        "source": "प्लॅन"
+      },
+      {
+        "corrected": "प्लान",
+        "source": "पेन"
+      },
+      {
+        "corrected": "प्लान का एलिजिबल",
+        "source": "फ़्रान्स का एलिजिबल"
+      },
+      {
+        "corrected": "प्लान्स",
+        "source": "प्लांट"
+      },
+      {
+        "corrected": "प्लान्स",
+        "source": "क्लांस"
+      },
+      {
+        "corrected": "प्ले अलोंग",
+        "source": "प्लेयर लाऊं"
+      },
+      {
+        "corrected": "प्लेलिस्ट",
+        "source": "प्ले लिस्ट"
+      },
+      {
+        "corrected": "प्लैटिनम",
+        "source": "प्लेटिनियम"
+      },
+      {
+        "corrected": "प्लैटिनम",
+        "source": "प्लेटटिनम"
+      },
+      {
+        "corrected": "फाइबर",
+        "source": "फ़ाइबर"
+      },
+      {
+        "corrected": "फाइबर अमेजॉन",
+        "source": "फाइबरअमेजॉन"
+      },
+      {
+        "corrected": "फाइबर आईडी",
+        "source": "फ़ाइबर id"
+      },
+      {
+        "corrected": "फाइल्स",
+        "source": "फ़ाइल"
+      },
+      {
+        "corrected": "फायदे",
+        "source": "फ़ायदे"
+      },
+      {
+        "corrected": "फीचर",
+        "source": "कीचड़"
+      },
+      {
+        "corrected": "फीचर",
+        "source": "टीचर"
+      },
+      {
+        "corrected": "फीचर",
+        "source": "फ़ीचर"
+      },
+      {
+        "corrected": "फीचर्स",
+        "source": "फ्यूचर्स"
+      },
+      {
+        "corrected": "फीचर्स",
+        "source": "फ़ीचर्स"
+      },
+      {
+        "corrected": "फीडबैक",
+        "source": "फ्रीदाग"
+      },
+      {
+        "corrected": "फीडबैक",
+        "source": "फिर भाग"
+      },
+      {
+        "corrected": "फीडबैक",
+        "source": "फिट बाद"
+      },
+      {
+        "corrected": "फेवरेट",
+        "source": "फेवडेट"
+      },
+      {
+        "corrected": "फेवरेट",
+        "source": "फ़ेवरेट"
+      },
+      {
+        "corrected": "फैमिली",
+        "source": "कामिली"
+      },
+      {
+        "corrected": "फैमिली",
+        "source": "कामली"
+      },
+      {
+        "corrected": "फॉरवर्डिंग",
+        "source": "फॉर बिल्डिंग"
+      },
+      {
+        "corrected": "फॉरवर्डिंग",
+        "source": "फॉर्मेटिंग"
+      },
+      {
+        "corrected": "फॉरवर्डिंग",
+        "source": "फॉर वेल्डिंग"
+      },
+      {
+        "corrected": "फॉरवर्डिंग",
+        "source": "फ़रवरी डिंग"
+      },
+      {
+        "corrected": "फॉरवर्डिंग",
+        "source": "फॉरवर्ड डिंग"
+      },
+      {
+        "corrected": "फॉरवर्डिंग",
+        "source": "फॉर होल्ड्डिंग"
+      },
+      {
+        "corrected": "फॉरवर्डिंग",
+        "source": "और वेडिंग"
+      },
+      {
+        "corrected": "फॉरवर्डिंग",
+        "source": "फॉरवर्ड लिंग"
+      },
+      {
+        "corrected": "फॉरवर्डिंग",
+        "source": "फॉर बैटिंग"
+      },
+      {
+        "corrected": "फॉरवार्डिंग",
+        "source": "फॉर वेडिंग"
+      },
+      {
+        "corrected": "फोन",
+        "source": "फ़ोन"
+      },
+      {
+        "corrected": "फोन कुंभ",
+        "source": "फ़ोन कॉम"
+      },
+      {
+        "corrected": "फोन कुंभ",
+        "source": "फोन कोंबो"
+      },
+      {
+        "corrected": "फोन टू",
+        "source": "फ़ोन तू"
+      },
+      {
+        "corrected": "फ्री",
+        "source": "फ़्री"
+      },
+      {
+        "corrected": "फ्रॉम",
+        "source": "फ़्रॉम"
+      },
+      {
+        "corrected": "फ्लेम",
+        "source": "क्रीम"
+      },
+      {
+        "corrected": "फ्लैट",
+        "source": "फ़्लैट"
+      },
+      {
+        "corrected": "बस टिकट",
+        "source": "पास टिकट"
+      },
+      {
+        "corrected": "बस टिकट",
+        "source": "बस टिकेट"
+      },
+      {
+        "corrected": "बाइट साइज",
+        "source": "वाइट साइंस"
+      },
+      {
+        "corrected": "बाइट साइज",
+        "source": "बाइट्स आई"
+      },
+      {
+        "corrected": "बाइट साइज स्टोरीज",
+        "source": "बाइक साइड थोड़ी"
+      },
+      {
+        "corrected": "बारड",
+        "source": "बेड"
+      },
+      {
+        "corrected": "बार्ड",
+        "source": "बर्ड्स"
+      },
+      {
+        "corrected": "बिजी",
+        "source": "बीवी"
+      },
+      {
+        "corrected": "बिजी",
+        "source": "डीजे"
+      },
+      {
+        "corrected": "बिजी",
+        "source": "दीदी"
+      },
+      {
+        "corrected": "बिजी",
+        "source": "बिज़ी"
+      },
+      {
+        "corrected": "बिज़ी फॉरवर्ड",
+        "source": "pc फॉरवर्ड"
+      },
+      {
+        "corrected": "बिल",
+        "source": "ब्रिच"
+      },
+      {
+        "corrected": "बिल",
+        "source": "बेल"
+      },
+      {
+        "corrected": "बिलर्स",
+        "source": "बिल्डर्स"
+      },
+      {
+        "corrected": "बिलर्स",
+        "source": "बिल अर्थ"
+      },
+      {
+        "corrected": "बिल्स",
+        "source": "बेल्स"
+      },
+      {
+        "corrected": "बिल्स",
+        "source": "पिल्स"
+      },
+      {
+        "corrected": "बुकमार्क",
+        "source": "बुक माफ"
+      },
+      {
+        "corrected": "बुकमार्क",
+        "source": "दुख माफ"
+      },
+      {
+        "corrected": "बेनिफिशियरी",
+        "source": "बनी फ़ीसदी"
+      },
+      {
+        "corrected": "बेनिफिशियरी",
+        "source": "बनी फिर शिकारी"
+      },
+      {
+        "corrected": "बेनिफिशियरी",
+        "source": "बनी फ़िशर"
+      },
+      {
+        "corrected": "बेनिफिशियरी",
+        "source": "बैग नीचे शेयर"
+      },
+      {
+        "corrected": "बेस्ट",
+        "source": "भ्रष्ट"
+      },
+      {
+        "corrected": "बेस्ट प्लान",
+        "source": "20 प्लान"
+      },
+      {
+        "corrected": "बैकग्राउंड",
+        "source": "बैगन"
+      },
+      {
+        "corrected": "बैरिंग",
+        "source": "वारिंग"
+      },
+      {
+        "corrected": "मंथली",
+        "source": "मतली"
+      },
+      {
+        "corrected": "मर्चेंट",
+        "source": "और चोट"
+      },
+      {
+        "corrected": "माइग्रेट",
+        "source": "माइग्डेट"
+      },
+      {
+        "corrected": "मायजिओ",
+        "source": "माय जिओ"
+      },
+      {
+        "corrected": "मायजिओ",
+        "source": "माइक जो"
+      },
+      {
+        "corrected": "मायजिओ",
+        "source": "मई जिओ"
+      },
+      {
+        "corrected": "मायजिओ",
+        "source": "माइक जीओ"
+      },
+      {
+        "corrected": "मायजिओ",
+        "source": "माई gov"
+      },
+      {
+        "corrected": "मायजिओ",
+        "source": "माही जिओ"
+      },
+      {
+        "corrected": "मायजिओ",
+        "source": "माइक ज्यों"
+      },
+      {
+        "corrected": "मायजिओ",
+        "source": "माई योग"
+      },
+      {
+        "corrected": "मायजिओ",
+        "source": "नाजियों"
+      },
+      {
+        "corrected": "मायजिओ",
+        "source": "माइक ज़िलों"
+      },
+      {
+        "corrected": "मायजिओ",
+        "source": "माइक जीव"
+      },
+      {
+        "corrected": "मायजिओ",
+        "source": "माइक चीज़ों"
+      },
+      {
+        "corrected": "मायजिओ",
+        "source": "भाई जीओ"
+      },
+      {
+        "corrected": "मायजिओ",
+        "source": "माइ जिओ"
+      },
+      {
+        "corrected": "मायजिओ",
+        "source": "भाई जी और"
+      },
+      {
+        "corrected": "मायजिओ",
+        "source": "बच्चियों"
+      },
+      {
+        "corrected": "मायजिओ",
+        "source": "माएँ जिओ"
+      },
+      {
+        "corrected": "मायजिओ",
+        "source": "माएँ ज़िलों"
+      },
+      {
+        "corrected": "मायजिओ",
+        "source": "महायज्ञों"
+      },
+      {
+        "corrected": "मायजिओ",
+        "source": "नाइजीरिया"
+      },
+      {
+        "corrected": "मायजिओ",
+        "source": "माइक जिओ"
+      },
+      {
+        "corrected": "मायजिओ",
+        "source": "माइक की योग"
+      },
+      {
+        "corrected": "मायजिओ प्रोफाइल",
+        "source": "माइक्रोप्रोफाइल"
+      },
+      {
+        "corrected": "मायजिओ से",
+        "source": "माइक goc"
+      },
+      {
+        "corrected": "मेडलाइफ",
+        "source": "मैं ड्राइव"
+      },
+      {
+        "corrected": "मेडलाइफ",
+        "source": "मेट लाईफ़"
+      },
+      {
+        "corrected": "मेडलाइफ",
+        "source": "बट लाइफ़"
+      },
+      {
+        "corrected": "मेमोरी",
+        "source": "मेमरी"
+      },
+      {
+        "corrected": "मेरी सिम",
+        "source": "मेरी सेम"
+      },
+      {
+        "corrected": "मेल आईडी",
+        "source": "मेल id"
+      },
+      {
+        "corrected": "मैक्सिमम",
+        "source": "मैग्सिमम"
+      },
+      {
+        "corrected": "मैगजीन",
+        "source": "मैगज़ीन"
+      },
+      {
+        "corrected": "मैगजीन",
+        "source": "मैग्ज़ीन"
+      },
+      {
+        "corrected": "मैगजीन",
+        "source": "मानसिंह"
+      },
+      {
+        "corrected": "मैनेज",
+        "source": "मानस"
+      },
+      {
+        "corrected": "मैन्युअल कोड",
+        "source": "पैनल कोड"
+      },
+      {
+        "corrected": "मैन्युअल कोड",
+        "source": "मॉडल कोड"
+      },
+      {
+        "corrected": "मॉनिटरी",
+        "source": "मॉनेटरी"
+      },
+      {
+        "corrected": "मॉनिटरी",
+        "source": "मोनिट्री"
+      },
+      {
+        "corrected": "मॉनिटरी",
+        "source": "मोंट्री"
+      },
+      {
+        "corrected": "मॉनिटरी बैलेंस",
+        "source": "मौद्रिक संतुलन"
+      },
+      {
+        "corrected": "म्यूजिक",
+        "source": "म्यूज़िक"
+      },
+      {
+        "corrected": "यूएसएसडी",
+        "source": "यूएसबी"
+      },
+      {
+        "corrected": "यूएसएसडी",
+        "source": "यूज सी"
+      },
+      {
+        "corrected": "यूज",
+        "source": "यूज़"
+      },
+      {
+        "corrected": "यूजर",
+        "source": "यूज़र"
+      },
+      {
+        "corrected": "यूपीआई",
+        "source": "युवतियां"
+      },
+      {
+        "corrected": "यूपीआई",
+        "source": "up आयी"
+      },
+      {
+        "corrected": "यूपीआई",
+        "source": "यूटीआई"
+      },
+      {
+        "corrected": "यूपीआई",
+        "source": "यूपीए"
+      },
+      {
+        "corrected": "यूपीआई",
+        "source": "यूपीआईआई"
+      },
+      {
+        "corrected": "यूपीआई",
+        "source": "यूपीआईसए"
+      },
+      {
+        "corrected": "यूपीआई",
+        "source": "यूरोपियाई"
+      },
+      {
+        "corrected": "यूपीआई",
+        "source": "up आय"
+      },
+      {
+        "corrected": "यूपीआई",
+        "source": "संयुक्त प्यार"
+      },
+      {
+        "corrected": "यूपीआई आईडी",
+        "source": "up है id"
+      },
+      {
+        "corrected": "यूपीआई आईडी",
+        "source": "up आयी आयी t"
+      },
+      {
+        "corrected": "यूपीआई आईडी",
+        "source": "up ऐंडी"
+      },
+      {
+        "corrected": "यूपीआई आईडी",
+        "source": "up आइडी"
+      },
+      {
+        "corrected": "यूपीआई आईडी",
+        "source": "यह प्रिय आयडी"
+      },
+      {
+        "corrected": "यूपीआई एक्सेस",
+        "source": "ups इसके"
+      },
+      {
+        "corrected": "यूपीआई पिन",
+        "source": "ubi पीट"
+      },
+      {
+        "corrected": "यूपीआई पिन",
+        "source": "bse पीट"
+      },
+      {
+        "corrected": "यूपीआई पिन",
+        "source": "upi बिन"
+      },
+      {
+        "corrected": "यूपीआई पिन",
+        "source": "up आयी पी"
+      },
+      {
+        "corrected": "यूपीआई से",
+        "source": "upa से"
+      },
+      {
+        "corrected": "यूपीआई",
+        "source": "up आए"
+      },
+      {
+        "corrected": "यूपीआई से",
+        "source": "up ऐसे"
+      },
+      {
+        "corrected": "यूपीआई से",
+        "source": "up ऐसा"
+      },
+      {
+        "corrected": "यूपीआई हैंडल",
+        "source": "up हर 10"
+      },
+      {
+        "corrected": "यूपीआई हैंडल",
+        "source": "रुपया हैंडल"
+      },
+      {
+        "corrected": "यूपीसी",
+        "source": "यू पी सी"
+      },
+      {
+        "corrected": "यूसेज",
+        "source": "यू शेप"
+      },
+      {
+        "corrected": "यूसेज",
+        "source": "यू से"
+      },
+      {
+        "corrected": "यूसेज",
+        "source": "यूसेज़"
+      },
+      {
+        "corrected": "रहूं",
+        "source": "रहु"
+      },
+      {
+        "corrected": "रहूं",
+        "source": "रहू"
+      },
+      {
+        "corrected": "रहूंगी",
+        "source": "रहूंंगी"
+      },
+      {
+        "corrected": "राइडर",
+        "source": "राइटर"
+      },
+      {
+        "corrected": "रिकमेंड",
+        "source": "रिकमेंट"
+      },
+      {
+        "corrected": "रिक्वेस्ट ट्रैक",
+        "source": "रिको स्टॉक"
+      },
+      {
+        "corrected": "रिचार्ज",
+        "source": "रीचार्ज"
+      },
+      {
+        "corrected": "रिचेबल",
+        "source": "रिकेबल"
+      },
+      {
+        "corrected": "रिटर्न डेस्क",
+        "source": "रिटर्न बस"
+      },
+      {
+        "corrected": "रिटर्न डेस्क",
+        "source": "रिटर्न 10"
+      },
+      {
+        "corrected": "रिटर्न डेस्क",
+        "source": "रिटर्न डैड"
+      },
+      {
+        "corrected": "रिटर्न डेस्क",
+        "source": "अटेंडेंस"
+      },
+      {
+        "corrected": "रिटर्न डेस्क",
+        "source": "रिटर्न 10"
+      },
+      {
+        "corrected": "रिडीम",
+        "source": "पद्म"
+      },
+      {
+        "corrected": "रिडीम",
+        "source": "रुटीन"
+      },
+      {
+        "corrected": "रिन्यू",
+        "source": "रैनी"
+      },
+      {
+        "corrected": "रिफंड",
+        "source": "रेट फंड"
+      },
+      {
+        "corrected": "रिलीफ",
+        "source": "रिलीफ़"
+      },
+      {
+        "corrected": "रिसेट",
+        "source": "रिस्पेक्ट"
+      },
+      {
+        "corrected": "रीजनल भाषा",
+        "source": "रिज़ल्ट भाषा"
+      },
+      {
+        "corrected": "रीशेड्यूल",
+        "source": "री शेड्यूल"
+      },
+      {
+        "corrected": "रीसेंट बिल",
+        "source": "सीट बेल्ट"
+      },
+      {
+        "corrected": "रुपीस 1999",
+        "source": "रुपये 1900"
+      },
+      {
+        "corrected": "रूपीबॉस",
+        "source": "रूपी बॉस"
+      },
+      {
+        "corrected": "रूपीस फिफ्टी",
+        "source": "20 फिफ्टी"
+      },
+      {
+        "corrected": "रेडमी 5a",
+        "source": "रेडमी पाइप"
+      },
+      {
+        "corrected": "रेडमी 7a",
+        "source": "रेडमी 7 ने"
+      },
+      {
+        "corrected": "रेडमी गो ऑफर",
+        "source": "रणवीर को ऑफर"
+      },
+      {
+        "corrected": "रेडमी गो ऑफर",
+        "source": "रेडमी को ऑफर"
+      },
+      {
+        "corrected": "रोजगारी",
+        "source": "रोज़गारी"
+      },
+      {
+        "corrected": "रोमिंग",
+        "source": "रूम"
+      },
+      {
+        "corrected": "रोमिंग सर्विसेस",
+        "source": "होमिजर्विसेज"
+      },
+      {
+        "corrected": "रोलओवर",
+        "source": "ओलावर"
+      },
+      {
+        "corrected": "लाइफ",
+        "source": "लाइफ़"
+      },
+      {
+        "corrected": "लाइफ वाटर",
+        "source": "लाइट वॉटर"
+      },
+      {
+        "corrected": "विंड मॉडल्स",
+        "source": "वेड मॉडल"
+      },
+      {
+        "corrected": "लास्ट",
+        "source": "लाश"
+      },
+      {
+        "corrected": "लिंक",
+        "source": "लिंग"
+      },
+      {
+        "corrected": "लॉगिन",
+        "source": "लॉबिंग"
+      },
+      {
+        "corrected": "लॉगिन",
+        "source": "लोगिन"
+      },
+      {
+        "corrected": "लॉगिन",
+        "source": "लॉग इन"
+      },
+      {
+        "corrected": "लोड",
+        "source": "लूट"
+      },
+      {
+        "corrected": "लोनजिनी",
+        "source": "लोन जिनी"
+      },
+      {
+        "corrected": "वन प्लस",
+        "source": "वनप्लस"
+      },
+      {
+        "corrected": "वन प्लस 6t",
+        "source": "वनप्लस सिक्सटी"
+      },
+      {
+        "corrected": "वन प्लस 8",
+        "source": "वनप्लस गेट"
+      },
+      {
+        "corrected": "वर्क फ्रॉम होम",
+        "source": "बकरम होम"
+      },
+      {
+        "corrected": "वर्क फ्रॉम होम",
+        "source": "पर फ़्रॉम होम"
+      },
+      {
+        "corrected": "वर्जन",
+        "source": "बर्तन"
+      },
+      {
+        "corrected": "वर्जन",
+        "source": "वर्णन"
+      },
+      {
+        "corrected": "वाईफाई",
+        "source": "वाई फाई"
+      },
+      {
+        "corrected": "वाईफाई",
+        "source": "वाइ फाइ"
+      },
+      {
+        "corrected": "वाईफाई",
+        "source": "वाय फाय"
+      },
+      {
+        "corrected": "वाईफाई",
+        "source": "वाई फ़ाई"
+      },
+      {
+        "corrected": "वाईफाई",
+        "source": "हाई फ़ाई"
+      },
+      {
+        "corrected": "वाईफाई कॉलिंग",
+        "source": "बाय/ कॉलिंक"
+      },
+      {
+        "corrected": "वाउचर",
+        "source": "बहुचर"
+      },
+      {
+        "corrected": "वाउचर",
+        "source": "वाऊचर"
+      },
+      {
+        "corrected": "वाउचर",
+        "source": "बाउचर"
+      },
+      {
+        "corrected": "वाउचर",
+        "source": "अवसर"
+      },
+      {
+        "corrected": "वाटर",
+        "source": "पॉटर"
+      },
+      {
+        "corrected": "वारंटी",
+        "source": "बार एंटी"
+      },
+      {
+        "corrected": "विंड",
+        "source": "भिंड"
+      },
+      {
+        "corrected": "वीआईपी",
+        "source": "b आयी पी"
+      },
+      {
+        "corrected": "वीवो वी 19",
+        "source": "वी वो भी नाइनटीन"
+      },
+      {
+        "corrected": "वीवो वी 19",
+        "source": "v वो भी नाइनटीन"
+      },
+      {
+        "corrected": "वीवो वी 19",
+        "source": "b वो भी नाइंटीन"
+      },
+      {
+        "corrected": "वैलिड",
+        "source": "वाहिद"
+      },
+      {
+        "corrected": "वैलिडिटी",
+        "source": "वाली डीपी"
+      },
+      {
+        "corrected": "वैलिडिटी",
+        "source": "वाली टीटी"
+      },
+      {
+        "corrected": "वैलिडिटी",
+        "source": "डाले ड्यूटी"
+      },
+      {
+        "corrected": "वैलिडिटी",
+        "source": "डाली डिटी"
+      },
+      {
+        "corrected": "वैलिडिटी",
+        "source": "वाले डीपी"
+      },
+      {
+        "corrected": "वॉइस",
+        "source": "बॉयस"
+      },
+      {
+        "corrected": "वॉइस",
+        "source": "वॉयस"
+      },
+      {
+        "corrected": "वॉलेट पार्टनर रिचार्ज",
+        "source": "हॉलैंड पार्टनर विचार"
+      },
+      {
+        "corrected": "वोईस",
+        "source": "वाइज़"
+      },
+      {
+        "corrected": "वोटर कार्ड",
+        "source": "वोल्टीर कार्ड"
+      },
+      {
+        "corrected": "वोल्टी",
+        "source": "उल्टी"
+      },
+      {
+        "corrected": "वोल्टी",
+        "source": "वॉल्ट"
+      },
+      {
+        "corrected": "वोल्टी",
+        "source": "वोट"
+      },
+      {
+        "corrected": "वोल्टी",
+        "source": "बोल्ड टीवी"
+      },
+      {
+        "corrected": "वोल्टी",
+        "source": "बॉडी"
+      },
+      {
+        "corrected": "वोल्टी",
+        "source": "गोल्डी"
+      },
+      {
+        "corrected": "वोल्टी",
+        "source": "बोल्ड t"
+      },
+      {
+        "corrected": "वोल्टी सिम",
+        "source": "बोल्ड टीवी सेवा"
+      },
+      {
+        "corrected": "व्यू 20",
+        "source": "व्यू ट्वेंटी"
+      },
+      {
+        "corrected": "व्हाट्सएप",
+        "source": "वाटसन"
+      },
+      {
+        "corrected": "व्हील",
+        "source": "रील"
+      },
+      {
+        "corrected": "सजेशन",
+        "source": "शहंशाह"
+      },
+      {
+        "corrected": "सब्सक्रिप्शन",
+        "source": "सबसेक्षण"
+      },
+      {
+        "corrected": "सब्सक्रिप्शन",
+        "source": "सब शिक्षण"
+      },
+      {
+        "corrected": "सब्सक्रिप्शन",
+        "source": "सबसेक्शन"
+      },
+      {
+        "corrected": "सब्सक्रिप्शन",
+        "source": "सबसे भीषण"
+      },
+      {
+        "corrected": "सब्स्क्राइब",
+        "source": "सबटाइप"
+      },
+      {
+        "corrected": "सर्टिफिकेट",
+        "source": "सर्टिफ़िकेट"
+      },
+      {
+        "corrected": "सर्विसेज",
+        "source": "सर्विस इस"
+      },
+      {
+        "corrected": "सर्विसेज",
+        "source": "सर्विस एस"
+      },
+      {
+        "corrected": "सर्विसेज",
+        "source": "सर्विसेज़"
+      },
+      {
+        "corrected": "सर्विसेस",
+        "source": "सर्विसिस"
+      },
+      {
+        "corrected": "सर्विसेस",
+        "source": "सर्वेसे"
+      },
+      {
+        "corrected": "सर्विसेस",
+        "source": "सर्वश्रेष्ठ"
+      },
+      {
+        "corrected": "सही पिन",
+        "source": "साहिबगंज"
+      },
+      {
+        "corrected": "साइकिल",
+        "source": "साइकल"
+      },
+      {
+        "corrected": "सारे",
+        "source": "साढ़े"
+      },
+      {
+        "corrected": "साल्ट आई क्यू एले",
+        "source": "सॉर्ट आय युगल"
+      },
+      {
+        "corrected": "सावन",
+        "source": "सावंत"
+      },
+      {
+        "corrected": "सावन",
+        "source": "सावण"
+      },
+      {
+        "corrected": "सावन एप",
+        "source": "सावन आप"
+      },
+      {
+        "corrected": "सिक्योरिटी",
+        "source": "सिक्यूरिटी"
+      },
+      {
+        "corrected": "सिनॉप्सिस",
+        "source": "साथ नोटिस"
+      },
+      {
+        "corrected": "सिम",
+        "source": "सीम"
+      },
+      {
+        "corrected": "सिम",
+        "source": "सैम"
+      },
+      {
+        "corrected": "सिम",
+        "source": "सेम"
+      },
+      {
+        "corrected": "सिम कार्ड",
+        "source": "सैम कार्ड"
+      },
+      {
+        "corrected": "सिम को",
+        "source": "सिंक गोप"
+      },
+      {
+        "corrected": "सिम स्लॉट",
+        "source": "सिम्स लौट"
+      },
+      {
+        "corrected": "सीरीज 3",
+        "source": "सीरीज़ तरीक़े"
+      },
+      {
+        "corrected": "से एप अनइंस्टॉल",
+        "source": "सैंपल इंस्टॉल"
+      },
+      {
+        "corrected": "से एप अनइंस्टॉल",
+        "source": "सैर पानी इंस्टॉल"
+      },
+      {
+        "corrected": "सेफ",
+        "source": "रेशेफ"
+      },
+      {
+        "corrected": "सेफ कस्टडी",
+        "source": "शेख चिल्ली"
+      },
+      {
+        "corrected": "सेफ कस्टडी",
+        "source": "शेष कास्टडी"
+      },
+      {
+        "corrected": "सेफ कस्टडी",
+        "source": "सेफ कचरी"
+      },
+      {
+        "corrected": "सेव",
+        "source": "सेब"
+      },
+      {
+        "corrected": "सेव कार्ड",
+        "source": "शेड कार्ड"
+      },
+      {
+        "corrected": "सोडेक्सो कार्ड",
+        "source": "सुरक्षा कार्ड"
+      },
+      {
+        "corrected": "सोडेक्सो कार्ड",
+        "source": "सड़क शो कार्ड"
+      },
+      {
+        "corrected": "सोडेक्सो कार्ड",
+        "source": "सड़क 100 कार्ड"
+      },
+      {
+        "corrected": "सोडेक्सो कार्ड",
+        "source": "प्रोडक्ट्स सरकार"
+      },
+      {
+        "corrected": "सोसाइटी सेंट्रेक्स",
+        "source": "महाराज it सेंटर"
+      },
+      {
+        "corrected": "सेंट्रेक्स इंटरकॉम",
+        "source": "से ड्रग्स इंस्टाग्राम"
+      },
+      {
+        "corrected": "स्टैंड अप कॉमेडी",
+        "source": "तांडव कॉमेडी"
+      },
+      {
+        "corrected": "स्टोर क्रेडिट",
+        "source": "शोर क्रेडिट"
+      },
+      {
+        "corrected": "स्टोरीज",
+        "source": "स्टोरीज़"
+      },
+      {
+        "corrected": "स्ट्रीम",
+        "source": "एक्सट्रीम"
+      },
+      {
+        "corrected": "स्ट्रीमिंग",
+        "source": "स्विमिंग"
+      },
+      {
+        "corrected": "स्मार्ट वॉच",
+        "source": "स्मार्टवॉच"
+      },
+      {
+        "corrected": "स्मार्टफोन",
+        "source": "स्मार्क्टफोन"
+      },
+      {
+        "corrected": "स्विच",
+        "source": "स्वच्छ"
+      },
+      {
+        "corrected": "हाथवे सेट टॉप",
+        "source": "हाँ तो वे सट्टा"
+      },
+      {
+        "corrected": "हाथवे सेट टॉप",
+        "source": "यहाँ पे सत्ता"
+      },
+      {
+        "corrected": "हाथवे सेट टॉप",
+        "source": "हैथवे सट्टा"
+      },
+      {
+        "corrected": "हाथवे सेट टॉप",
+        "source": "हाथ वैसे टॉप"
+      },
+      {
+        "corrected": "हाथवे सेट टॉप",
+        "source": "हाथरस छठा"
+      },
+      {
+        "corrected": "हाथवे सेट टॉप",
+        "source": "हाथ से टॉप"
+      },
+      {
+        "corrected": "हाथवे सेट टॉप",
+        "source": "हाथवे सेटअप"
+      },
+      {
+        "corrected": "हिंदी",
+        "source": "हिन्दी"
+      },
+      {
+        "corrected": "हेल्थ चेक अप",
+        "source": "ख़र्चा कप"
+      },
+      {
+        "corrected": "हेल्थ चेक अप",
+        "source": "है जब कप"
+      },
+      {
+        "corrected": "हेल्थ चेक अप",
+        "source": "खेल जगत"
+      },
+      {
+        "corrected": "हेल्दी",
+        "source": "हल्दी"
+      },
+      {
+        "corrected": "हेल्पफुल",
+        "source": "हेल्थफुल"
+      },
+      {
+        "corrected": "हेल्पफुल",
+        "source": "हरफूल"
+      },
+      {
+        "corrected": "हैंडल",
+        "source": "हाइडल"
+      },
+      {
+        "corrected": "हैथवे",
+        "source": "हाथ में"
+      },
+      {
+        "corrected": "हैथवे वॉलेट",
+        "source": "हाथ वे वाले"
+      },
+      {
+        "corrected": "हैथवे वॉलेट",
+        "source": "हैथवे वोल्टी"
+      },
+      {
+        "corrected": "हैथवे वॉलेट",
+        "source": "हाथ वर्ल्ड"
+      },
+      {
+        "corrected": "हैथवे सेट टॉप",
+        "source": "मैट्रेस टाटा"
+      },
+      {
+        "corrected": "हैथवे सेट टॉप",
+        "source": "अतुल्य सेटअप"
+      },
+      {
+        "corrected": "हैथवे सेट",
+        "source": "हाँ तो वे सेट"
+      },
+      {
+        "corrected": "हैथवे सेट टॉप",
+        "source": "सातवें सेटअप"
+      },
+      {
+        "corrected": "हैप्पी वैलेंटाइन डे",
+        "source": "फ़ैक्ट्री वारंटी डंडे"
+      },
+      {
+        "corrected": "हॉटस्टार",
+        "source": "हॉस्टल"
+      },
+      {
+        "corrected": "हॉटस्टार",
+        "source": "हार्ट स्टार"
+      },
+      {
+        "corrected": "हॉटस्टार",
+        "source": "हार्टर"
+      },
+      {
+        "corrected": "हॉटस्पॉट",
+        "source": "हॉट स्पॉट"
+      },
+      {
+        "corrected": "हॉनर",
+        "source": "होनर"
+      },
+      {
+        "corrected": "हॉनर",
+        "source": "ऑनर"
+      },
+      {
+        "corrected": "हॉनर 20",
+        "source": "अंडर 20"
+      },
+      {
+        "corrected": "होनर व्यू 20",
+        "source": "और न ट्वेंटी"
+      },
+      {
+        "corrected": "होम पैक",
+        "source": "होम बैक"
+      },
+      {
+        "corrected": "होल्ड",
+        "source": "होल"
+      },
+      {
+        "corrected": "जिओ",
+        "source": "पंछियों"
+      },
+      {
+        "corrected": "एम हियर",
+        "source": "एम्पीयर"
+      },
+      {
+        "corrected": "जिओ गीगा",
+        "source": "सहगीगा का"
+      },
+      {
+        "corrected": "जिओ मार्ट",
+        "source": "जिओमेटिक्स"
+      },
+      {
+        "corrected": "यूपीआई आईडी",
+        "source": "up आईडी"
+      },
+      {
+        "corrected": "रेडमी 8a",
+        "source": "एडमिन एंड ई"
+      },
+      {
+        "corrected": "गीगा फाइबर",
+        "source": "कि गा फाइबर"
+      },
+      {
+        "corrected": "जिओ गीगा फाइबर",
+        "source": "जिओ की वह फ़ाइबर"
+      },
+      {
+        "corrected": "मायजिओ",
+        "source": "मायके"
+      },
+      {
+        "corrected": "जिओ गीगा फाइबर",
+        "source": "योगिता फाइबर"
+      },
+      {
+        "corrected": "आइएसडी",
+        "source": "आयी एस t"
+      },
+      {
+        "corrected": "जिओ 4g",
+        "source": "du फ़र्ज़ी"
+      },
+      {
+        "corrected": "जिओ 4g वॉइस",
+        "source": "क्यों फटती वॉइस"
+      },
+      {
+        "corrected": "जिओ",
+        "source": "g वो"
+      },
+      {
+        "corrected": "जिओ पोको",
+        "source": "जी आरोपों"
+      },
+      {
+        "corrected": "जिओ फोन 2",
+        "source": "यू फ़ोटू"
+      },
+      {
+        "corrected": "ऑल इन वन",
+        "source": "ऑलिवर"
+      },
+      {
+        "corrected": "एलटीई",
+        "source": "lte ई"
+      },
+      {
+        "corrected": "नॉट रीचअबल",
+        "source": "नॉर्थ रिज़र्व बल"
+      },
+      {
+        "corrected": "असूस आर ओ जी",
+        "source": "असुस रॉक"
+      },
+      {
+        "corrected": "कैशबैक",
+        "source": "कैश बैक"
+      },
+      {
+        "corrected": "पार्टनर",
+        "source": "पैकनर"
+      },
+      {
+        "corrected": "s10",
+        "source": "एस्टेट"
+      },
+      {
+        "corrected": "वीवो वी 19",
+        "source": "भी वो भी नाइंटीन"
+      },
+      {
+        "corrected": "7a",
+        "source": "सर्वे ने"
+      },
+      {
+        "corrected": "7a",
+        "source": "अश्विनी"
+      },
+      {
+        "corrected": "a9",
+        "source": "एयरलाइन"
+      },
+      {
+        "corrected": "नोट 10",
+        "source": "नोट ट्रेन"
+      },
+      {
+        "corrected": "नोट 10",
+        "source": "नोट डैन"
+      },
+      {
+        "corrected": "ई बिल",
+        "source": "ईविल"
+      },
+      {
+        "corrected": "टेली वेरीफिकेशन",
+        "source": "तली वेरिफ़िकेशन"
+      },
+      {
+        "corrected": "अनकंडीशनल",
+        "source": "अन कंडिशनर"
+      },
+      {
+        "corrected": "अनकंडीशनल",
+        "source": "अनकंडीशनर"
+      },
+      {
+        "corrected": "वर्क फ्रॉम होम",
+        "source": "वर्करों भवन"
+      },
+      {
+        "corrected": "आईआर पे गो",
+        "source": "आयी एआरपी गुर"
+      },
+      {
+        "corrected": "जिओ एप्लीकेशन",
+        "source": "थियो अप्लीकेशन"
+      },
+      {
+        "corrected": "एंड्रॉयड",
+        "source": "ऐंड्रॉयड"
+      },
+      {
+        "corrected": "आईओएस",
+        "source": "iओ एस"
+      },
+      {
+        "corrected": "जिओ गीगा फाइबर",
+        "source": "ड्यूटी का फ़ाइबर"
+      },
+      {
+        "corrected": "जिओ वॉइस",
+        "source": "जी-वॉइस"
+      },
+      {
+        "corrected": "एवरीव्हेयर",
+        "source": "एवरी बेयर"
+      },
+      {
+        "corrected": "जिओ गीगा फाइबर",
+        "source": "कि ok का फाइबर"
+      },
+      {
+        "corrected": "फेलियर",
+        "source": "फैली और"
+      },
+      {
+        "corrected": "जिओसिनेमा",
+        "source": "जिओ सिम ने वहाँ"
+      },
+      {
+        "corrected": "जिओ फोन 2",
+        "source": "जिओ फ़ोर टू"
+      },
+      {
+        "corrected": "विंड सीरीज",
+        "source": "बेंड सेरेस"
+      },
+      {
+        "corrected": "ओप्पो रेनो",
+        "source": "तो पूरे नो"
+      },
+      {
+        "corrected": "रेडमी 5a",
+        "source": "रेडमी फ़ाइव डे"
+      },
+      {
+        "corrected": "जिओ गीगा फाइबर",
+        "source": "जियोगी का फाइबर"
+      },
+      {
+        "corrected": "जिओफाई",
+        "source": "युवा फाइट"
+      },
+      {
+        "corrected": "वोल्टी",
+        "source": "बोल t"
+      },
+      {
+        "corrected": "वॉलेट पार्टनर",
+        "source": "वो लाइफ पार्टनर"
+      },
+      {
+        "corrected": "कैपेबिलिटी",
+        "source": "पब्लिसिटी"
+      },
+      {
+        "corrected": "जिओपे",
+        "source": "जी ओपेक"
+      },
+      {
+        "corrected": "इनफार्मेशन",
+        "source": "इन्फ़ॉर्मेशन"
+      },
+      {
+        "corrected": "मायजिओ",
+        "source": "माइक युवक"
+      },
+      {
+        "corrected": "ऑल इन वन",
+        "source": "ऑनलाइन वन"
+      },
+      {
+        "corrected": "कांफ्रेंस",
+        "source": "कॉन्फ़्रेन्स"
+      },
+      {
+        "corrected": "जिओ सिक्योरिटी",
+        "source": "जो सेक्युरिटी"
+      },
+      {
+        "corrected": "जिओटीवी",
+        "source": "uटीवी"
+      },
+      {
+        "corrected": "एप्लीकेशन",
+        "source": "अप्लीकेशन"
+      },
+      {
+        "corrected": "हॉटस्टार",
+        "source": "हॉट स्टोर"
+      },
+      {
+        "corrected": "कॉन्पिटिशन",
+        "source": "कॉम्पिटिशन"
+      },
+      {
+        "corrected": "किड्स",
+        "source": "गेट्स"
+      },
+      {
+        "corrected": "गवर्नमेंट",
+        "source": "गवर्मेंट"
+      },
+      {
+        "corrected": "प्रोफाइल",
+        "source": "प्रोफाइल्स"
+      },
+      {
+        "corrected": "मैगजीन",
+        "source": "मैक्सिन"
+      },
+      {
+        "corrected": "जिओ फोन",
+        "source": "यूरो फ़ोन"
+      },
+      {
+        "corrected": "एलजी",
+        "source": "l ज़ी"
+      },
+      {
+        "corrected": "एंटरप्राइज",
+        "source": "एंटरप्राइज़"
+      },
+      {
+        "corrected": "जिओ फाइबर",
+        "source": "गर्जिओ फ़ादर"
+      },
+      {
+        "corrected": "हेलो ट्यून",
+        "source": "हेलो टूंस"
+      },
+      {
+        "corrected": "जिओ डाटा",
+        "source": "जीव दाता"
+      },
+      {
+        "corrected": "ऑफर",
+        "source": "और फ़र"
+      },
+      {
+        "corrected": "खरीदें",
+        "source": "ख़रीदें"
+      },
+      {
+        "corrected": "ट्रांसफर",
+        "source": "ट्रान्सफर"
+      },
+      {
+        "corrected": "रिडीम",
+        "source": "रेडियम"
+      },
+      {
+        "corrected": "असूस आर ओ जी",
+        "source": "आसुस रॉक"
+      },
+      {
+        "corrected": "वीवो वी 19",
+        "source": "वीवो भी नाइंटीन"
+      },
+      {
+        "corrected": "रिडेंप्शन",
+        "source": "रेडिएशन"
+      },
+      {
+        "corrected": "एप्लीकेबल",
+        "source": "अपलक केवल"
+      },
+      {
+        "corrected": "रेडमी 7a",
+        "source": "रेडमी 7 8"
+      },
+      {
+        "corrected": "श्याओमी 7a",
+        "source": "श्याओमी 7 8"
+      },
+      {
+        "corrected": "जिओफाई",
+        "source": "जिओ फ़ाय"
+      },
+      {
+        "corrected": "वेरिफिकेशन",
+        "source": "वेरिफ़िकेशन"
+      },
+      {
+        "corrected": "अनकंडीशनल",
+        "source": "अन कंडीशनल"
+      },
+      {
+        "corrected": "ई सिम",
+        "source": "ईद से"
+      },
+      {
+        "corrected": "आईएआर पे गो रेट",
+        "source": "आईएआरपी गोरे"
+      },
+      {
+        "corrected": "वॉइस के वोल्टी में",
+        "source": "वो इसके बोल टीमें"
+      },
+      {
+        "corrected": "फेल",
+        "source": "फ़ेल"
+      },
+      {
+        "corrected": "लाइफ विंड",
+        "source": "लाइफ बेंड"
+      },
+      {
+        "corrected": "सीरीज",
+        "source": "सेरेस"
+      },
+      {
+        "corrected": "ओप्पो रेनो",
+        "source": "ओप्पो रहे नौ"
+      },
+      {
+        "corrected": "s10",
+        "source": "एस टैंक"
+      },
+      {
+        "corrected": "4a",
+        "source": "फ़ोरेन"
+      },
+      {
+        "corrected": "एमआई टीवी",
+        "source": "ए माइक टीवी"
+      },
+      {
+        "corrected": "मैगजीन",
+        "source": "मैडिसन"
+      },
+      {
+        "corrected": "ईज़ीगोव",
+        "source": "इज़ी गाँव"
+      },
+      {
+        "corrected": "999",
+        "source": "नौजवानों"
+      },
+      {
+        "corrected": "वीवो वी 19",
+        "source": "वी वो अभी नाइनटीन"
+      },
+      {
+        "corrected": "जिओफाई",
+        "source": "जिओ फाइल्स"
+      },
+      {
+        "corrected": "इंटरकनेक्ट",
+        "source": "इंटर करने"
+      },
+      {
+        "corrected": "मायजिओ",
+        "source": "मार्जी औ"
+      },
+      {
+        "corrected": "इंटरकनेक्ट",
+        "source": "इंटर कनेक्ट"
+      },
+      {
+        "corrected": "999",
+        "source": "9 नाइन नाइन"
+      },
+      {
+        "corrected": "9",
+        "source": "नाइन"
+      },
+      {
+        "corrected": "वी 19",
+        "source": "भी नाइनटीन"
+      },
+      {
+        "corrected": "19",
+        "source": "नाइनटीन"
+      },
+      {
+        "corrected": "1999",
+        "source": "वन ट्रिपल नाइन"
+      },
+      {
+        "corrected": "1999",
+        "source": "1 ट्रिपल 9"
+      },
+      {
+        "corrected": "ईएमआई",
+        "source": "यह माह"
+      },
+      {
+        "corrected": "ईएमआई",
+        "source": "यह माया"
+      },
+      {
+        "corrected": "लाइफ विंड",
+        "source": "वाइफ़ वेट"
+      },
+      {
+        "corrected": "लाइफ विंड",
+        "source": "लाइफ वेंट"
+      },
+      {
+        "corrected": "लाइफ विंड",
+        "source": "लाइफ वेट"
+      },
+      {
+        "corrected": "विंड",
+        "source": "वेड"
+      },
+      {
+        "corrected": "ग्लासेस",
+        "source": "क्लासेज"
+      },
+      {
+        "corrected": "ग्लासेस",
+        "source": "क्लासेस"
+      },
+      {
+        "corrected": "ग्लास",
+        "source": "क्लास"
+      },
+      {
+        "corrected": "सॉन्ग",
+        "source": "साँग"
+      },
+      {
+        "corrected": "सॉन्ग",
+        "source": "सांग"
+      },
+      {
+        "corrected": "ईज़ीगोव",
+        "source": "इसी गांव"
+      },
+      {
+        "corrected": "ईज़ीगोव",
+        "source": "िजिगो"
+      },
+      {
+        "corrected": "ईज़ीगोव",
+        "source": "इजी गो"
+      },
+      {
+        "corrected": "ईज़ीगोव",
+        "source": "इजी जीओवी"
+      },
+      {
+        "corrected": "ईज़ीगोव",
+        "source": "डिजीकॉप"
+      },
+      {
+        "corrected": "ईज़ीगोव",
+        "source": "इजी डॉग"
+      },
+      {
+        "corrected": "ईज़ी",
+        "source": "इजी"
+      },
+      {
+        "corrected": "ईज़ीगोव",
+        "source": "इसी गो"
+      },
+      {
+        "corrected": "ईज़ीगोव",
+        "source": "इजी गांव"
+      },
+      {
+        "corrected": "ईज़ीगोव",
+        "source": "इसी गोव"
+      },
+      {
+        "corrected": "ईज़ीगोव",
+        "source": "ईजीगो"
+      },
+      {
+        "corrected": "ईज़ीगोव",
+        "source": "ईज़ीजीओवी"
+      },
+      {
+        "corrected": "ईज़ीगोव",
+        "source": "इसी जीओवी"
+      },
+      {
+        "corrected": "ईज़ीगोव",
+        "source": "इसी गीओवी"
+      },
+      {
+        "corrected": "स्लो",
+        "source": "सिलो"
+      },
+      {
+        "corrected": "mp3",
+        "source": "m पी थ्री"
+      },
+      {
+        "corrected": "एलटीई",
+        "source": "lte"
+      },
+      {
+        "corrected": "जिओटीवी",
+        "source": "utv"
+      },
+      {
+        "corrected": "आइएसडी",
+        "source": "ist"
+      },
+      {
+        "corrected": "आईआर",
+        "source": "ir"
+      },
+      {
+        "corrected": "आईएफएससी",
+        "source": "ifsc"
+      },
+      {
+        "corrected": "आईडी",
+        "source": "id"
+      },
+      {
+        "corrected": "आईफोन",
+        "source": "iphone"
+      },
+      {
+        "corrected": "आईयूसी",
+        "source": "iuc"
+      },
+      {
+        "corrected": "आईयूसी",
+        "source": "icc"
+      },
+      {
+        "corrected": "आर एम एन",
+        "source": "r.m.l."
+      },
+      {
+        "corrected": "ईएमआई",
+        "source": "asmi"
+      },
+      {
+        "corrected": "ई सिम",
+        "source": "ec"
+      },
+      {
+        "corrected": "ई सिम",
+        "source": "ecm"
+      },
+      {
+        "corrected": "ई सिम",
+        "source": "ecb"
+      },
+      {
+        "corrected": "ई सिम",
+        "source": "esm"
+      },
+      {
+        "corrected": "ए जिओ",
+        "source": "ago"
+      },
+      {
+        "corrected": "ए जिओ",
+        "source": "egom"
+      },
+      {
+        "corrected": "एचडी",
+        "source": "ngt"
+      },
+      {
+        "corrected": "एचपी",
+        "source": "hp"
+      },
+      {
+        "corrected": "एप्पल",
+        "source": "apple"
+      },
+      {
+        "corrected": "एफयूपी",
+        "source": "f up"
+      },
+      {
+        "corrected": "एमपिन",
+        "source": "m10"
+      },
+      {
+        "corrected": "एमपिन",
+        "source": "mpin"
+      },
+      {
+        "corrected": "एसएमएस",
+        "source": "sms"
+      },
+      {
+        "corrected": "एसएमएस",
+        "source": "s.m.s."
+      },
+      {
+        "corrected": "एसटीबी",
+        "source": "st.bir"
+      },
+      {
+        "corrected": "एसटीबी",
+        "source": "sdb3"
+      },
+      {
+        "corrected": "ऑल इन वन",
+        "source": "all-in-one"
+      },
+      {
+        "corrected": "ओ एस",
+        "source": "os"
+      },
+      {
+        "corrected": "ओटीपी",
+        "source": "otp"
+      },
+      {
+        "corrected": "ओबीसी",
+        "source": "obc"
+      },
+      {
+        "corrected": "क्यूआर",
+        "source": "qr"
+      },
+      {
+        "corrected": "जिओ",
+        "source": "jdu"
+      },
+      {
+        "corrected": "जिओ",
+        "source": "jnu"
+      },
+      {
+        "corrected": "जिओ",
+        "source": "go"
+      },
+      {
+        "corrected": "जिओ",
+        "source": "ngo"
+      },
+      {
+        "corrected": "ट्यून",
+        "source": "tune"
+      },
+      {
+        "corrected": "यूपीआई",
+        "source": "upi"
+      },
+      {
+        "corrected": "जिओ सिम",
+        "source": "gsm"
+      },
+      {
+        "corrected": "जिओ सिम",
+        "source": "goc"
+      },
+      {
+        "corrected": "टिक टैक टो",
+        "source": "tic-tac-toe"
+      },
+      {
+        "corrected": "टीवी",
+        "source": "tv"
+      },
+      {
+        "corrected": "डब्ल्यू पी एस",
+        "source": "wpc"
+      },
+      {
+        "corrected": "डब्ल्यू पी एस",
+        "source": "wps"
+      },
+      {
+        "corrected": "डीएनडी",
+        "source": "dnd"
+      },
+      {
+        "corrected": "डीटीएच",
+        "source": "dth"
+      },
+      {
+        "corrected": "बाइट साइज",
+        "source": "bite-sized"
+      },
+      {
+        "corrected": "मायजिओ यूपीआई",
+        "source": "gov upi"
+      },
+      {
+        "corrected": "यूपीआई",
+        "source": "upa"
+      },
+      {
+        "corrected": "यूपीआई",
+        "source": "ubi"
+      },
+      {
+        "corrected": "यूपीआई",
+        "source": "uti"
+      },
+      {
+        "corrected": "यूपीआई",
+        "source": "wpi"
+      },
+      {
+        "corrected": "यूपीआई आईडी",
+        "source": "upi id"
+      },
+      {
+        "corrected": "यूपीआई आईडी",
+        "source": "up iit"
+      },
+      {
+        "corrected": "यूपीआई आईडी",
+        "source": "up ipl"
+      },
+      {
+        "corrected": "वाईफाई",
+        "source": "wifi"
+      },
+      {
+        "corrected": "वाईफाई",
+        "source": "wi-fi"
+      },
+      {
+        "corrected": "वीआईपी",
+        "source": "vip"
+      },
+      {
+        "corrected": "सिम",
+        "source": "cm"
+      },
+      {
+        "corrected": "वीआईपी",
+        "source": "bip"
+      },
+      {
+        "corrected": "हॉनर 20",
+        "source": "under-20"
+      },
+      {
+        "corrected": "एफटीटीएच",
+        "source": "ftth"
+      },
+      {
+        "corrected": "मायजिओ",
+        "source": "myjio"
+      }
+    ]
+  },
+  "deeplinks": [
+    {
+      "name": "edit_profile",
+      "url": "jio://com.jio.myjio/settings"
+    },
+    {
+      "name": "jio_care",
+      "url": "jio://com.jio.myjio/jio_care"
+    },
+    {
+      "name": "jio_saavn_app",
+      "url": "jio://com.jio.myjio/dashboard_jio_saavn"
+    },
+    {
+      "name": "myjio_dnd",
+      "url": "jio://com.jio.myjio/dnd"
+    },
+    {
+      "name": "update_profile",
+      "url": "jio://com.jio.myjio/ps_account_settings"
+    },
+    {
+      "name": "jio_engage",
+      "url": "jio://com.jio.myjio/jio_engage_dashboard"
+    },
+    {
+      "name": "jio_payment_bank",
+      "url": "jio://com.jio.myjio/jio_jpb"
+    }
+  ],
+  "commands": [
+    {
+      "command_name": "^(call|dial|call to|hey hellojio call|hey ask jio call|I want to call|please call|can you call|can you please call|please dial|can you dial|can you please dial)(.*)$",
+      "command_tag": "CALL",
+      "command_ops_tag": "2",
+      "command_extra_name": "",
+      "command_extra_tag": ""
+    },
+    {
+      "command_name": "^(send a text message to|send a text message|send text message|send text message to|send a message to|send message to|send a text to|send an sms to|send a message|text a message|send message|send text to|send sms to|send text|send sms|text to|message|text|sms)(.*)$",
+      "command_tag": "SEND_SMS",
+      "command_ops_tag": "2",
+      "command_extra_name": "^(.*)(saying|to tell him|to tell her|to tell|to|asking|that|for|ask|say)(.*)$",
+      "command_extra_tag": "1,3"
+    },
+    {
+      "command_name": "^(set alarm|please set alarm|please set an alarm|please set an alarm at|please set alarm at|set alarm at|set an alarm at|hellojio set an alarm|hey ask jio set an alarm|ask jio set an alarm|set an alarm for|set my alarm at|set my alarm|please set my alarm at)(.*)$",
+      "command_tag": "ALARM",
+      "command_ops_tag": "2",
+      "command_extra_name": "",
+      "command_extra_tag": ""
+    },
+    {
+      "command_name": "^(set my timer at|set timer for|set timer|set timer to|please set timer)(.*)$",
+      "command_tag": "TIMER",
+      "command_ops_tag": "2",
+      "command_extra_name": "",
+      "command_extra_tag": ""
+    },
+    {
+      "command_name": "^(cancel alarm|disable alarm|cancel my alarm|disable my alarm)(.*)$",
+      "command_tag": "CANCEL_ALARM",
+      "command_ops_tag": "2",
+      "command_extra_name": "",
+      "command_extra_tag": ""
+    },
+    {
+      "command_name": "^(show my shopping cart|i would like to see my shopping list|show my cart|show my shopping list|show my list|show list|show my reminder list|show my reminders|show my reminder)(.*)$",
+      "command_tag": "SHOPPING_CART",
+      "command_ops_tag": "2",
+      "command_extra_name": "",
+      "command_extra_tag": ""
+    },
+    {
+      "command_name": "^(clear my cart|clear my shopping cart|clear my shopping list|please clear my list|clear my list|clear list)(.*)$",
+      "command_tag": "CLEAR_CART",
+      "command_ops_tag": "2",
+      "command_extra_name": "",
+      "command_extra_tag": ""
+    },
+    {
+      "command_name": "^(i want to add |add |please add |put |please put )(.*)$",
+      "command_tag": "ADD_CART",
+      "command_ops_tag": "2",
+      "command_extra_name": "",
+      "command_extra_tag": ""
+    },
+    {
+      "command_name": "^(remind me |remind me to |please add |put |please put )(.*)$",
+      "command_tag": "ADD_REMINDER_CART",
+      "command_ops_tag": "2",
+      "command_extra_name": "",
+      "command_extra_tag": ""
+    },
+    {
+      "command_name": "^(remove |delete )(.*)$",
+      "command_tag": "REMOVE_CART",
+      "command_ops_tag": "2",
+      "command_extra_name": "",
+      "command_extra_tag": ""
+    },
+    {
+      "command_name": "^(turn on)(.*)$",
+      "command_tag": "TURN_ON_COMMAND",
+      "command_ops_tag": "2",
+      "command_extra_name": "",
+      "command_extra_tag": ""
+    },
+    {
+      "command_name": "^(turn off)(.*)$",
+      "command_tag": "TURN_OFF_COMMAND",
+      "command_ops_tag": "2",
+      "command_extra_name": "",
+      "command_extra_tag": ""
+    },
+    {
+      "command_name": "^(show version|show app version|show hellojio version|show ask jio version|show my app version|app version)(.*)$",
+      "command_tag": "SHOW_VERSION",
+      "command_ops_tag": "2",
+      "command_extra_name": "",
+      "command_extra_tag": ""
+    },
+    {
+      "command_name": "^(launch|please launch|open|can you please launch|i would like to launch|hey ask jio please launch|ask jio launch)(.*)$",
+      "command_tag": "LAUNCH_COMMAND",
+      "command_ops_tag": "2",
+      "command_extra_name": "",
+      "command_extra_tag": ""
+    },
+    {
+      "command_name": "^(start |go to|goto |show me the|show me|show )(.*)$",
+      "command_tag": "LAUNCH_COMMAND_PLAY",
+      "command_ops_tag": "2",
+      "command_extra_name": "",
+      "command_extra_tag": ""
+    },
+    {
+      "command_name": "^(install|please install|ask jio install|download)(.*)$",
+      "command_tag": "INSTALL_COMMAND",
+      "command_ops_tag": "2",
+      "command_extra_name": "",
+      "command_extra_tag": ""
+    },
+    {
+      "command_name": "^(play music)(.*)$",
+      "command_tag": "PLAY_COMMAND",
+      "command_ops_tag": "2",
+      "command_extra_name": "",
+      "command_extra_tag": ""
+    },
+    {
+      "command_name": "^(mute)(.*)$",
+      "command_tag": "MUTE_COMMAND",
+      "command_ops_tag": "2",
+      "command_extra_name": "",
+      "command_extra_tag": ""
+    },
+    {
+      "command_name": "^(unmute)(.*)$",
+      "command_tag": "UNMUTE_COMMAND",
+      "command_ops_tag": "2",
+      "command_extra_name": "",
+      "command_extra_tag": ""
+    },
+    {
+      "command_name": "^(switch to)(.*)$",
+      "command_tag": "SWITCH_COMMAND",
+      "command_ops_tag": "2",
+      "command_extra_name": "",
+      "command_extra_tag": ""
+    },
+    {
+      "command_name": "^(change language to)(.*)$",
+      "command_tag": "LANG_COMMAND",
+      "command_ops_tag": "2",
+      "command_extra_name": "",
+      "command_extra_tag": ""
+    },
+    {
+      "command_name": "^(latest news|what are latest news|news|top news|show latest news)(.*)$",
+      "command_tag": "LATEST_NEWS",
+      "command_ops_tag": "2",
+      "command_extra_name": "",
+      "command_extra_tag": ""
+    },
+    {
+      "command_name": "^(play me the|play me|play|i want to hear|play a|i want to hear|i want to listen|i would like to listen|i would like to listen to|i would like to hear|listen|listen to|can you play)(.*)$",
+      "command_tag": "PLAY_MUSIC",
+      "command_ops_tag": "2",
+      "command_extra_name": "",
+      "command_extra_tag": ""
+    },
+    {
+      "command_name": "^(can you play|can you start|play a|play|i want to watch|play a|play me|please play|please play me|please start a|can you play)(.*)$",
+      "command_tag": "PLAY_MOVIE",
+      "command_ops_tag": "2",
+      "command_extra_name": "",
+      "command_extra_tag": ""
+    },
+    {
+      "command_name": "^(i want to read|i would like to read|read|top news|show latest news)(.*)$",
+      "command_tag": "OPEN_JIOMAGS",
+      "command_ops_tag": "2",
+      "command_extra_name": "",
+      "command_extra_tag": ""
+    }
+  ]
+}

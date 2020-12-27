@@ -1,0 +1,162 @@
+{
+	"jio": {
+		"terms": {
+			"termstext": "",
+			"subTitleID": "60174",
+			"btntext": "Continue",
+			"res": "",
+			"primeImageUrl": "/upload/BottomNavigation/drawable/prime_terms.png",
+			"callActionLink": "",
+			"commonActionURL": "",
+			"actionTag": "",
+			"title": "",
+			"visibility": "1",
+			"headerVisibility": "0"
+		},
+		"termsHyperLink": {
+			"termstextNew": "I accept JioPrime programme Terms & Conditions and hereby share the above phone number to enroll.",
+			"termsConditonUrl": "https://www.jio.com/en-in/prime-points-terms-conditions?header=no&",
+			"subTitleID": "60174",
+			"callActionLink": "",
+			"commonActionURL": "",
+			"actionTag": "T003",
+			"title": "",
+			"visibility": "1",
+			"headerVisibility": "0"
+		},
+		"jioPrimePointsTerms": [{
+			"items": [{
+					"res": "ic_primepoints",
+					"title": "PRIME POINTS",
+					"titleID": "60001",
+					"subTitle": "Maximum Loyalty Rewards",
+					"subTitleID": "60064",
+					"description": "Earn points on Shopping, Travel, Movies and Dining. Redeem at all your favourite brands and Reliance Retail stores!",
+					"descriptionID": "60175",
+					"order": "1",
+					"imageUrl": "",
+					"callActionLink": "F072",
+					"appVersion": "4104",
+					"visibility": "1",
+					"commonActionURL": "",
+					"actionTag": "T005",
+					"bannerJTokenTag": "D000"
+				},
+				{
+					"res": "ic_primeshop",
+					"title": "PRIME SHOPS",
+					"titleID": "60002",
+					"subTitle": "Convenient & Rewarding Online Purchases",
+					"subTitleID": "60065",
+					"description": "Start all your Online Shopping here! Order all your groceries and home supplies from your local Jio Prime Merchant (kirana) and earn PrimePoints!",
+					"descriptionID": "60176",
+					"order": "2",
+					"imageUrl": "",
+					"callActionLink": "F072",
+					"appVersion": "4104",
+					"visibility": "1",
+					"commonActionURL": "https://www.jio.com/shop/jiofi-999-festive-offer?utm_source=myjio&utm_medium=banner&utm_campaign=jiofi-999-festive-offer&utm_content=jiofi",
+					"actionTag": "T005",
+					"bannerJTokenTag": "D000"
+				},
+				{
+					"res": "ic_primefridays",
+					"title": "PRIME FRIDAYS",
+					"titleID": "60003",
+					"subTitle": "Exclusive Offers & Deals",
+					"subTitleID": "60066",
+					"description": "Exciting coupons from all your favourite retailers, service providers and grocery brands! New coupons announced every Friday. Hurry, offers are limited!",
+					"descriptionID": "60177",
+					"order": "3",
+					"imageUrl": "",
+					"callActionLink": "F074",
+					"appVersion": "4104",
+					"visibility": "1",
+					"commonActionURL": "https://www.jio.com/JioWebApp/index.html?root=myVoucher&source=MYJIO_ANDROID&action=NL_MB",
+					"actionTag": "T008",
+					"bannerJTokenTag": "D003"
+				}
+			]
+		}]
+	},
+	"nonjio": {
+		"terms": {
+			"termstext": "",
+			"subTitleID": "60174",
+			"btntext": "Continue",
+			"res": "",
+			"primeImageUrl": "/upload/BottomNavigation/drawable/prime_terms.png",
+			"callActionLink": "",
+			"commonActionURL": "",
+			"actionTag": "",
+			"title": "",
+			"visibility": "1",
+			"headerVisibility": "0"
+		},
+		"termsHyperLink": {
+			"termstextNew": "I accept JioPrime Terms & Conditions and understand that my membership will be activated on this mobile only after I become a customer of JioPrime Superstore, Jio Payments Bank, Reliance Retail or Jio.",
+			"termsConditonUrl": "https://www.jio.com/en-in/prime-points-terms-conditions?header=no&",
+			"subTitleID": "60174",
+			"callActionLink": "",
+			"commonActionURL": "",
+			"actionTag": "T003",
+			"title": "",
+			"visibility": "1",
+			"headerVisibility": "0"
+		},
+		"jioPrimePointsTerms": [{
+			"items": [{
+					"res": "ic_primepoints",
+					"title": "PRIME POINTS",
+					"titleID": "60001",
+					"subTitle": "Maximum Loyalty Rewards",
+					"subTitleID": "60064",
+					"description": "Earn points on Shopping, Travel, Movies and Dining. Redeem at all your favourite brands and Reliance Retail stores!",
+					"descriptionID": "60175",
+					"order": "1",
+					"imageUrl": "",
+					"callActionLink": "F072",
+					"appVersion": "4104",
+					"visibility": "1",
+					"commonActionURL": "",
+					"actionTag": "T005",
+					"bannerJTokenTag": "D000"
+				},
+				{
+					"res": "ic_primeshop",
+					"title": "PRIME SHOPS",
+					"titleID": "60002",
+					"subTitle": "Convenient & Rewarding Online Purchases",
+					"subTitleID": "60065",
+					"description": "Start all your Online Shopping here! Order all your groceries and home supplies from your local Jio Prime Merchant (kirana) and earn PrimePoints!",
+					"descriptionID": "60176",
+					"order": "2",
+					"imageUrl": "",
+					"callActionLink": "F072",
+					"appVersion": "4104",
+					"visibility": "1",
+					"commonActionURL": "https://www.jio.com/shop/jiofi-999-festive-offer?utm_source=myjio&utm_medium=banner&utm_campaign=jiofi-999-festive-offer&utm_content=jiofi",
+					"actionTag": "T005",
+					"bannerJTokenTag": "D000"
+				},
+				{
+					"res": "ic_primefridays",
+					"title": "PRIME FRIDAYS",
+					"titleID": "60003",
+					"subTitle": "Exclusive Offers & Deals",
+					"subTitleID": "60066",
+					"description": "Exciting coupons from all your favourite retailers, service providers and grocery brands! New coupons announced every Friday. Hurry, offers are limited!",
+					"descriptionID": "60177",
+					"order": "3",
+					"imageUrl": "",
+					"callActionLink": "F074",
+					"appVersion": "4104",
+					"visibility": "1",
+					"commonActionURL": "https://www.jio.com/JioWebApp/index.html?root=myVoucher&source=MYJIO_ANDROID&action=NL_MB",
+					"actionTag": "T008",
+					"bannerJTokenTag": "D003"
+				}
+			]
+		}]
+	}
+}

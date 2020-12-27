@@ -1,0 +1,62 @@
+{
+  "ads": [
+    {
+      "code": "rin",
+      "type": "0",
+      "pID": "36",
+      "pageID": "373",
+      "url": "https://jioplayalong3.akamaized.net/jiogame/index.html?GameID=JS2001&jwt="
+    },
+    {
+      "code": "mountain_dew",
+      "type": "1",
+      "url": "https://jioplayalong3.akamaized.net/app23/index.html?jwt="
+    },
+    {
+      "code": "ariel",
+      "type": "1",
+      "url": "https://jioplayalong3.akamaized.net/app25/index.html?jwt="
+    },
+    {
+      "code": "Sunsilk",
+      "type": "0",
+      "pID": "36",
+      "pageID": "412",
+      "url": "https://jioplayalong3.akamaized.net/jiogame/index.html?GameID=JS2003&jwt="
+    },
+    {
+      "code": "Lipton",
+      "type": "0",
+      "pID": "36",
+      "pageID": "409",
+      "url": "https://jioplayalong3.akamaized.net/jiogame/index.html?GameID=JS2002&jwt="
+    },
+    {
+      "code": "Coke1",
+      "type": "1",
+      "url": "https://jioplayalong3.akamaized.net/app24/index.html?jwt="
+    },
+    {
+      "code": "Coke2",
+      "type": "1",
+      "url": "https://jioplayalong3.akamaized.net/app24/index.html?jwt="
+    },
+    {
+      "code": "Coke",
+      "type": "1",
+      "url": "https://jioplayalong3.akamaized.net/app24/index.html?jwt="
+    },
+    {
+      "code": "mda",
+      "type": "3",
+      "url": "https://en.wikipedia.org/wiki/Mukesh_Ambani"
+    },
+    {
+      "code": "cadbury",
+      "type": "2",
+      "url": "https://www.cadburygifting.in/"
+    }
+  ],
+  "fingerPrintDelay": "5",
+  "fingerPrintApi": "https://adxtend.jioengageapps.com/ad_find/upload"
+}

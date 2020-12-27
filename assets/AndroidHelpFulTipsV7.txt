@@ -1,0 +1,130 @@
+{
+  "HelpFulTips": [
+    {
+      "order": "1",
+      "title": "",
+      "bannerTitle": "New Banner",
+      "accessibilityContent": "JioPhone exchange program",
+      "visibility": "1",
+      "res": "",
+      "icon": "",
+      "items": [
+        {
+          "title": "Curb causes of high data usage",
+          "titleID": "95139",
+          "subTitle": "<html> <head><style>.color_7d7d7d {color:#7D7D7D;} .font14{font-size: 14px} .color_000000  {color: #000} .mb20 {margin-bottom: 20px;} .mb-3{margin-bottom: 5px} .mt-5{margin-top: 5px} p{margin:0}</style></head> <body class='JioTypeW04_Medium color_7d7d7d font14'><p class='mb20 mb3'>Let's take a look at how to curb unnecessary data usage.</p><p class='color_000000 mb-3'>1. Video streaming apps/sites:</p><p class='mb20'>Streaming of videos, especially with high resolution, will cause high data usage. Higher the quality of video, higher will be data consumption. Read 'Manage data used for video streaming' in Helpful tips to learn how to set preferred video resolution and control data usage.</p><p class='color_000000 mb-3'>2. Video streaming on Facebook</p><p class='mb20 mtn'>When you are watching livestreams on Facebook for long duration, data consumption is higher. Facebook videos which auto play while scrolling through the timeline also contribute to data usage.</p><p class='color_000000 mb-3'>3. Video downloads on WhatsApp</p><p class='mtn'>Multiple video downloads on WhatsApp consume high amount of data usage. If your WhatsApp setting allows auto-download of videos, it could consume even more data.</p><p class='mb20 mt-5'>Tip: Open WhatsApp and go to 'Settings' (top right hand corner). Select 'Data Usage' option and choose the type of content for auto-download.</p><p class='color_000000 mb-3'>4. Cloud/Online backup</p><p class='mb20 mtn'>Applications such as Dropbox, Google Photos, Google Drive, iCloud allow automatic schedules for backing up and syncing data such as photos, videos and music to cloud. Recheck the settings to ensure only critical information is updated, as this could quickly use your data quota.</p><p class='color_000000 mb-3'>5. Tethering/Wi-Fi hotspot</p><p>A. When you make your mobile a Wi-Fi hotspot and connect other devices, the amount of data used completely depends on the type of content accessed by those consumption devices.</p><p class='mb20 mt-5'>Tip: Ensure you have a complex Wi-Fi password to prevent unauthorised access.</p><p>B. When you make your device a Wi-Fi hotspot & other devices connect to your device over Wi-Fi; the Wi-Fi related auto update setting comes into effect in the connected devices. Most devices have settings which enable auto update of apps & perform online backup whenever connected to Wi-Fi.</p><p class='mb20 mt-5'>Tip: Change settings which allow 'auto update on Wi-Fi' on connected devices and choose to update only when needed.</p><p class='color_000000 mb-3'>6. App updates</p><p>Check your Play Store/App Store settings. If 'Auto-Update Apps' option is enabled on mobile data, apps get updated automatically whenever a new version is available. Certain apps consume as high as 150MB for updates.</p><p class='mt-5'>In Android devices, go to 'Settings' in Play Store and set auto update preference.</p><p class='mt-5'>In Apple devices, go to 'iTunes & App Store' in 'Settings' to set auto download preference.</p><p class='mb20 mt-5'>Tip: Set option as 'Do not Auto-update Apps', so that you update apps as per your need.</p><p class='color_000000 mb-3'>7. System updates</p><p class='mb20'>Android or iOS device software updates consume high data consumption. It is recommend to perform these updates when you have sufficient data balance or over WiFi.</p><p class='color_000000 mb-3'>8. Audio streaming</p><p class='mb20'>While data used through audio streaming is much lower than video streaming, regular audio streaming on apps such as JioSaavn and Gaana for longer duration will consume high data.</p></body></html>",
+          "subTitleID": "95176",
+          "accessibilityContent": "",
+          "callActionLink": "",
+          "bannerUrl": "https://jep-asset.akamaized.net/MyJio_Client/Common/check_causes_high_data_usage.jpg",
+          "appVersion": "5000",
+          "visibility": "1",
+          "commonActionURL": "",
+          "actionTag": "T006",
+          "isLangCodeEnable": "1",
+          "bannerJTokenTag": "D000"
+        },
+        {
+          "title": "Manage data used for video streaming",
+          "titleID": "95140",
+          "subTitle": "<html> <head><style>.color_7d7d7d {color:#7D7D7D;} .font14{font-size: 14px} .color_000000  {color: #000} .mb20 {margin-bottom: 20px;} .mb-3{margin-bottom: 5px} .mt-5{margin-top: 5px} p{margin:0}</style></head> <body class='JioTypeW04_Medium color_7d7d7d font14'><p class='mb20'>You can control and adjust data usage during streaming services by making few minor quality settings. High resolution videos will require higher amount of data usage for streaming. These steps vary depending on the app. Here are the steps for few popular apps:</p><p class='color_000000 mb-3'>1. JioCinema</p><p class='mb20'>Open JioCinema app and tap on 'Settings'. Tap on 'Data Usage' and select the video quality.</p><p class='color_000000 mb-3'>2. YouTube</p><p class='mb20'>While playing the video, tap on settings icon and  select video quality.</p><p class='color_000000 mb-3'>3. Netflix</p><p class='mb20'>Access Account settings from Netflix App and select Playback settings. Select your desired data usage settings and save the preferred option</p><p class='color_000000 mb-3'>4. Hotstar</p><p class='mb20'>While playing a video on Hotstar app, tap on 'Settings' and select 'Video Quality'.</p></body></html>",
+          "subTitleID": "95177",
+          "accessibilityContent": "",
+          "callActionLink": "",
+          "bannerUrl": "https://jep-asset.akamaized.net/MyJio_Client/Common/manage_data_used_for_video_streaming.jpg",
+          "appVersion": "5000",
+          "visibility": "1",
+          "commonActionURL": "",
+          "actionTag": "T006",
+          "isLangCodeEnable": "1",
+          "bannerJTokenTag": "D000"
+        },
+        {
+          "title": "Data Consumption for videos of different resolutions",
+          "titleID": "95141",
+          "subTitle": "<html> <head><style>.color_7d7d7d {color:#7D7D7D;} .font14{font-size: 14px} .color_000000  {color: #000} .mb20 {margin-bottom: 20px;} .mb-3{margin-bottom: 5px} .mt-5{margin-top: 5px} p{margin:0}</style></head> <body class='JioTypeW04_Medium color_7d7d7d font14'><p class='mb20'>Video streaming with higher resolution will consume higher amount of data. Below is the estimated data used depending on quality of video. However, this could vary for each application or website such as JioCinema, YouTube, Netflix, Hotstar etc. and it is recommended to refer respective video stream application or website for exact resolution & data consumption details.</p><p class='color_000000 mb-3'>1. Low</p><p class='mb20'>Basic video quality, up to 0.3 GB per hour.</p><p class='color_000000 mb-3'>2. Medium</p><p class='mb20'>Standard video quality, up to 0.7 GB per hour.</p><p class='color_000000 mb-3'>3. High</p><p class='mb20'>Standard video quality, up to 1 GB per hour.</p><p class='color_000000 mb-3'>4. HD</p><p class='mb20'>High definition quality, up to 3 GB per hour.</p><p class='color_000000 mb-3'>5. Ultra HD</p><p class='mb20'>Up to 7 GB per hour.</p><p class='color_000000 mb-3'>6. Auto</p><p class='mb20'>Video quality is automatically adjusted basis data speed. Thus, when you are on a 4G network, you will experience the best video quality supported by the app and thus data consumption will be high.</p></body></html>",
+          "subTitleID": "95178",
+          "accessibilityContent": "",
+          "callActionLink": "",
+          "bannerUrl": "https://jep-asset.akamaized.net/MyJio_Client/Common/data_consumption_for_videos_of_different.jpg",
+          "appVersion": "5000",
+          "visibility": "1",
+          "isLangCodeEnable": "1",
+          "commonActionURL": "",
+          "actionTag": "T006",
+          "bannerJTokenTag": "D000"
+        },
+        {
+          "title": "Tips to restrict high background data usage",
+          "titleID": "95142",
+          "subTitle": "<html> <head><style>.color_7d7d7d {color:#7D7D7D;} .font14{font-size: 14px} .color_000000  {color: #000} .mb20 {margin-bottom: 20px;} .mb-3{margin-bottom: 5px} .mt-5{margin-top: 5px} p{margin:0}</style></head> <body class='JioTypeW04_Medium color_7d7d7d font14'><p class='mb20'>Even when you are not actively using your smart phone, apps may still be consuming data in the background. These apps are constantly checking their servers through internet for updates and notifications.</p><p class='mb20'>Data usage section in Android settings lets you view the amount of data used by each specific app. If you notice an app using more background data than you'd like it to, you can restrict it from accessing internet.</p><p class='color_000000 mb-3'>Step 1:</p><p class='mb20'>Open Settings and tap on Data usage.</p><p class='color_000000 mb-3'>Step 2:</p><p class='mb20'>Scroll down to view list of your apps sorted by data usage. Tap an app to check out detailed usage statistics. This is where you can restrict background data for individual apps.</p><p class='color_000000 mb-3'>Step 3:</p><p class='mb20'>Tap on the app(s) you don't want to connect to mobile data and select 'Restrict app background data'.</p><p class='mb20'>In iOS devices, you can set your preference to turn cellular data on or off for all apps or individual apps.</p><p class='color_000000 mb-3'>Step 1:</p><p class='mb20'>Go to 'Settings'</p><p class='color_000000 mb-3'>Step 2:</p><p class='mb20'>Tap on 'Cellular or Mobile Data' to view details and set preference.</p></body></html>",
+          "subTitleID": "95179",
+          "accessibilityContent": "",
+          "callActionLink": "",
+          "bannerUrl": "https://jep-asset.akamaized.net/MyJio_Client/Common/tips_to_restrict_high_background_data_usage.jpg",
+          "appVersion": "5000",
+          "visibility": "1",
+          "commonActionURL": "",
+          "actionTag": "",
+          "bannerJTokenTag": "D000"
+        },
+        {
+          "title": "Detects apps consuming more data",
+          "titleID": "95143",
+          "subTitle": "<html> <head><style>.color_7d7d7d {color:#7D7D7D;} .font14{font-size: 14px} .color_000000  {color: #000} .mb20 {margin-bottom: 20px;} .mb-3{margin-bottom: 5px} .mt-5{margin-top: 5px} p{margin:0}</style></head> <body class='JioTypeW04_Medium color_7d7d7d font14'><p class='mb20'>You can view amount of data used by each app in your smart phone for selected date range.</p><p class='mb20'>'Data usage' section in Android 'Settings' lets you view amount of data used by each specific app.</p><p class='color_000000 mb-3'>Step 1:</p><p class='mb20'>Open 'Settings' and tap on 'Data usage'.</p><p class='color_000000 mb-3'>Step 2:</p><p class='mb20'>Select date range and view the total data used for the given period.</p><p class='color_000000 mb-3'>Step 3:</p><p class='mb20'>Scroll down to view list of apps sorted by data usage.</p><p class='mb20'>In iOS devices, you can check how much data is used and how to turn cellular data on or off for all apps or individual apps.</p><p class='color_000000 mb-3'>Step 1:</p><p class='mb20'>Go to 'Settings'</p><p class='color_000000 mb-3'>Step 2:</p><p class='mb20'>Tap on 'Cellular or Mobile Data' to view these details.</p><p class='color_000000 mb-3'>Step 3:</p><p class='mb20'>To view data usage for individual system services, scroll to the bottom of the settings/mobile data screen and tap 'System Services'.</p></body></html>",
+          "subTitleID": "95180",
+          "accessibilityContent": "",
+          "callActionLink": "",
+          "bannerUrl": "https://jep-asset.akamaized.net/MyJio_Client/Common/detect_apps_consuming_more_data.jpg",
+          "appVersion": "5000",
+          "visibility": "1",
+          "commonActionURL": "",
+          "actionTag": "T003",
+          "bannerJTokenTag": "D000"
+        },
+        {
+          "title": "Know your data plan, balance and validity",
+          "titleID": "95144",
+          "subTitle": "<html> <head><style>.color_7d7d7d {color:#7D7D7D;} .font14{font-size: 14px} .color_000000  {color: #000} .mb20 {margin-bottom: 20px;} .mb-3{margin-bottom: 5px} .mt-5{margin-top: 5px} p{margin:0}</style></head> <body class='JioTypeW04_Medium color_7d7d7d font14'><p class='mb20'>Your internet plan, data quota and balance can be viewed by accessing MyJio app.</p><p class='mb20'>Open MyJio app to view your active plan, validity and data balance on the landing page. Tap on 'View details' in My Account to view current & upcoming plans along with benefits, balance and validity.</p></body></html>",
+          "subTitleID": "95181",
+          "accessibilityContent": "",
+          "callActionLink": "",
+          "bannerUrl": "https://jep-asset.akamaized.net/MyJio_Client/Common/Know-your-data-plan,-balance-and-validity.jpg",
+          "appVersion": "5000",
+          "visibility": "1",
+          "commonActionURL": "",
+          "actionTag": "T003",
+          "bannerJTokenTag": "D000"
+        },
+        {
+          "title": "Time spent on internet vis a vis data consumption",
+          "titleID": "95145",
+          "subTitle": "<html> <head><style>.color_7d7d7d {color:#7D7D7D;} .font14{font-size: 14px} .color_000000  {color: #000} .mb20 {margin-bottom: 20px;} .mb-3{margin-bottom: 5px} .mt-5{margin-top: 5px} p{margin:0}</style></head> <body class='JioTypeW04_Medium color_7d7d7d font14'><p class='mb20'>Type of activities performed matter more than time spent online. For example, data-rich activities, such as streaming video, cloud backup, tethering through hotspot will use more data than sending emails or browsing. Read 'Curb causes of high data usage' in Helpful tips to view types of usage which consume high data.</p></body></html>",
+          "subTitleID": "95182",
+          "accessibilityContent": "",
+          "callActionLink": "",
+          "bannerUrl": "https://jep-asset.akamaized.net/MyJio_Client/Common/Time-spent-on-internet-vis-a-vis-data.jpg",
+          "appVersion": "5000",
+          "visibility": "1",
+          "commonActionURL": "",
+          "actionTag": "T003",
+          "bannerJTokenTag": "D000"
+        },
+        {
+          "title": "Alerts on data usage",
+          "titleID": "95146",
+          "subTitle": "<html> <head><style>.color_7d7d7d {color:#7D7D7D;} .font14{font-size: 14px} .color_000000  {color: #000} .mb20 {margin-bottom: 20px;} .mb-3{margin-bottom: 5px} .mt-5{margin-top: 5px} p{margin:0}</style></head> <body class='JioTypeW04_Medium color_7d7d7d font14'><p class='mb20'>You will receive alerts at regular intervals on 50%, 90% and 100% of your data pack usage to keep you updated on data pack quota consumption. You will receive these alerts on your preferred mode of communication, i.e., SMS or Email.</p></body></html>",
+          "subTitleID": "95183",
+          "accessibilityContent": "",
+          "callActionLink": "",
+          "bannerUrl": "https://jep-asset.akamaized.net/MyJio_Client/Common/Alerts-on-data-usage.jpg",
+          "appVersion": "5000",
+          "visibility": "1",
+          "commonActionURL": "",
+          "actionTag": "T003",
+          "bannerJTokenTag": "D000"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+<html>
+<head>
+    <title>MYSTIQUE</title>
+</head>
+<body>
+</body>
+<script type="text/javascript">
+    console.log = function() {}
+    console.info = function() {}
+</script>
+<script type="text/javascript">
+    window.JBridge = top.JBridge;
+    window.Android = top.Android;
+    window.DUIGatekeeper = JBridge;
+    window.__OS = "ANDROID"
+
+    window.onMerchantEvent = function(key, value) {
+        if(key == "__order_create_response_") {
+            if(typeof window.__payload.juspay_session_token == "string") {
+                window.__payload.juspay_session_token = JSON.parse(window.__payload.juspay_session_token);
+            }
+            var data = JSON.parse(value);
+            window[key + window.__payload.juspay_session_token.client_auth_token] = data;
+            JBridge.trackEvent("order_id", data.payment_id);
+        } else {
+            window[key] = JSON.parse(value);
+        }
+    }
+    window.JOS.addEventListener("onMerchantEvent")();
+
+    var id = {};
+    for(var i = 0; i < 20; i++) {
+        id[i] = Android.getNewID();
+    }
+
+    var text = {"type":"android.widget.LinearLayout","props":{"root":true,"id":id[1],"runInUI":"set_PARAMS=android.widget.LinearLayout$LayoutParams->new:i_-1,i_-1;this->setLayoutParams:get_PARAMS;this->setOrientation:i_0;this->setGravity:i_17;this->setClickable:b_true;this->setId:i_" + id[1] + ";set_DRAWABLE=android.graphics.drawable.GradientDrawable->new;set_colorInt=android.graphics.Color->parseColor:s_#44000000;get_DRAWABLE->setColor:get_colorInt;get_DRAWABLE->setCornerRadius:dpf_0;this->setBackground:get_DRAWABLE;","node_id":"" + id[1],"__filename":"filename not added"},"children":[{"type":"android.widget.LinearLayout","props":{"root":true,"animation":"[{\"startImmediate\":\"truetrue\",\"props\":\"[{\\\"to\\\":\\\"1.0\\\",\\\"prop\\\":\\\"alpha\\\",\\\"from\\\":\\\"0.0\\\"}]\",\"easing\":\"ease-in-out\",\"duration\":\"400.0\",\"id\":\"showProcessing\"}]","id":id[2],"runInUI":"set_PARAMS=android.widget.LinearLayout$LayoutParams->new:dp_304,dp_150;get_PARAMS->setMargins:dp_0,dp_0,dp_0,dp_0;get_PARAMS->setMarginStart:dp_0;get_PARAMS->setMarginEnd:dp_0;this->setLayoutParams:get_PARAMS;this->setOrientation:i_1;this->setGravity:i_1;this->setPaddingRelative:dp_14,dp_41,dp_14,dp_0;this->setTranslationZ:f_12;this->setId:i_" + id[2] + ";set_DRAWABLE=android.graphics.drawable.GradientDrawable->new;set_colorInt=android.graphics.Color->parseColor:s_#ffffffff;get_DRAWABLE->setColor:get_colorInt;get_DRAWABLE->setCornerRadius:dpf_6;this->setBackground:get_DRAWABLE;","node_id":"" + id[2],"__filename":"filename not added"},"children":[{"type":"android.widget.ProgressBar","props":{"id":id[3],"runInUI":"set_PARAMS=android.widget.LinearLayout$LayoutParams->new:dp_34,dp_34;get_PARAMS->setMargins:dp_121,dp_0,dp_121,dp_0;get_PARAMS->setMarginStart:dp_121;get_PARAMS->setMarginEnd:dp_121;this->setLayoutParams:get_PARAMS;this->setId:i_" + id[3] + ";","node_id":"" + id[3],"__filename":"filename not added"},"children":[]},{"type":"android.widget.TextView","props":{"lineHeight":"15px","id":id[4],"runInUI":"set_PARAMS=android.widget.LinearLayout$LayoutParams->new:i_-1,dp_17;get_PARAMS->setMargins:dp_0,dp_5,dp_0,dp_0;get_PARAMS->setMarginStart:dp_0;get_PARAMS->setMarginEnd:dp_0;this->setLayoutParams:get_PARAMS;this->setTextSize:f_14;set_colorInt=android.graphics.Color->parseColor:s_#ff898989;this->setTextColor:get_colorInt;set_fontFace=android.graphics.Typeface->create:s_sans-serif,i_1;this->setTypeface:get_fontFace,i_1;this->setGravity:i_17;this->setText:cs_Processing;this->setId:i_" + id[4] + ";","node_id":"" + id[4],"__filename":"filename not added"},"children":[]}]}]}
+
+    if(__payload.client_id.split("_")[0] == "olacabs") {
+        text = {"type":"android.widget.LinearLayout","props":{"root":true,"id":id[1],"runInUI":"set_PARAMS=android.widget.LinearLayout$LayoutParams->new:i_-1,i_-1;this->setLayoutParams:get_PARAMS;this->setGravity:i_17;this->setClickable:b_true;this->setId:i_"+id[1]+";set_DRAWABLE=android.graphics.drawable.GradientDrawable->new;set_colorInt=android.graphics.Color->parseColor:s_#44000000;get_DRAWABLE->setColor:get_colorInt;this->setBackground:get_DRAWABLE;","node_id":"7","__filename":"filename not added"},"children":[{"type":"android.widget.LinearLayout","props":{"id":id[2],"runInUI":"set_PARAMS=android.widget.LinearLayout$LayoutParams->new:i_-1,i_-1;this->setLayoutParams:get_PARAMS;this->setOrientation:i_0;this->setGravity:i_17;this->setVisibility:i_0;this->setClickable:b_true;this->setTranslationZ:f_13;this->setId:i_"+id[2]+";set_DRAWABLE=android.graphics.drawable.GradientDrawable->new; get_DRAWABLE->setCornerRadius:dpf_0;this->setBackground:get_DRAWABLE;","node_id":"6","__filename":"filename not added"},"children":[{"type":"android.widget.LinearLayout","props":{"root":true,"id":id[3],"runInUI":"set_PARAMS=android.widget.LinearLayout$LayoutParams->new:dp_304,dp_150;get_PARAMS->setMargins:dp_0,dp_0,dp_0,dp_0;get_PARAMS->setMarginStart:dp_0;get_PARAMS->setMarginEnd:dp_0;this->setLayoutParams:get_PARAMS;this->setOrientation:i_1;this->setTranslationZ:f_22;this->setGravity:i_1;this->setPaddingRelative:dp_14,dp_41,dp_14,dp_0;this->setId:i_"+id[3]+";set_DRAWABLE=android.graphics.drawable.GradientDrawable->new;set_colorInt=android.graphics.Color->parseColor:s_#ffffffff;get_DRAWABLE->setColor:get_colorInt;get_DRAWABLE->setCornerRadius:dpf_6;this->setBackground:get_DRAWABLE;","node_id":"5","__filename":"filename not added"},"children":[{"type":"android.widget.ProgressBar","props":{"id":id[4],"runInUI":"set_PARAMS=android.widget.LinearLayout$LayoutParams->new:dp_34,dp_34;get_PARAMS->setMargins:dp_121,dp_0,dp_121,dp_0;get_PARAMS->setMarginStart:dp_121;get_PARAMS->setMarginEnd:dp_121;this->setLayoutParams:get_PARAMS;this->setId:i_"+id[4]+";","node_id":"2","__filename":"filename not added"},"children":[]},{"type":"android.widget.TextView","props":{"lineHeight":"15px","id":id[5],"runInUI":"set_PARAMS=android.widget.LinearLayout$LayoutParams->new:i_-1,dp_17;get_PARAMS->setMargins:dp_0,dp_5,dp_0,dp_0;get_PARAMS->setMarginStart:dp_0;get_PARAMS->setMarginEnd:dp_0;this->setLayoutParams:get_PARAMS;this->setTextSize:f_14;set_colorInt=android.graphics.Color->parseColor:s_#ff898989;this->setTextColor:get_colorInt;set_fontFace=android.graphics.Typeface->create:s_sans-serif,i_1;this->setTypeface:get_fontFace,i_1;this->setGravity:i_17;this->setText:cs_Processing Your Request;this->setId:i_"+id[5]+";","node_id":"3","__filename":"filename not added"},"children":[]},{"type":"android.widget.TextView","props":{"lineHeight":"15px","id":id[6],"runInUI":"set_PARAMS=android.widget.LinearLayout$LayoutParams->new:i_-1,dp_17;get_PARAMS->setMargins:dp_0,dp_5,dp_0,dp_0;get_PARAMS->setMarginStart:dp_0;get_PARAMS->setMarginEnd:dp_0;this->setLayoutParams:get_PARAMS;this->setTextSize:f_14;set_colorInt=android.graphics.Color->parseColor:s_#ff898989;this->setTextColor:get_colorInt;set_fontFace=android.graphics.Typeface->create:s_sans-serif,i_2;this->setTypeface:get_fontFace,i_2;this->setGravity:i_17;this->setText:cs_Please wait;this->setVisibility:i_0;this->setId:i_"+id[6]+";","node_id":"4","__filename":"filename not added"},"children":[]}]}]}]}
+    }
+
+    var root = {"type":"android.widget.RelativeLayout","props":{"root":"true","id":id[0],"runInUI":"set_PARAMS=android.widget.RelativeLayout$LayoutParams->new:i_-1,i_-1;this->setLayoutParams:get_PARAMS;this->setId:i_" + id[0] + ";","node_id":"" + id[0],"__filename":"filename not added"},"children":[text]}
+
+    if(__payload.client_id.split("_")[0] != "dreamplug" && __payload.client_id.split("_")[0] != "olacabs") {
+        console.log(root);
+        window.idToBeRemoved = id[0];
+        Android.Render(JSON.stringify(root), null, "false");
+        Android.addViewToParent(root.props.id, JSON.stringify(root), 0, null, null);
+    }
+</script>
+<script type="text/javascript">
+    if(__payload.client_id.split("_")[0] == "dreamplug") {
+        var headID = document.getElementsByTagName("head")[0];
+        var newScript = document.createElement('script');
+        newScript.type = 'text/javascript';
+        newScript.id = 'mystique';
+
+        //Fallback code. Please undo once rc13 is stable
+        if(__payload.client_id.split("_")[0] == "dreamplug" && window.__payload.use_rc12 === "true") {
+            newScript.innerHTML = DUIGatekeeper.loadFileInDUI('payments/in.hyper.pay/v1-lib_bundle_rc12.jsa');
+        } else {
+            newScript.innerHTML = DUIGatekeeper.loadFileInDUI('payments/in.hyper.pay/v1-lib_bundle.jsa');
+        }
+
+        headID.appendChild(newScript);
+    }
+</script>
+<script type="text/javascript">
+    if(__payload.client_id.split("_")[0] == "dreamplug") {
+        var pl = {
+            merchant_id : "dreamplug_live"
+          , client_id : "dreamplug_android"
+          ,   display_note : ""
+          ,   order_id : ""
+          ,   currency : "INR"
+          ,   environment : "https://api.juspay.in"
+          ,   "WHITE_LIST" : ""
+          ,   "UPI_PAYMENT_METHOD" : "NA"
+          ,   get_available_apps : "true"
+          ,   pay_with_app : null
+        }
+        var cb = function(code) {
+            return function(status) {
+              return function() {
+                console.log("Returning from EC UPI:", code, status);
+                var resp = {
+                  code: code,
+                  status: status
+                }
+                // JBridge.setSessionId(window.hyper_session_id);
+                // tracker(JSON.stringify(resp))();
+                window.ec_upi_apps = resp;
+              }
+            }
+        }
+        JOS.startApp("in.juspay.ec.upi")(pl)(cb)();
+    }
+</script>
+<script type="text/javascript">
+    var loadIndex = function() {
+        var headID = document.getElementsByTagName("head")[0];
+        var newScript = document.createElement('script');
+        newScript.type = 'text/javascript';
+        newScript.id = 'mystique';
+
+        //Fallback code. Please undo once rc13 is stable
+        if(__payload.client_id.split("_")[0] == "dreamplug" && window.__payload.use_rc12 === "true") {
+            newScript.innerHTML = DUIGatekeeper.loadFileInDUI('payments/in.hyper.pay/v1-index_bundle_rc12.jsa');
+        } else {
+            newScript.innerHTML = DUIGatekeeper.loadFileInDUI('payments/in.hyper.pay/v1-index_bundle.jsa');
+        }
+
+        headID.appendChild(newScript);
+    }
+    if(__payload.client_id.split("_")[0] == "dreamplug") {
+        if(__payload.pre_init != "true") {
+            loadIndex();
+        } else {
+            window.onBundleUpdate = function() {
+                loadIndex();
+            }
+        }
+    } else {
+        loadIndex();
+    }
+</script>
+</html>
