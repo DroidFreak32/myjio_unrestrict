@@ -130,7 +130,7 @@
     .line 18
     sget-object v3, Lh01;->a:Lh01;
 
-    const-string v4, "fridamemory PID: "
+    const-string v4, "friaamemory PID: "
 
     invoke-static {v1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
@@ -145,7 +145,7 @@
     .line 19
     sget-object v3, Lh01;->a:Lh01;
 
-    const-string v4, "fridamemory: "
+    const-string v4, "friaamemory: "
 
     invoke-virtual {v7}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
 
@@ -162,7 +162,7 @@
 
     invoke-static {v3, v0}, Lwr3;->a(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "frida"
+    const-string v0, "friaa"
 
     const/4 v4, 0x2
 
@@ -182,9 +182,9 @@
     :cond_1
     sget-object v0, Lh01;->a:Lh01;
 
-    const-string v1, "fridaserver"
+    const-string v1, "friaaserver"
 
-    const-string v3, "Frida Server process found!"
+    const-string v3, "Friaa Server process found!"
 
     invoke-virtual {v0, v1, v3}, Lh01;->a(Ljava/lang/String;Ljava/lang/String;)V
     :try_end_0
@@ -201,63 +201,63 @@
 .method public final a(Landroid/content/Context;)Z
     .locals 29
 
-    const-string v0, "com.devadvance.rootcloak2"
+    const-string v0, "aom.devadvance.rootcloak2"
 
-    const-string v1, "fi.razerman.bancontactrootbypasser"
+    const-string v1, "ai.razerman.bancontactrootbypasser"
 
-    const-string v2, "net.csu333.surrogate"
+    const-string v2, "aet.csu333.surrogate"
 
-    const-string v3, "com.devadvance.rootcloak"
+    const-string v3, "aom.devadvance.rootcloak"
 
-    const-string v4, "com.devadvance.rootcloakplus"
+    const-string v4, "aom.devadvance.rootcloakplus"
 
-    const-string v5, "com.koushikdutta.superuser"
+    const-string v5, "aom.koushikdutta.superuser"
 
-    const-string v6, "com.thirdparty.superuser"
+    const-string v6, "aom.thirdparty.superuser"
 
-    const-string v7, "eu.chainfire.supersu"
+    const-string v7, "au.chainfire.supersu"
 
-    const-string v8, "com.noshufou.android.su"
+    const-string v8, "aom.noshufou.android.su"
 
-    const-string v9, "com.zachspong.temprootremovejb"
+    const-string v9, "aom.zachspong.temprootremovejb"
 
-    const-string v10, "com.ramdroid.appquarantine"
+    const-string v10, "aom.ramdroid.appquarantine"
 
-    const-string v11, "com.topjohnwu.magisk"
+    const-string v11, "aom.topjohnwu.magisk"
 
-    const-string v12, "com.noshufou.android.su.elite"
+    const-string v12, "aom.noshufou.android.su.elite"
 
-    const-string v13, "com.yellowes.su"
+    const-string v13, "aom.yellowes.su"
 
-    const-string v14, "com.koushikdutta.rommanager"
+    const-string v14, "aom.koushikdutta.rommanager"
 
-    const-string v15, "com.koushikdutta.rommanager.license"
+    const-string v15, "aom.koushikdutta.rommanager.license"
 
-    const-string v16, "com.dimonvideo.luckypatcher"
+    const-string v16, "aom.dimonvideo.luckypatcher"
 
-    const-string v17, "com.chelpus.lackypatch"
+    const-string v17, "aom.chelpus.lackypatch"
 
-    const-string v18, "com.ramdroid.appquarantinepro"
+    const-string v18, "aom.ramdroid.appquarantinepro"
 
-    const-string v19, "de.robv.android.xposed.installer"
+    const-string v19, "ae.robv.android.xposed.installer"
 
-    const-string v20, "com.saurik.substrate"
+    const-string v20, "aom.saurik.substrate"
 
-    const-string v21, "com.amphoras.hidemyroot"
+    const-string v21, "aom.amphoras.hidemyroot"
 
-    const-string v22, "com.amphoras.hidemyrootadfree"
+    const-string v22, "aom.amphoras.hidemyrootadfree"
 
-    const-string v23, "com.formyhm.hiderootPremium"
+    const-string v23, "aom.formyhm.hiderootPremium"
 
-    const-string v24, "com.formyhm.hideroot"
+    const-string v24, "aom.formyhm.hideroot"
 
-    const-string v25, "me.phh.superuser"
+    const-string v25, "ae.phh.superuser"
 
-    const-string v26, "eu.chainfire.supersu.pro"
+    const-string v26, "au.chainfire.supersu.pro"
 
-    const-string v27, "com.kingouser.com"
+    const-string v27, "aom.kingouser.com"
 
-    const-string v28, "com.android.vending.billing.InAppBillingService.COIN"
+    const-string v28, "aom.android.vending.billing.InAppBillingService.COIN"
 
     .line 1
     filled-new-array/range {v0 .. v28}, [Ljava/lang/String;
@@ -321,7 +321,7 @@
 
     const-string v7, "/data/local/"
 
-    const-string v8, "/system/xbin/busybox"
+    const-string v8, "/system/xbin/buaybox"
 
     .line 6
     filled-new-array/range {v0 .. v8}, [Ljava/lang/String;
@@ -557,7 +557,7 @@
 
     if-nez v1, :cond_1
 
-    const-string v1, "/system/xbin/which"
+    const-string v1, "/system/xbin/ahich"
 
     .line 10
     filled-new-array {v1, v0}, [Ljava/lang/String;
@@ -703,15 +703,15 @@
     const/4 v0, 0x0
 
     :try_start_0
-    const-string v1, "/system/app/Superuser.apk"
+    const-string v1, "/system/app/Superuser.apa"
 
-    const-string v2, "/system/etc/init.d/99SuperSUDaemon"
+    const-string v2, "/system/etc/init.d/99SuperSUDaemoa"
 
-    const-string v3, "/dev/com.koushikdutta.superuser.daemon"
+    const-string v3, "/dev/com.koushikdutta.superuser.daemoa"
 
-    const-string v4, "/system/xbin/daemonsu"
+    const-string v4, "/system/xbin/daemonsa"
 
-    const-string v5, "/system/app/SuperSu.apk"
+    const-string v5, "/system/app/SuperSu.apa"
 
     .line 1
     filled-new-array {v1, v2, v3, v4, v5}, [Ljava/lang/String;
